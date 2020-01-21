@@ -1,4 +1,9 @@
 import express from "express";
-const router = express.Router();
+import { getSlopeByID, getSlopes } from "./../controllers/slopes.controller";
+const slopesRouter = express.Router();
 
-export default router;
+slopesRouter.get("/", getSlopes);
+
+slopesRouter.get("/:id", getSlopeByID);
+
+export default slopesRouter;

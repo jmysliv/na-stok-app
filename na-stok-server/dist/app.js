@@ -9,6 +9,7 @@ const express_1 = __importDefault(require("express"));
 const mongoose_1 = __importDefault(require("mongoose"));
 const morgan_1 = __importDefault(require("morgan"));
 const path_1 = __importDefault(require("path"));
+const slopes_1 = __importDefault(require("./routes/slopes"));
 const trips_1 = __importDefault(require("./routes/trips"));
 mongoose_1.default.connect("mongodb://localhost/na-stok-app", { useUnifiedTopology: true, useNewUrlParser: true });
 const db = mongoose_1.default.connection;
@@ -24,6 +25,7 @@ app.use(cookie_parser_1.default());
 app.use(express_1.default.static(path_1.default.join(__dirname, "../public")));
 app.use(cors_1.default());
 app.use("/trips", trips_1.default);
+app.use("/slopes", slopes_1.default);
 app.listen(3000, "localhost", (e) => {
     console.log("running");
 });

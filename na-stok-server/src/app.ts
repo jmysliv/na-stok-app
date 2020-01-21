@@ -4,6 +4,7 @@ import express from "express";
 import mongoose from "mongoose";
 import logger from "morgan";
 import path from "path";
+import slopesRouter from "./routes/slopes";
 import tripRouter from "./routes/trips";
 
 mongoose.connect("mongodb://localhost/na-stok-app", {useUnifiedTopology: true, useNewUrlParser: true});
@@ -21,6 +22,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "../public")));
 app.use(cors());
 app.use("/trips", tripRouter);
+app.use("/slopes", slopesRouter);
 
 app.listen(3000, "localhost", (e) => {
     console.log("running");
