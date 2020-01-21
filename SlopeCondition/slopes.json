@@ -1,0 +1,6574 @@
+[
+    {
+        "name": "U Steni",
+        "city": "Gliczar\u00f3w G\u00f3rny",
+        "address": "Gliczar\u00f3w G\u00f3rny 157",
+        "condition_min": "40",
+        "condition_max": "70",
+        "condition_equal": null,
+        "update_time": "2020-01-20 19:13:14",
+        "status": " czynny",
+        "snow_fall": "4",
+        "weather": [
+            {
+                "day": "19.1",
+                "day_name": "Nd.",
+                "clouds": "\u015anieg",
+                "temperature": "-1"
+            },
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Cz\u0119\u015bciowe zachmurzenie",
+                "temperature": "-1"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Przejrzyste niebo",
+                "temperature": "5"
+            }
+        ]
+    },
+    {
+        "name": "Bobliwo",
+        "city": "Bobliwo",
+        "address": "Bobliwo 1",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2020-01-20 18:13:39",
+        "status": " nieczynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "2"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Lekkie zachmurzenie",
+                "temperature": "4"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Pochmurno",
+                "temperature": "2"
+            }
+        ]
+    },
+    {
+        "name": "Kazimierz",
+        "city": "Kazimierz Dolny",
+        "address": "Pu\u0142awska 168",
+        "condition_min": "10",
+        "condition_max": "30",
+        "condition_equal": null,
+        "update_time": "2020-01-20 16:59:08",
+        "status": " czynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "3"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Lekkie zachmurzenie",
+                "temperature": "4"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Lekkie opady \u015bniegu z deszczem",
+                "temperature": "3"
+            }
+        ]
+    },
+    {
+        "name": "Kocierz",
+        "city": "Andrych\u00f3w",
+        "address": "ul. Beskidzka 206, Targanice",
+        "condition_min": "30",
+        "condition_max": "40",
+        "condition_equal": null,
+        "update_time": "2020-01-20 13:02:10",
+        "status": " czynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "1"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Lekkie zachmurzenie",
+                "temperature": "2"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Lekkie opady \u015bniegu",
+                "temperature": "2"
+            }
+        ]
+    },
+    {
+        "name": "Grapa Ski",
+        "city": "Czarna G\u00f3ra",
+        "address": "Zag\u00f3ra 200",
+        "condition_min": "30",
+        "condition_max": "60",
+        "condition_equal": null,
+        "update_time": "2020-01-20 12:59:04",
+        "status": " czynny",
+        "snow_fall": "3",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "-1"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Przejrzyste niebo",
+                "temperature": "5"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Lekkie opady \u015bniegu",
+                "temperature": "4"
+            }
+        ]
+    },
+    {
+        "name": "Bania",
+        "city": "Bia\u0142ka Tatrza\u0144ska",
+        "address": "ul. \u015arodkowa 181",
+        "condition_min": "70",
+        "condition_max": "90",
+        "condition_equal": null,
+        "update_time": "2020-01-20 09:26:25",
+        "status": " czynny",
+        "snow_fall": "3",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "-1"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Przejrzyste niebo",
+                "temperature": "5"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Lekkie opady \u015bniegu",
+                "temperature": "4"
+            }
+        ]
+    },
+    {
+        "name": "Ski Lubomierz",
+        "city": "Lubomierz",
+        "address": "Lubomierz 186",
+        "condition_min": "10",
+        "condition_max": "40",
+        "condition_equal": null,
+        "update_time": "2020-01-20 07:22:25",
+        "status": " czynny",
+        "snow_fall": "5",
+        "weather": [
+            {
+                "day": "19.1",
+                "day_name": "Nd.",
+                "clouds": "\u015anieg",
+                "temperature": "0"
+            },
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "0"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Przejrzyste niebo",
+                "temperature": "4"
+            }
+        ]
+    },
+    {
+        "name": "Koziniec-Ski",
+        "city": "Czarna G\u00f3ra",
+        "address": "ul. Nadwodnia 170",
+        "condition_min": "45",
+        "condition_max": "50",
+        "condition_equal": null,
+        "update_time": "2020-01-19 18:50:07",
+        "status": " czynny",
+        "snow_fall": "3",
+        "weather": [
+            {
+                "day": "19.1",
+                "day_name": "Nd.",
+                "clouds": "\u015anieg",
+                "temperature": "0"
+            },
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "0"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Przejrzyste niebo",
+                "temperature": "5"
+            }
+        ]
+    },
+    {
+        "name": "Jacnia",
+        "city": "Jacnia",
+        "address": "Jacnia 142",
+        "condition_min": "30",
+        "condition_max": "70",
+        "condition_equal": null,
+        "update_time": "2020-01-19 14:05:36",
+        "status": " czynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "1"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Lekkie zachmurzenie",
+                "temperature": "3"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Pochmurno",
+                "temperature": "2"
+            }
+        ]
+    },
+    {
+        "name": "Jaworki Homole",
+        "city": "Jaworki",
+        "address": "ul. Zaskalskie 14",
+        "condition_min": "20",
+        "condition_max": "40",
+        "condition_equal": null,
+        "update_time": "2020-01-19 09:39:10",
+        "status": " czynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "0"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Lekkie zachmurzenie",
+                "temperature": "5"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Deszcz ze \u015bniegiem",
+                "temperature": "5"
+            }
+        ]
+    },
+    {
+        "name": "Guba\u0142\u00f3wka",
+        "city": "Zakopane",
+        "address": "ul. Na Guba\u0142\u00f3wk\u0119",
+        "condition_min": "40",
+        "condition_max": "130",
+        "condition_equal": null,
+        "update_time": "2020-01-19 07:18:11",
+        "status": " czynny",
+        "snow_fall": "6",
+        "weather": [
+            {
+                "day": "19.1",
+                "day_name": "Nd.",
+                "clouds": "\u015anieg",
+                "temperature": "-4"
+            },
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "-4"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Przejrzyste niebo",
+                "temperature": "1"
+            }
+        ]
+    },
+    {
+        "name": "Nosal",
+        "city": "Zakopane",
+        "address": "ul. Balzera 30",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "30",
+        "update_time": "2020-01-18 21:35:34",
+        "status": " czynny",
+        "snow_fall": "2",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Mg\u0142a",
+                "temperature": "-4"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Lekkie zachmurzenie",
+                "temperature": "1"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "\u015anieg",
+                "temperature": "-2"
+            }
+        ]
+    },
+    {
+        "name": "Ma\u0142e Ciche",
+        "city": "Ma\u0142e Ciche",
+        "address": "Ma\u0142e Ciche 73C",
+        "condition_min": "100",
+        "condition_max": "150",
+        "condition_equal": null,
+        "update_time": "2020-01-18 15:38:58",
+        "status": " czynny",
+        "snow_fall": "1",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Mg\u0142a",
+                "temperature": "-2"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Przejrzyste niebo",
+                "temperature": "4"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Lekkie opady \u015bniegu",
+                "temperature": "0"
+            }
+        ]
+    },
+    {
+        "name": "Bystre",
+        "city": "Baligr\u00f3d",
+        "address": "Bystre",
+        "condition_min": "30",
+        "condition_max": "40",
+        "condition_equal": null,
+        "update_time": "2020-01-18 08:01:55",
+        "status": " czynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "2"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Lekkie zachmurzenie",
+                "temperature": "4"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Pochmurno",
+                "temperature": "3"
+            }
+        ]
+    },
+    {
+        "name": "Pilsko-Jontek",
+        "city": "Korbiel\u00f3w",
+        "address": "ul. J. Sitki 8",
+        "condition_min": "15",
+        "condition_max": "20",
+        "condition_equal": null,
+        "update_time": "2020-01-17 07:27:45",
+        "status": " czynny",
+        "snow_fall": "2",
+        "weather": [
+            {
+                "day": "19.1",
+                "day_name": "Nd.",
+                "clouds": "\u015anieg",
+                "temperature": "-5"
+            },
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "-5"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Przejrzyste niebo",
+                "temperature": "-2"
+            }
+        ]
+    },
+    {
+        "name": "Potoczki - Z\u0105b",
+        "city": "Z\u0105b",
+        "address": "Z\u0105b 55b",
+        "condition_min": "40",
+        "condition_max": "60",
+        "condition_equal": null,
+        "update_time": "2020-01-16 21:32:58",
+        "status": " czynny",
+        "snow_fall": "1",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Mg\u0142a",
+                "temperature": "-3"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Przejrzyste niebo",
+                "temperature": "2"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Lekkie opady \u015bniegu",
+                "temperature": "-1"
+            }
+        ]
+    },
+    {
+        "name": "Orawka",
+        "city": "Orawka",
+        "address": "Orawka 202D",
+        "condition_min": "30",
+        "condition_max": "50",
+        "condition_equal": null,
+        "update_time": "2020-01-16 07:42:09",
+        "status": " czynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "0"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Lekkie zachmurzenie",
+                "temperature": "4"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Lekkie opady \u015bniegu",
+                "temperature": "3"
+            }
+        ]
+    },
+    {
+        "name": "Kokuszka Ski",
+        "city": "Piwniczna-Zdr\u00f3j",
+        "address": "Kokuszka 2",
+        "condition_min": "40",
+        "condition_max": "60",
+        "condition_equal": null,
+        "update_time": "2020-01-15 17:55:15",
+        "status": " czynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "19.1",
+                "day_name": "Nd.",
+                "clouds": "Mg\u0142a",
+                "temperature": "0"
+            },
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "1"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Przejrzyste niebo",
+                "temperature": "6"
+            }
+        ]
+    },
+    {
+        "name": "Pod Starym Groniem",
+        "city": "Brenna",
+        "address": "ul. Sportowa 4",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2020-01-14 13:41:14",
+        "status": " nieczynny",
+        "snow_fall": "1",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Mg\u0142a",
+                "temperature": "-1"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Przejrzyste niebo",
+                "temperature": "2"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Deszcz ze \u015bniegiem",
+                "temperature": "1"
+            }
+        ]
+    },
+    {
+        "name": "Amalka",
+        "city": "Amalka",
+        "address": "Amalka",
+        "condition_min": "1",
+        "condition_max": "2",
+        "condition_equal": null,
+        "update_time": "2020-01-14 13:30:54",
+        "status": " nieczynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "2"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Pochmurno",
+                "temperature": "3"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Przejrzyste niebo",
+                "temperature": "4"
+            }
+        ]
+    },
+    {
+        "name": "Limanowa-Ski",
+        "city": "Limanowa",
+        "address": "\u0141ysa G\u00f3ra",
+        "condition_min": "50",
+        "condition_max": "80",
+        "condition_equal": null,
+        "update_time": "2020-01-10 10:54:37",
+        "status": " czynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "-1"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Cz\u0119\u015bciowe zachmurzenie",
+                "temperature": "4"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Pochmurno",
+                "temperature": "1"
+            }
+        ]
+    },
+    {
+        "name": "Kalat\u00f3wki",
+        "city": "Zakopane",
+        "address": "Polana Kalat\u00f3wki",
+        "condition_min": "25",
+        "condition_max": "50",
+        "condition_equal": null,
+        "update_time": "2020-01-07 11:59:49",
+        "status": " czynny",
+        "snow_fall": "1",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Mg\u0142a",
+                "temperature": "-2"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Lekkie zachmurzenie",
+                "temperature": "3"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Lekkie opady \u015bniegu",
+                "temperature": "2"
+            }
+        ]
+    },
+    {
+        "name": "Rusi\u0144 Ski",
+        "city": "Bukowina Tatrza\u0144ska",
+        "address": "Wierch Rusi\u0144ski 70",
+        "condition_min": "50",
+        "condition_max": "120",
+        "condition_equal": null,
+        "update_time": "2020-01-07 11:19:12",
+        "status": " czynny",
+        "snow_fall": "1",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Mg\u0142a",
+                "temperature": "-2"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Lekkie zachmurzenie",
+                "temperature": "4"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Lekkie opady \u015bniegu",
+                "temperature": "2"
+            }
+        ]
+    },
+    {
+        "name": "Bajtek",
+        "city": "\u015awierad\u00f3w-Zdr\u00f3j",
+        "address": "ul. D\u0105browskiego",
+        "condition_min": "10",
+        "condition_max": "15",
+        "condition_equal": null,
+        "update_time": "2019-12-29 01:21:30",
+        "status": " czynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Lekkie zachmurzenie",
+                "temperature": "-1"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Przejrzyste niebo",
+                "temperature": "4"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Mg\u0142a",
+                "temperature": "0"
+            }
+        ]
+    },
+    {
+        "name": "Zebra",
+        "city": "Bia\u0142ka Tatrza\u0144ska",
+        "address": "ul. \u015arodkowa 144",
+        "condition_min": "40",
+        "condition_max": "60",
+        "condition_equal": null,
+        "update_time": "2019-12-28 11:02:55",
+        "status": " czynny",
+        "snow_fall": "3",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "-1"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Przejrzyste niebo",
+                "temperature": "5"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Lekkie opady \u015bniegu",
+                "temperature": "4"
+            }
+        ]
+    },
+    {
+        "name": "Kani\u00f3wka",
+        "city": "Bia\u0142ka Tatrza\u0144ska",
+        "address": "ul. Kani\u00f3wka 19",
+        "condition_min": "30",
+        "condition_max": "40",
+        "condition_equal": null,
+        "update_time": "2019-12-22 20:53:57",
+        "status": " czynny",
+        "snow_fall": "3",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "-1"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Przejrzyste niebo",
+                "temperature": "5"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Lekkie opady \u015bniegu",
+                "temperature": "4"
+            }
+        ]
+    },
+    {
+        "name": "Polana Sosny",
+        "city": "Niedzica",
+        "address": "os. Polana Sosny 5",
+        "condition_min": "40",
+        "condition_max": "80",
+        "condition_equal": null,
+        "update_time": "2019-12-20 22:34:19",
+        "status": " czynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "1"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Lekkie zachmurzenie",
+                "temperature": "6"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Przelotny deszcz",
+                "temperature": "5"
+            }
+        ]
+    },
+    {
+        "name": "Olcza\u0144-Ski",
+        "city": "Bukowina Tatrza\u0144ska",
+        "address": "ul. Wierch Olcza\u0144ski",
+        "condition_min": "60",
+        "condition_max": "70",
+        "condition_equal": null,
+        "update_time": "2019-12-19 14:58:17",
+        "status": " czynny",
+        "snow_fall": "1",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Mg\u0142a",
+                "temperature": "-2"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Lekkie zachmurzenie",
+                "temperature": "4"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Lekkie opady \u015bniegu",
+                "temperature": "2"
+            }
+        ]
+    },
+    {
+        "name": "D\u0142uga Polana",
+        "city": "Nowy Targ",
+        "address": "os. Oleks\u00f3wki 6a",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "20",
+        "update_time": "2019-12-16 18:50:38",
+        "status": " nieczynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "19.1",
+                "day_name": "Nd.",
+                "clouds": "Pochmurno",
+                "temperature": "-1"
+            },
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "-1"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Przejrzyste niebo",
+                "temperature": "3"
+            }
+        ]
+    },
+    {
+        "name": "Jurg\u00f3w-Ski",
+        "city": "Jurg\u00f3w",
+        "address": "ul. Podok\u00f3lne 1",
+        "condition_min": "30",
+        "condition_max": "50",
+        "condition_equal": null,
+        "update_time": "2019-12-16 16:03:45",
+        "status": " czynny",
+        "snow_fall": "2",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Mg\u0142a",
+                "temperature": "-1"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Lekkie zachmurzenie",
+                "temperature": "4"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "\u015anieg",
+                "temperature": "1"
+            }
+        ]
+    },
+    {
+        "name": "Z\u0142oty Gro\u0144",
+        "city": "Istebna",
+        "address": "Istebna Zaolzie 1628",
+        "condition_min": "80",
+        "condition_max": "110",
+        "condition_equal": null,
+        "update_time": "2019-12-16 10:23:22",
+        "status": " czynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "0"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Przejrzyste niebo",
+                "temperature": "0"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Lekkie opady \u015bniegu",
+                "temperature": "1"
+            }
+        ]
+    },
+    {
+        "name": "Beskid",
+        "city": "Spytkowice",
+        "address": "Spytkowice 135a",
+        "condition_min": "60",
+        "condition_max": "100",
+        "condition_equal": null,
+        "update_time": "2019-12-14 17:14:51",
+        "status": " czynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "3"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Cz\u0119\u015bciowe zachmurzenie",
+                "temperature": "3"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Pochmurno",
+                "temperature": "1"
+            }
+        ]
+    },
+    {
+        "name": "Telegraf",
+        "city": "Kielce",
+        "address": "ul. Narciarska 6",
+        "condition_min": "20",
+        "condition_max": "70",
+        "condition_equal": null,
+        "update_time": "2019-12-12 23:58:45",
+        "status": " czynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "2"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Przejrzyste niebo",
+                "temperature": "3"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Pochmurno",
+                "temperature": "2"
+            }
+        ]
+    },
+    {
+        "name": "Pod Dziedzicem",
+        "city": "Gogo\u0142\u00f3w",
+        "address": "Gogo\u0142\u00f3w",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2019-12-10 12:11:02",
+        "status": " nieczynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "1"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Cz\u0119\u015bciowe zachmurzenie",
+                "temperature": "3"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Pochmurno",
+                "temperature": "2"
+            }
+        ]
+    },
+    {
+        "name": "Mieszko",
+        "city": "Zieleniec",
+        "address": "",
+        "condition_min": "30",
+        "condition_max": "50",
+        "condition_equal": null,
+        "update_time": "2019-12-10 10:44:29",
+        "status": " czynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "19.1",
+                "day_name": "Nd.",
+                "clouds": "Lekkie opady \u015bniegu",
+                "temperature": "-2"
+            },
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Cz\u0119\u015bciowe zachmurzenie",
+                "temperature": "-1"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Lekkie zachmurzenie",
+                "temperature": "0"
+            }
+        ]
+    },
+    {
+        "name": "Kaim\u00f3wka",
+        "city": "Szczyrk",
+        "address": "ul. Leszczynowa",
+        "condition_min": "0",
+        "condition_max": "30",
+        "condition_equal": null,
+        "update_time": "2019-12-09 18:54:26",
+        "status": " nieczynny",
+        "snow_fall": "1",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Mg\u0142a",
+                "temperature": "-1"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Przejrzyste niebo",
+                "temperature": "2"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Lekkie opady \u015bniegu",
+                "temperature": "1"
+            }
+        ]
+    },
+    {
+        "name": "Z\u0142oty Stok",
+        "city": "Krzesz\u00f3w",
+        "address": "ul. Sieniawska 3",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2019-12-09 14:54:55",
+        "status": " nieczynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "1"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Lekkie zachmurzenie",
+                "temperature": "2"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Lekkie opady \u015bniegu",
+                "temperature": "2"
+            }
+        ]
+    },
+    {
+        "name": "G\u00f3ra \u017bar",
+        "city": "Mi\u0119dzybrodzie \u017bywieckie",
+        "address": "ul. G\u00f3rska 21",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2019-12-09 12:47:44",
+        "status": " nieczynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "-1"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Lekkie zachmurzenie",
+                "temperature": "1"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Lekkie opady \u015bniegu",
+                "temperature": "-1"
+            }
+        ]
+    },
+    {
+        "name": "Tylicz Ski",
+        "city": "Tylicz",
+        "address": "Boczna 4",
+        "condition_min": "40",
+        "condition_max": "50",
+        "condition_equal": null,
+        "update_time": "2019-12-09 11:41:27",
+        "status": " czynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "0"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Cz\u0119\u015bciowe zachmurzenie",
+                "temperature": "4"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Pochmurno",
+                "temperature": "3"
+            }
+        ]
+    },
+    {
+        "name": "Lubinka",
+        "city": "Janowice",
+        "address": "Janowice 298",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2019-12-09 10:11:39",
+        "status": " nieczynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "1"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Cz\u0119\u015bciowe zachmurzenie",
+                "temperature": "4"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Pochmurno",
+                "temperature": "2"
+            }
+        ]
+    },
+    {
+        "name": "Osmelakowa Dolina",
+        "city": "Spalona",
+        "address": "Spalona 14",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2019-04-04 08:37:49",
+        "status": " nieczynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Cz\u0119\u015bciowe zachmurzenie",
+                "temperature": "0"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Lekkie zachmurzenie",
+                "temperature": "-1"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Pochmurno",
+                "temperature": "0"
+            }
+        ]
+    },
+    {
+        "name": "Dwie Doliny",
+        "city": "Wierchomla Ma\u0142a",
+        "address": "Wierchomla Ma\u0142a 21",
+        "condition_min": "10",
+        "condition_max": "50",
+        "condition_equal": null,
+        "update_time": "2019-04-01 08:53:14",
+        "status": " nieczynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "-1"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Przejrzyste niebo",
+                "temperature": "4"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Pochmurno",
+                "temperature": "3"
+            }
+        ]
+    },
+    {
+        "name": "Kotlinka",
+        "city": "Wie\u017cyca",
+        "address": "ul. G\u00f3rska 3",
+        "condition_min": "30",
+        "condition_max": "80",
+        "condition_equal": null,
+        "update_time": "2019-03-15 15:42:58",
+        "status": " nieczynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Cz\u0119\u015bciowe zachmurzenie",
+                "temperature": "2"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Pochmurno",
+                "temperature": "3"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Przejrzyste niebo",
+                "temperature": "5"
+            }
+        ]
+    },
+    {
+        "name": "Kiczera Ski",
+        "city": "Pu\u0142awy",
+        "address": "Pu\u0142awy 16",
+        "condition_min": "20",
+        "condition_max": "70",
+        "condition_equal": null,
+        "update_time": "2019-03-11 14:06:18",
+        "status": " nieczynny",
+        "snow_fall": "1",
+        "weather": [
+            {
+                "day": "19.1",
+                "day_name": "Nd.",
+                "clouds": "Pochmurno",
+                "temperature": "1"
+            },
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "1"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Cz\u0119\u015bciowe zachmurzenie",
+                "temperature": "0"
+            }
+        ]
+    },
+    {
+        "name": "Lesko-Ski",
+        "city": "Weremie\u0144",
+        "address": "Weremie\u0144 36",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2019-03-11 10:53:54",
+        "status": " nieczynny",
+        "snow_fall": "1",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "0"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Lekkie zachmurzenie",
+                "temperature": "3"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Deszcz ze \u015bniegiem",
+                "temperature": "0"
+            }
+        ]
+    },
+    {
+        "name": "Morsko",
+        "city": "Zawiercie",
+        "address": "Morsko - \u0141\u0119\u017cec",
+        "condition_min": "20",
+        "condition_max": "40",
+        "condition_equal": null,
+        "update_time": "2019-02-24 17:21:03",
+        "status": " czynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "2"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Lekkie zachmurzenie",
+                "temperature": "2"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Pochmurno",
+                "temperature": "0"
+            }
+        ]
+    },
+    {
+        "name": "Szelment",
+        "city": "Jeleniewo",
+        "address": "Szelment 2",
+        "condition_min": "30",
+        "condition_max": "60",
+        "condition_equal": null,
+        "update_time": "2019-02-18 09:42:25",
+        "status": " czynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Cz\u0119\u015bciowe zachmurzenie",
+                "temperature": "1"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Pochmurno",
+                "temperature": "2"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Lekkie zachmurzenie",
+                "temperature": "4"
+            }
+        ]
+    },
+    {
+        "name": "Parchatka",
+        "city": "Parchatka",
+        "address": "Parchatka 187",
+        "condition_min": "40",
+        "condition_max": "70",
+        "condition_equal": null,
+        "update_time": "2019-02-16 09:07:06",
+        "status": " czynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "3"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Przejrzyste niebo",
+                "temperature": "4"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Lekkie opady deszczu",
+                "temperature": "4"
+            }
+        ]
+    },
+    {
+        "name": "Nartsport",
+        "city": "R\u0105bl\u00f3w",
+        "address": "R\u0105bl\u00f3w 27",
+        "condition_min": "40",
+        "condition_max": "70",
+        "condition_equal": null,
+        "update_time": "2019-02-15 11:42:42",
+        "status": " czynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "2"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Przejrzyste niebo",
+                "temperature": "3"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Lekkie opady deszczu",
+                "temperature": "3"
+            }
+        ]
+    },
+    {
+        "name": "Chyrowa-Ski",
+        "city": "Chyrowa",
+        "address": "Chyrowa 40",
+        "condition_min": "30",
+        "condition_max": "50",
+        "condition_equal": null,
+        "update_time": "2019-02-14 11:20:41",
+        "status": " czynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "0"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Cz\u0119\u015bciowe zachmurzenie",
+                "temperature": "1"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Lekkie opady \u015bniegu",
+                "temperature": "-4"
+            }
+        ]
+    },
+    {
+        "name": "Budzowski Wierch",
+        "city": "Zakopane",
+        "address": "ul. Krzept\u00f3wki",
+        "condition_min": "150",
+        "condition_max": "200",
+        "condition_equal": null,
+        "update_time": "2019-02-03 18:04:26",
+        "status": " czynny",
+        "snow_fall": "1",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Mg\u0142a",
+                "temperature": "-2"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Lekkie zachmurzenie",
+                "temperature": "3"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Lekkie opady \u015bniegu",
+                "temperature": "2"
+            }
+        ]
+    },
+    {
+        "name": "Stajkowa",
+        "city": "Kro\u015bcienko nad Dunajcem",
+        "address": "ul. Karola Wojty\u0142y - Papie\u017ca 78",
+        "condition_min": "80",
+        "condition_max": "90",
+        "condition_equal": null,
+        "update_time": "2019-02-01 15:06:51",
+        "status": " czynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "2"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Lekkie zachmurzenie",
+                "temperature": "6"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Przelotny deszcz",
+                "temperature": "5"
+            }
+        ]
+    },
+    {
+        "name": "Mareszka",
+        "city": "\u015awi\u0105tkowa Wielka",
+        "address": "",
+        "condition_min": "70",
+        "condition_max": "120",
+        "condition_equal": null,
+        "update_time": "2019-01-30 23:54:37",
+        "status": " czynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "1"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Cz\u0119\u015bciowe zachmurzenie",
+                "temperature": "3"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Pochmurno",
+                "temperature": "-1"
+            }
+        ]
+    },
+    {
+        "name": "Morenowa",
+        "city": "Okr\u0105g\u0142e",
+        "address": "Okr\u0105g\u0142e 10",
+        "condition_min": "60",
+        "condition_max": "100",
+        "condition_equal": null,
+        "update_time": "2019-01-29 16:09:45",
+        "status": " czynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Lekkie zachmurzenie",
+                "temperature": "2"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Pochmurno",
+                "temperature": "2"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Lekkie zachmurzenie",
+                "temperature": "4"
+            }
+        ]
+    },
+    {
+        "name": "Czantoria",
+        "city": "Ustro\u0144",
+        "address": "ul. 3 Maja 130",
+        "condition_min": "50",
+        "condition_max": "80",
+        "condition_equal": null,
+        "update_time": "2019-01-29 08:13:28",
+        "status": " czynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "-3"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Lekkie zachmurzenie",
+                "temperature": "-2"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Lekkie opady \u015bniegu",
+                "temperature": "-3"
+            }
+        ]
+    },
+    {
+        "name": "Lodowiec",
+        "city": "Karpacz",
+        "address": "ul. Wolna 4",
+        "condition_min": "30",
+        "condition_max": "70",
+        "condition_equal": null,
+        "update_time": "2019-01-28 06:45:22",
+        "status": " czynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Przejrzyste niebo",
+                "temperature": "-1"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Przejrzyste niebo",
+                "temperature": "6"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Mg\u0142a",
+                "temperature": "1"
+            }
+        ]
+    },
+    {
+        "name": "Ostra g\u00f3ra",
+        "city": "Dyl\u0105g\u00f3wka",
+        "address": "",
+        "condition_min": "30",
+        "condition_max": "60",
+        "condition_equal": null,
+        "update_time": "2019-01-27 22:49:16",
+        "status": " czynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "1"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Cz\u0119\u015bciowe zachmurzenie",
+                "temperature": "4"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Pochmurno",
+                "temperature": "2"
+            }
+        ]
+    },
+    {
+        "name": "G\u00f3ra 4 Wiatr\u00f3w",
+        "city": "Mr\u0105gowo",
+        "address": "Miejski Las 11",
+        "condition_min": "30",
+        "condition_max": "50",
+        "condition_equal": null,
+        "update_time": "2019-01-27 15:56:42",
+        "status": " czynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Cz\u0119\u015bciowe zachmurzenie",
+                "temperature": "2"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Pochmurno",
+                "temperature": "2"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Lekkie zachmurzenie",
+                "temperature": "5"
+            }
+        ]
+    },
+    {
+        "name": "STA\u015a",
+        "city": "Handzl\u00f3wka 72A",
+        "address": "Handzl\u00f3wka",
+        "condition_min": "15",
+        "condition_max": "30",
+        "condition_equal": null,
+        "update_time": "2019-01-23 09:13:29",
+        "status": " czynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "1"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Cz\u0119\u015bciowe zachmurzenie",
+                "temperature": "4"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Pochmurno",
+                "temperature": "2"
+            }
+        ]
+    },
+    {
+        "name": "Wotex",
+        "city": "Batorz",
+        "address": "Batorz",
+        "condition_min": "30",
+        "condition_max": "70",
+        "condition_equal": null,
+        "update_time": "2019-01-17 11:24:35",
+        "status": " czynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "2"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Lekkie zachmurzenie",
+                "temperature": "3"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Pochmurno",
+                "temperature": "2"
+            }
+        ]
+    },
+    {
+        "name": "Sosz\u00f3w",
+        "city": "Wis\u0142a",
+        "address": "ul. Cie\u015blar\u00f3w 30",
+        "condition_min": "70",
+        "condition_max": "120",
+        "condition_equal": null,
+        "update_time": "2019-01-14 10:38:30",
+        "status": " czynny",
+        "snow_fall": "1",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Cz\u0119\u015bciowe zachmurzenie",
+                "temperature": "0"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Przejrzyste niebo",
+                "temperature": "2"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Deszcz ze \u015bniegiem",
+                "temperature": "1"
+            }
+        ]
+    },
+    {
+        "name": "POSiR",
+        "city": "Przemy\u015bl",
+        "address": "ul. Sanocka 4",
+        "condition_min": "30",
+        "condition_max": "50",
+        "condition_equal": null,
+        "update_time": "2019-01-14 08:22:36",
+        "status": " czynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "1"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Cz\u0119\u015bciowe zachmurzenie",
+                "temperature": "5"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Pochmurno",
+                "temperature": "2"
+            }
+        ]
+    },
+    {
+        "name": "Baba",
+        "city": "Korbiel\u00f3w",
+        "address": "ul. Szczyrbok",
+        "condition_min": "80",
+        "condition_max": "120",
+        "condition_equal": null,
+        "update_time": "2019-01-14 07:40:14",
+        "status": " czynny",
+        "snow_fall": "2",
+        "weather": [
+            {
+                "day": "19.1",
+                "day_name": "Nd.",
+                "clouds": "\u015anieg",
+                "temperature": "-5"
+            },
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "-5"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Przejrzyste niebo",
+                "temperature": "-2"
+            }
+        ]
+    },
+    {
+        "name": "Hajduk",
+        "city": "Murzasichle",
+        "address": "Budzowa 23",
+        "condition_min": "70",
+        "condition_max": "250",
+        "condition_equal": null,
+        "update_time": "2019-01-13 09:57:27",
+        "status": " czynny",
+        "snow_fall": "2",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Mg\u0142a",
+                "temperature": "-2"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Lekkie zachmurzenie",
+                "temperature": "2"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "\u015anieg",
+                "temperature": "0"
+            }
+        ]
+    },
+    {
+        "name": "Czorsztyn-Ski",
+        "city": "Kluszkowce",
+        "address": "ul. Kamieniarska 30a",
+        "condition_min": "40",
+        "condition_max": "101",
+        "condition_equal": null,
+        "update_time": "2019-01-13 09:47:55",
+        "status": " czynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "1"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Lekkie zachmurzenie",
+                "temperature": "5"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Deszcz ze \u015bniegiem",
+                "temperature": "4"
+            }
+        ]
+    },
+    {
+        "name": "U Kuruca",
+        "city": "Bia\u0142ka Tatrza\u0144ska",
+        "address": "ul. Pod Grap\u0105 25",
+        "condition_min": "120",
+        "condition_max": "150",
+        "condition_equal": null,
+        "update_time": "2019-01-12 10:28:54",
+        "status": " czynny",
+        "snow_fall": "3",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "-1"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Przejrzyste niebo",
+                "temperature": "5"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Lekkie opady \u015bniegu",
+                "temperature": "4"
+            }
+        ]
+    },
+    {
+        "name": "Sucha Dolina",
+        "city": "Piwniczna Zdr\u00f3j",
+        "address": "",
+        "condition_min": "100",
+        "condition_max": "150",
+        "condition_equal": null,
+        "update_time": "2019-01-11 18:59:31",
+        "status": " czynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "19.1",
+                "day_name": "Nd.",
+                "clouds": "Mg\u0142a",
+                "temperature": "0"
+            },
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "1"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Przejrzyste niebo",
+                "temperature": "6"
+            }
+        ]
+    },
+    {
+        "name": "Partecznik",
+        "city": "Wis\u0142a",
+        "address": "ul. Partecznik 8",
+        "condition_min": "35",
+        "condition_max": "70",
+        "condition_equal": null,
+        "update_time": "2019-01-10 18:16:24",
+        "status": " czynny",
+        "snow_fall": "1",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Cz\u0119\u015bciowe zachmurzenie",
+                "temperature": "0"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Przejrzyste niebo",
+                "temperature": "2"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Deszcz ze \u015bniegiem",
+                "temperature": "1"
+            }
+        ]
+    },
+    {
+        "name": "Tomek-Ski",
+        "city": "Tylicz",
+        "address": "ul. Biskupa Tylickiego 10",
+        "condition_min": "30",
+        "condition_max": "40",
+        "condition_equal": null,
+        "update_time": "2019-01-05 22:46:51",
+        "status": " czynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "0"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Cz\u0119\u015bciowe zachmurzenie",
+                "temperature": "4"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Pochmurno",
+                "temperature": "3"
+            }
+        ]
+    },
+    {
+        "name": "Bia\u0142y Potok",
+        "city": "Wit\u00f3w",
+        "address": "Wit\u00f3w 320",
+        "condition_min": "100",
+        "condition_max": "150",
+        "condition_equal": null,
+        "update_time": "2019-01-05 16:45:52",
+        "status": " nieczynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Cz\u0119\u015bciowe zachmurzenie",
+                "temperature": "0"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Lekkie zachmurzenie",
+                "temperature": "-1"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Pochmurno",
+                "temperature": "-1"
+            }
+        ]
+    },
+    {
+        "name": "Hornik\u00f3w Wierch",
+        "city": "Bia\u0142ka Tatrza\u0144ska",
+        "address": "ul. Kani\u00f3wka",
+        "condition_min": "40",
+        "condition_max": "80",
+        "condition_equal": null,
+        "update_time": "2019-01-04 22:35:43",
+        "status": " czynny",
+        "snow_fall": "3",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "-1"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Przejrzyste niebo",
+                "temperature": "5"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Lekkie opady \u015bniegu",
+                "temperature": "4"
+            }
+        ]
+    },
+    {
+        "name": "Gromadzy\u0144",
+        "city": "Ustrzyki Dolne",
+        "address": "ul. Naftowa",
+        "condition_min": "60",
+        "condition_max": "100",
+        "condition_equal": null,
+        "update_time": "2019-01-04 10:18:01",
+        "status": " czynny",
+        "snow_fall": "2",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "0"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Lekkie zachmurzenie",
+                "temperature": "3"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "\u015anieg",
+                "temperature": "1"
+            }
+        ]
+    },
+    {
+        "name": "White Park Palenica",
+        "city": "Ustro\u0144",
+        "address": "Wczasowa 78",
+        "condition_min": "30",
+        "condition_max": "55",
+        "condition_equal": null,
+        "update_time": "2019-01-04 10:16:44",
+        "status": " czynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Mg\u0142a",
+                "temperature": "-1"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Przejrzyste niebo",
+                "temperature": "2"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Deszcz ze \u015bniegiem",
+                "temperature": "1"
+            }
+        ]
+    },
+    {
+        "name": "Pod Wangiem",
+        "city": "Karpacz",
+        "address": "Szkolna",
+        "condition_min": "30",
+        "condition_max": "50",
+        "condition_equal": null,
+        "update_time": "2019-01-03 13:19:15",
+        "status": " czynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Przejrzyste niebo",
+                "temperature": "-1"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Przejrzyste niebo",
+                "temperature": "6"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Mg\u0142a",
+                "temperature": "1"
+            }
+        ]
+    },
+    {
+        "name": "Kasprowy Wierch",
+        "city": "Zakopane",
+        "address": "Ku\u017anice 14",
+        "condition_min": "50",
+        "condition_max": "165",
+        "condition_equal": null,
+        "update_time": "2019-01-03 10:13:27",
+        "status": " czynny",
+        "snow_fall": "1",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Mg\u0142a",
+                "temperature": "-8"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Przejrzyste niebo",
+                "temperature": "-4"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "\u015anieg",
+                "temperature": "-6"
+            }
+        ]
+    },
+    {
+        "name": "Bia\u0142y Krzy\u017c",
+        "city": "Szczyrk",
+        "address": "Grabowa 26",
+        "condition_min": "130",
+        "condition_max": "160",
+        "condition_equal": null,
+        "update_time": "2019-01-03 07:28:10",
+        "status": " czynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "-1"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Lekkie zachmurzenie",
+                "temperature": "-1"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Lekkie opady \u015bniegu",
+                "temperature": "-1"
+            }
+        ]
+    },
+    {
+        "name": "Czarn\u00f3w-Ski",
+        "city": "Czarn\u00f3w",
+        "address": "Czarn\u00f3w",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "50",
+        "update_time": "2019-01-02 19:57:36",
+        "status": " czynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Cz\u0119\u015bciowe zachmurzenie",
+                "temperature": "-1"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Lekkie zachmurzenie",
+                "temperature": "5"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Mg\u0142a",
+                "temperature": "1"
+            }
+        ]
+    },
+    {
+        "name": "Unis\u0142aw",
+        "city": "Unis\u0142aw",
+        "address": "Unis\u0142aw",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2019-01-02 19:40:30",
+        "status": " nieczynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "3"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Pochmurno",
+                "temperature": "2"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Cz\u0119\u015bciowe zachmurzenie",
+                "temperature": "5"
+            }
+        ]
+    },
+    {
+        "name": "Ar\u0142am\u00f3w",
+        "city": "Ustrzyki Dolne",
+        "address": "Ar\u0142am\u00f3w 1",
+        "condition_min": "60",
+        "condition_max": "90",
+        "condition_equal": null,
+        "update_time": "2019-01-02 19:35:22",
+        "status": " czynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "0"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Lekkie zachmurzenie",
+                "temperature": "3"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Pochmurno",
+                "temperature": "1"
+            }
+        ]
+    },
+    {
+        "name": "U \u017bura",
+        "city": "Chab\u00f3wka",
+        "address": "Chab\u00f3wka 181",
+        "condition_min": "40",
+        "condition_max": "50",
+        "condition_equal": null,
+        "update_time": "2019-01-02 18:02:11",
+        "status": " czynny",
+        "snow_fall": "1",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Cz\u0119\u015bciowe zachmurzenie",
+                "temperature": "1"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Lekkie zachmurzenie",
+                "temperature": "4"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Deszcz ze \u015bniegiem",
+                "temperature": "2"
+            }
+        ]
+    },
+    {
+        "name": "Palenica",
+        "city": "Szczawnica",
+        "address": "ul. G\u0142\u00f3wna 7",
+        "condition_min": "30",
+        "condition_max": "70",
+        "condition_equal": null,
+        "update_time": "2019-01-02 14:32:37",
+        "status": " czynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "-1"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Przejrzyste niebo",
+                "temperature": "4"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Pochmurno",
+                "temperature": "3"
+            }
+        ]
+    },
+    {
+        "name": "Sto\u017cek",
+        "city": "Wis\u0142a",
+        "address": "ul. Zjazdowa 11",
+        "condition_min": "30",
+        "condition_max": "40",
+        "condition_equal": null,
+        "update_time": "2019-01-02 10:46:21",
+        "status": " czynny",
+        "snow_fall": "1",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "-2"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Przejrzyste niebo",
+                "temperature": "-1"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Lekkie opady \u015bniegu",
+                "temperature": "-1"
+            }
+        ]
+    },
+    {
+        "name": "Czerwienne",
+        "city": "Czerwienne",
+        "address": "Budz 179a",
+        "condition_min": "60",
+        "condition_max": "80",
+        "condition_equal": null,
+        "update_time": "2019-01-01 16:22:19",
+        "status": " czynny",
+        "snow_fall": "1",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "-1"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Lekkie zachmurzenie",
+                "temperature": "3"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Lekkie opady \u015bniegu",
+                "temperature": "2"
+            }
+        ]
+    },
+    {
+        "name": "Podstolice",
+        "city": "Podstolice",
+        "address": "Podstolice 260",
+        "condition_min": "18",
+        "condition_max": "25",
+        "condition_equal": null,
+        "update_time": "2018-12-21 10:22:39",
+        "status": " czynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "3"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Cz\u0119\u015bciowe zachmurzenie",
+                "temperature": "4"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Pochmurno",
+                "temperature": "2"
+            }
+        ]
+    },
+    {
+        "name": "Juras\u00f3wka",
+        "city": "Siemiech\u00f3w",
+        "address": "Siemiech\u00f3w",
+        "condition_min": "50",
+        "condition_max": "70",
+        "condition_equal": null,
+        "update_time": "2018-12-20 22:08:36",
+        "status": " czynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Cz\u0119\u015bciowe zachmurzenie",
+                "temperature": "2"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Cz\u0119\u015bciowe zachmurzenie",
+                "temperature": "4"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Pochmurno",
+                "temperature": "2"
+            }
+        ]
+    },
+    {
+        "name": "Trzepowo",
+        "city": "Trzepowo",
+        "address": "ul. Mestwina",
+        "condition_min": "20",
+        "condition_max": "40",
+        "condition_equal": null,
+        "update_time": "2018-12-20 07:28:44",
+        "status": " czynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Cz\u0119\u015bciowe zachmurzenie",
+                "temperature": "2"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Pochmurno",
+                "temperature": "3"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Przejrzyste niebo",
+                "temperature": "5"
+            }
+        ]
+    },
+    {
+        "name": "Polana Szymoszkowa",
+        "city": "Zakopane",
+        "address": "Polana Szymoszkowa 2",
+        "condition_min": "50",
+        "condition_max": "100",
+        "condition_equal": null,
+        "update_time": "2018-12-19 16:57:15",
+        "status": " czynny",
+        "snow_fall": "1",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Mg\u0142a",
+                "temperature": "-2"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Lekkie zachmurzenie",
+                "temperature": "3"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Lekkie opady \u015bniegu",
+                "temperature": "2"
+            }
+        ]
+    },
+    {
+        "name": "Szwajcaria Ba\u0142towska",
+        "city": "Ba\u0142t\u00f3w",
+        "address": "Ba\u0142t\u00f3w 8a",
+        "condition_min": "40",
+        "condition_max": "1000",
+        "condition_equal": null,
+        "update_time": "2018-12-19 14:18:26",
+        "status": " czynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "3"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Przejrzyste niebo",
+                "temperature": "4"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Cz\u0119\u015bciowe zachmurzenie",
+                "temperature": "3"
+            }
+        ]
+    },
+    {
+        "name": "Szczeci\u0144ska Guba\u0142\u00f3wka",
+        "city": "Szczecin",
+        "address": "ul. Lisiej G\u00f3ry 5",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2018-12-15 17:03:04",
+        "status": " nieczynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "1"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Pochmurno",
+                "temperature": "2"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Lekkie zachmurzenie",
+                "temperature": "6"
+            }
+        ]
+    },
+    {
+        "name": "Pasieki",
+        "city": "Wis\u0142a",
+        "address": "ul. Brzegowa 10",
+        "condition_min": "20",
+        "condition_max": "30",
+        "condition_equal": null,
+        "update_time": "2018-12-13 08:38:02",
+        "status": " nieczynny",
+        "snow_fall": "1",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Cz\u0119\u015bciowe zachmurzenie",
+                "temperature": "0"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Przejrzyste niebo",
+                "temperature": "2"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Deszcz ze \u015bniegiem",
+                "temperature": "1"
+            }
+        ]
+    },
+    {
+        "name": "Wysoki Wierch",
+        "city": "Bukowina Tatrza\u0144ska",
+        "address": "ul. Le\u015bna 26",
+        "condition_min": "0",
+        "condition_max": "30",
+        "condition_equal": null,
+        "update_time": "2018-12-08 19:43:06",
+        "status": " nieczynny",
+        "snow_fall": "1",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Mg\u0142a",
+                "temperature": "-2"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Lekkie zachmurzenie",
+                "temperature": "4"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Lekkie opady \u015bniegu",
+                "temperature": "2"
+            }
+        ]
+    },
+    {
+        "name": "Diament",
+        "city": "Mi\u0119dzyg\u00f3rze",
+        "address": "\u015anie\u017cna 31",
+        "condition_min": "1",
+        "condition_max": "3",
+        "condition_equal": null,
+        "update_time": "2018-12-08 15:40:06",
+        "status": " nieczynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "1"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Cz\u0119\u015bciowe zachmurzenie",
+                "temperature": "5"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Pochmurno",
+                "temperature": "4"
+            }
+        ]
+    },
+    {
+        "name": "Jedlina Zdr\u00f3j",
+        "city": "Jedlina Zdr\u00f3j",
+        "address": "Sienkiewicza",
+        "condition_min": "0",
+        "condition_max": "1",
+        "condition_equal": null,
+        "update_time": "2018-12-08 13:34:27",
+        "status": " nieczynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Cz\u0119\u015bciowe zachmurzenie",
+                "temperature": "0"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Lekkie zachmurzenie",
+                "temperature": "1"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Pochmurno",
+                "temperature": "2"
+            }
+        ]
+    },
+    {
+        "name": "Skomielna Czarna Ski",
+        "city": "Skomielna Czarna",
+        "address": "Skomielna Czarna 150",
+        "condition_min": "20",
+        "condition_max": "30",
+        "condition_equal": null,
+        "update_time": "2018-12-07 17:36:06",
+        "status": " nieczynny",
+        "snow_fall": "1",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Cz\u0119\u015bciowe zachmurzenie",
+                "temperature": "1"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Lekkie zachmurzenie",
+                "temperature": "3"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "\u015anieg",
+                "temperature": "1"
+            }
+        ]
+    },
+    {
+        "name": "Kotelnica Bia\u0142cza\u0144ska",
+        "city": "Bia\u0142ka Tatrza\u0144ska",
+        "address": "ul. \u015arodkowa 181b",
+        "condition_min": "15",
+        "condition_max": "25",
+        "condition_equal": null,
+        "update_time": "2018-12-07 16:05:01",
+        "status": " czynny",
+        "snow_fall": "3",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "-1"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Przejrzyste niebo",
+                "temperature": "5"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Lekkie opady \u015bniegu",
+                "temperature": "4"
+            }
+        ]
+    },
+    {
+        "name": "Maciejowa Ski",
+        "city": "Rabka-Zdr\u00f3j",
+        "address": "ul. Poniatowskiego",
+        "condition_min": "1",
+        "condition_max": "2",
+        "condition_equal": null,
+        "update_time": "2018-12-07 15:59:27",
+        "status": " nieczynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "19.1",
+                "day_name": "Nd.",
+                "clouds": "Lekkie opady \u015bniegu",
+                "temperature": "0"
+            },
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "0"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Przejrzyste niebo",
+                "temperature": "3"
+            }
+        ]
+    },
+    {
+        "name": "Andaluzja",
+        "city": "Mi\u0119dzybrodzie Bialskie",
+        "address": "",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "2"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Lekkie zachmurzenie",
+                "temperature": "3"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Deszcz ze \u015bniegiem",
+                "temperature": "2"
+            }
+        ]
+    },
+    {
+        "name": "Baba Jaga",
+        "city": "Bodzentyn",
+        "address": "Kielecka 97",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "2"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Przejrzyste niebo",
+                "temperature": "3"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Pochmurno",
+                "temperature": "2"
+            }
+        ]
+    },
+    {
+        "name": "Bambino SKI",
+        "city": "\u015awierad\u00f3w Zdr\u00f3j",
+        "address": "ul. G\u00f3rska 7",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Lekkie zachmurzenie",
+                "temperature": "-1"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Przejrzyste niebo",
+                "temperature": "4"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Mg\u0142a",
+                "temperature": "0"
+            }
+        ]
+    },
+    {
+        "name": "Barbara",
+        "city": "\u015awierad\u00f3w-Zdr\u00f3j",
+        "address": "ul.\u0179r\u00f3dlana 3a",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Lekkie zachmurzenie",
+                "temperature": "-1"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Przejrzyste niebo",
+                "temperature": "4"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Mg\u0142a",
+                "temperature": "0"
+            }
+        ]
+    },
+    {
+        "name": "Bartek",
+        "city": "Bukowina Tatrza\u0144ska",
+        "address": "ul. Wierch Olcza\u0144ski 96",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "1",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Mg\u0142a",
+                "temperature": "-2"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Lekkie zachmurzenie",
+                "temperature": "4"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Lekkie opady \u015bniegu",
+                "temperature": "2"
+            }
+        ]
+    },
+    {
+        "name": "Beskidek",
+        "city": "Szczyrk",
+        "address": "ul. G\u00f3rska 7a",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "0"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Lekkie zachmurzenie",
+                "temperature": "1"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Lekkie opady \u015bniegu",
+                "temperature": "0"
+            }
+        ]
+    },
+    {
+        "name": "Brenna W\u0119gierski",
+        "city": "Brenna",
+        "address": "Brenna",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "1",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Mg\u0142a",
+                "temperature": "-1"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Przejrzyste niebo",
+                "temperature": "2"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Deszcz ze \u015bniegiem",
+                "temperature": "1"
+            }
+        ]
+    },
+    {
+        "name": "Che\u0142mowa G\u00f3ra",
+        "city": "Krasnobr\u00f3d",
+        "address": "ul. Dominika\u0144ska 1",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "1"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Lekkie zachmurzenie",
+                "temperature": "3"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Pochmurno",
+                "temperature": "2"
+            }
+        ]
+    },
+    {
+        "name": "Cie\u0144k\u00f3w",
+        "city": "Wis\u0142a",
+        "address": "ul. Malinka 8",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "1",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Cz\u0119\u015bciowe zachmurzenie",
+                "temperature": "0"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Przejrzyste niebo",
+                "temperature": "2"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Deszcz ze \u015bniegiem",
+                "temperature": "1"
+            }
+        ]
+    },
+    {
+        "name": "Cisowa",
+        "city": "Cisowa",
+        "address": "Cisowa",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "2"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Lekkie zachmurzenie",
+                "temperature": "3"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Pochmurno",
+                "temperature": "0"
+            }
+        ]
+    },
+    {
+        "name": "Cypisek",
+        "city": "Korbiel\u00f3w",
+        "address": "ul. Graniczna 12",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "1",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "1"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Przejrzyste niebo",
+                "temperature": "3"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "\u015anieg",
+                "temperature": "1"
+            }
+        ]
+    },
+    {
+        "name": "Czarna G\u00f3ra",
+        "city": "Sienna",
+        "address": "Sienna 11",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Cz\u0119\u015bciowe zachmurzenie",
+                "temperature": "-4"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Przejrzyste niebo",
+                "temperature": "-4"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Pochmurno",
+                "temperature": "-2"
+            }
+        ]
+    },
+    {
+        "name": "Czarny Gro\u0144",
+        "city": "Rzyki",
+        "address": "Osiedle Praciaki 91",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "1"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Lekkie zachmurzenie",
+                "temperature": "2"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Lekkie opady \u015bniegu",
+                "temperature": "2"
+            }
+        ]
+    },
+    {
+        "name": "Czyrna-Solisko",
+        "city": "Szczyrk",
+        "address": "ul. Narciarska 10",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "1",
+        "weather": [
+            {
+                "day": "19.1",
+                "day_name": "Nd.",
+                "clouds": "Lekkie opady \u015bniegu",
+                "temperature": "-4"
+            },
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "-4"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Przejrzyste niebo",
+                "temperature": "-4"
+            }
+        ]
+    },
+    {
+        "name": "D\u0105br\u00f3wka",
+        "city": "Suwa\u0142ki",
+        "address": "D\u0105br\u00f3wka 10",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Cz\u0119\u015bciowe zachmurzenie",
+                "temperature": "2"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Pochmurno",
+                "temperature": "2"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Lekkie zachmurzenie",
+                "temperature": "3"
+            }
+        ]
+    },
+    {
+        "name": "Dolina Le\u015bnicy",
+        "city": "Brenna",
+        "address": "ul. Le\u015bnica 153",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "1",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Mg\u0142a",
+                "temperature": "-1"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Przejrzyste niebo",
+                "temperature": "2"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Deszcz ze \u015bniegiem",
+                "temperature": "1"
+            }
+        ]
+    },
+    {
+        "name": "Dolina Sport\u00f3w Zimowych",
+        "city": "Kudowa-Zdr\u00f3j",
+        "address": "Jakubowice",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Cz\u0119\u015bciowe zachmurzenie",
+                "temperature": "2"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Lekkie zachmurzenie",
+                "temperature": "0"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Pochmurno",
+                "temperature": "0"
+            }
+        ]
+    },
+    {
+        "name": "Dolina Szcz\u0119\u015bcia",
+        "city": "Szklarska Por\u0119ba",
+        "address": "11 Listopada 13",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Cz\u0119\u015bciowe zachmurzenie",
+                "temperature": "0"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Lekkie zachmurzenie",
+                "temperature": "2"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Pochmurno",
+                "temperature": "0"
+            }
+        ]
+    },
+    {
+        "name": "Dolomity Ski Dolina",
+        "city": "Bytom",
+        "address": "ul. Blach\u00f3wka 94",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "3"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Lekkie zachmurzenie",
+                "temperature": "3"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Pochmurno",
+                "temperature": "1"
+            }
+        ]
+    },
+    {
+        "name": "Rachowiec Ski",
+        "city": "Zwardo\u0144",
+        "address": "Zwardo\u0144 149b (Sta\u0144c\u00f3wka)",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "0"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Przejrzyste niebo",
+                "temperature": "-1"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Lekkie opady \u015bniegu",
+                "temperature": "0"
+            }
+        ]
+    },
+    {
+        "name": "Dzikowiec SN",
+        "city": "Bogusz\u00f3w-Gorce",
+        "address": "Bema",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Cz\u0119\u015bciowe zachmurzenie",
+                "temperature": "1"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Przejrzyste niebo",
+                "temperature": "3"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Pochmurno",
+                "temperature": "2"
+            }
+        ]
+    },
+    {
+        "name": "Gigant",
+        "city": "Zakopane",
+        "address": "ul. Bronis\u0142awa Czecha 8",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "1",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Mg\u0142a",
+                "temperature": "-2"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Lekkie zachmurzenie",
+                "temperature": "3"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Lekkie opady \u015bniegu",
+                "temperature": "2"
+            }
+        ]
+    },
+    {
+        "name": "G\u00f3ra Chrobrego",
+        "city": "Elbl\u0105g",
+        "address": "ul. Chrobrego",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Cz\u0119\u015bciowe zachmurzenie",
+                "temperature": "4"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Pochmurno",
+                "temperature": "4"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Przejrzyste niebo",
+                "temperature": "6"
+            }
+        ]
+    },
+    {
+        "name": "G\u00f3ra Kamie\u0144sk",
+        "city": "Kamie\u0144sk",
+        "address": "Ozga k. Kamie\u0144ska",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "2"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Przejrzyste niebo",
+                "temperature": "3"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Pochmurno",
+                "temperature": "3"
+            }
+        ]
+    },
+    {
+        "name": "G\u00f3rnik",
+        "city": "Rzeczka",
+        "address": "Rzeczka 36a",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Cz\u0119\u015bciowe zachmurzenie",
+                "temperature": "-1"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Lekkie zachmurzenie",
+                "temperature": "0"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Pochmurno",
+                "temperature": "1"
+            }
+        ]
+    },
+    {
+        "name": "Gwarek",
+        "city": "Rybnica Le\u015bna",
+        "address": "Andrzej\u00f3wka",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Cz\u0119\u015bciowe zachmurzenie",
+                "temperature": "0"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Lekkie zachmurzenie",
+                "temperature": "0"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Pochmurno",
+                "temperature": "1"
+            }
+        ]
+    },
+    {
+        "name": "Harenda",
+        "city": "Zakopane",
+        "address": "ul. Harenda 21A",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "1",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Mg\u0142a",
+                "temperature": "-2"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Lekkie zachmurzenie",
+                "temperature": "3"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Lekkie opady \u015bniegu",
+                "temperature": "2"
+            }
+        ]
+    },
+    {
+        "name": "Henryk",
+        "city": "Krynica-Zdr\u00f3j",
+        "address": "ul. Zielona 9",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Cz\u0119\u015bciowe zachmurzenie",
+                "temperature": "-1"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Lekkie zachmurzenie",
+                "temperature": "5"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Lekkie opady \u015bniegu",
+                "temperature": "5"
+            }
+        ]
+    },
+    {
+        "name": "LeskoSki Weremie\u0144",
+        "city": "Lesko",
+        "address": "Weremie\u0144 36",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "1",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "0"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Cz\u0119\u015bciowe zachmurzenie",
+                "temperature": "3"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Lekkie opady \u015bniegu",
+                "temperature": "-1"
+            }
+        ]
+    },
+    {
+        "name": "Jaroszowiec",
+        "city": "Jaroszowiec",
+        "address": "Jaroszowiec",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "2"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Cz\u0119\u015bciowe zachmurzenie",
+                "temperature": "2"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Pochmurno",
+                "temperature": "0"
+            }
+        ]
+    },
+    {
+        "name": "Jastrz\u0119bia",
+        "city": "Jastrz\u0119bia",
+        "address": "Jastrz\u0119bia 343",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "2"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Cz\u0119\u015bciowe zachmurzenie",
+                "temperature": "4"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Deszcz ze \u015bniegiem",
+                "temperature": "3"
+            }
+        ]
+    },
+    {
+        "name": "Jaworze",
+        "city": "Ptaszkowa",
+        "address": "Ptaszkowa",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "1",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "0"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Cz\u0119\u015bciowe zachmurzenie",
+                "temperature": "5"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Pochmurno",
+                "temperature": "3"
+            }
+        ]
+    },
+    {
+        "name": "Jaworzyna Krynicka",
+        "city": "Krynica-Zdr\u00f3j",
+        "address": "ul. Czarny Potok 75",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "1",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "-3"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Lekkie zachmurzenie",
+                "temperature": "-2"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "\u015anieg",
+                "temperature": "-3"
+            }
+        ]
+    },
+    {
+        "name": "Kacwin",
+        "city": "Kacwin",
+        "address": "ul. Nadwodnia 11",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "1"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Lekkie zachmurzenie",
+                "temperature": "5"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Deszcz ze \u015bniegiem",
+                "temperature": "4"
+            }
+        ]
+    },
+    {
+        "name": "Kalnica",
+        "city": "Kalnica",
+        "address": "Kalnica",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "1",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Mg\u0142a",
+                "temperature": "-1"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Cz\u0119\u015bciowe zachmurzenie",
+                "temperature": "-1"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Lekkie opady \u015bniegu",
+                "temperature": "-3"
+            }
+        ]
+    },
+    {
+        "name": "Kamianna",
+        "city": "Kamianna",
+        "address": "Kamianna",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "-1"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Cz\u0119\u015bciowe zachmurzenie",
+                "temperature": "4"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Lekkie opady \u015bniegu",
+                "temperature": "2"
+            }
+        ]
+    },
+    {
+        "name": "Kamienica",
+        "city": "Kamienica",
+        "address": "Kamienica 1a",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "2"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Przejrzyste niebo",
+                "temperature": "3"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Pochmurno",
+                "temperature": "2"
+            }
+        ]
+    },
+    {
+        "name": "Karlik\u00f3w",
+        "city": "Karlik\u00f3w",
+        "address": "Karlik\u00f3w",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "1",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "-1"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Cz\u0119\u015bciowe zachmurzenie",
+                "temperature": "1"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Lekkie opady \u015bniegu",
+                "temperature": "-3"
+            }
+        ]
+    },
+    {
+        "name": "Karpatka Ski Panorama",
+        "city": "Karpacz",
+        "address": "My\u015bliwska 2b",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Przejrzyste niebo",
+                "temperature": "-1"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Przejrzyste niebo",
+                "temperature": "6"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Mg\u0142a",
+                "temperature": "1"
+            }
+        ]
+    },
+    {
+        "name": "Kartasi\u00f3wka",
+        "city": "Ru\u015b",
+        "address": "Ru\u015b k. Olsztyna",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Cz\u0119\u015bciowe zachmurzenie",
+                "temperature": "2"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Pochmurno",
+                "temperature": "2"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Lekkie zachmurzenie",
+                "temperature": "5"
+            }
+        ]
+    },
+    {
+        "name": "Klepki",
+        "city": "Wis\u0142a",
+        "address": "ul. Malinka",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "1",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Cz\u0119\u015bciowe zachmurzenie",
+                "temperature": "0"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Przejrzyste niebo",
+                "temperature": "2"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Deszcz ze \u015bniegiem",
+                "temperature": "1"
+            }
+        ]
+    },
+    {
+        "name": "Kolisty Gro\u0144",
+        "city": "Zawoja",
+        "address": "Wid\u0142y",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "2",
+        "weather": [
+            {
+                "day": "19.1",
+                "day_name": "Nd.",
+                "clouds": "\u015anieg",
+                "temperature": "0"
+            },
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "0"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Przejrzyste niebo",
+                "temperature": "4"
+            }
+        ]
+    },
+    {
+        "name": "Kolorowa",
+        "city": "Karpacz",
+        "address": "ul. Parkowa 10",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Przejrzyste niebo",
+                "temperature": "-1"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Przejrzyste niebo",
+                "temperature": "6"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Mg\u0142a",
+                "temperature": "1"
+            }
+        ]
+    },
+    {
+        "name": "Kopa",
+        "city": "Karpacz",
+        "address": "ul. Turystyczna 4",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "-3"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Lekkie zachmurzenie",
+                "temperature": "-1"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Mg\u0142a",
+                "temperature": "-3"
+            }
+        ]
+    },
+    {
+        "name": "Kosza\u0142kowo",
+        "city": "Wie\u017cyca",
+        "address": "Wie\u017cyca 32",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Cz\u0119\u015bciowe zachmurzenie",
+                "temperature": "2"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Pochmurno",
+                "temperature": "2"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Przejrzyste niebo",
+                "temperature": "4"
+            }
+        ]
+    },
+    {
+        "name": "Krak\u00f3w Valley",
+        "city": "Pacz\u00f3\u0142towice",
+        "address": "Pacz\u00f3\u0142towice 328",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "2"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Cz\u0119\u015bciowe zachmurzenie",
+                "temperature": "2"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Pochmurno",
+                "temperature": "0"
+            }
+        ]
+    },
+    {
+        "name": "Kumowa Dolina",
+        "city": "Che\u0142m",
+        "address": "Kumowa Dolina",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "2"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Lekkie zachmurzenie",
+                "temperature": "4"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Lekkie opady deszczu",
+                "temperature": "3"
+            }
+        ]
+    },
+    {
+        "name": "L\u0105dek-Zdr\u00f3j",
+        "city": "L\u0105dek - Zdr\u00f3j",
+        "address": "Aleja Marze\u0144 22",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Cz\u0119\u015bciowe zachmurzenie",
+                "temperature": "0"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Przejrzyste niebo",
+                "temperature": "1"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Pochmurno",
+                "temperature": "3"
+            }
+        ]
+    },
+    {
+        "name": "Laskowa-Ski",
+        "city": "Laskowa",
+        "address": "Laskowa 697",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "1",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "-1"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Cz\u0119\u015bciowe zachmurzenie",
+                "temperature": "2"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Pochmurno",
+                "temperature": "0"
+            }
+        ]
+    },
+    {
+        "name": "Laworta",
+        "city": "Ustrzyki Dolne",
+        "address": "ul. Jasie\u0144 9",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "2",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "0"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Lekkie zachmurzenie",
+                "temperature": "3"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "\u015anieg",
+                "temperature": "1"
+            }
+        ]
+    },
+    {
+        "name": "Lodowiec Babica",
+        "city": "Babica",
+        "address": "",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "1"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Cz\u0119\u015bciowe zachmurzenie",
+                "temperature": "4"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Pochmurno",
+                "temperature": "2"
+            }
+        ]
+    },
+    {
+        "name": "Maciu\u015b",
+        "city": "Karpacz",
+        "address": "ul. Saneczkowa 12",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Przejrzyste niebo",
+                "temperature": "-1"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Przejrzyste niebo",
+                "temperature": "6"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Mg\u0142a",
+                "temperature": "1"
+            }
+        ]
+    },
+    {
+        "name": "Malinowy Dw\u00f3r",
+        "city": "\u015awierad\u00f3w-Zdr\u00f3j",
+        "address": "ul. D\u0142uga 10",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Lekkie zachmurzenie",
+                "temperature": "-1"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Przejrzyste niebo",
+                "temperature": "4"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Mg\u0142a",
+                "temperature": "0"
+            }
+        ]
+    },
+    {
+        "name": "Malta Ski",
+        "city": "Pozna\u0144",
+        "address": "ul. Wiankowa 2",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Cz\u0119\u015bciowe zachmurzenie",
+                "temperature": "3"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Cz\u0119\u015bciowe zachmurzenie",
+                "temperature": "4"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Cz\u0119\u015bciowe zachmurzenie",
+                "temperature": "6"
+            }
+        ]
+    },
+    {
+        "name": "Ma\u0142y Kr\u00f3l",
+        "city": "Ustrzyki Dolne",
+        "address": "Strwi\u0105\u017cyk 8",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "2",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "0"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Lekkie zachmurzenie",
+                "temperature": "3"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "\u015anieg",
+                "temperature": "1"
+            }
+        ]
+    },
+    {
+        "name": "Mosorny Gro\u0144",
+        "city": "Zawoja",
+        "address": "Zawoja Policzne 1307",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "2",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "-5"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Lekkie zachmurzenie",
+                "temperature": "-3"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "\u015anieg",
+                "temperature": "-5"
+            }
+        ]
+    },
+    {
+        "name": "My\u015bl\u0119cinek",
+        "city": "Bydgoszcz",
+        "address": "ul. Gda\u0144ska 173",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Cz\u0119\u015bciowe zachmurzenie",
+                "temperature": "4"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Pochmurno",
+                "temperature": "4"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Cz\u0119\u015bciowe zachmurzenie",
+                "temperature": "5"
+            }
+        ]
+    },
+    {
+        "name": "Sport Arena My\u015blenice",
+        "city": "My\u015blenice",
+        "address": "ul. Jod\u0142owa 1 F",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "1",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "-1"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Cz\u0119\u015bciowe zachmurzenie",
+                "temperature": "4"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Pochmurno",
+                "temperature": "2"
+            }
+        ]
+    },
+    {
+        "name": "Na Polanie Extreme",
+        "city": "Wis\u0142a",
+        "address": "Malinka 42a",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "1",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Cz\u0119\u015bciowe zachmurzenie",
+                "temperature": "0"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Przejrzyste niebo",
+                "temperature": "2"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Deszcz ze \u015bniegiem",
+                "temperature": "1"
+            }
+        ]
+    },
+    {
+        "name": "Na stoku",
+        "city": "Rzeczka",
+        "address": "Rzeczka 16",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Cz\u0119\u015bciowe zachmurzenie",
+                "temperature": "0"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Lekkie zachmurzenie",
+                "temperature": "0"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Pochmurno",
+                "temperature": "1"
+            }
+        ]
+    },
+    {
+        "name": "Nartorama",
+        "city": "Zieleniec",
+        "address": "Zieleniec 136",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "19.1",
+                "day_name": "Nd.",
+                "clouds": "Lekkie opady \u015bniegu",
+                "temperature": "-2"
+            },
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Cz\u0119\u015bciowe zachmurzenie",
+                "temperature": "-1"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Lekkie zachmurzenie",
+                "temperature": "0"
+            }
+        ]
+    },
+    {
+        "name": "Nartowisko Pod Czantori\u0105",
+        "city": "Ustro\u0144",
+        "address": "ul. 3 Maja 144",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Mg\u0142a",
+                "temperature": "-1"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Przejrzyste niebo",
+                "temperature": "2"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Deszcz ze \u015bniegiem",
+                "temperature": "1"
+            }
+        ]
+    },
+    {
+        "name": "Niestach\u00f3w",
+        "city": "Niestach\u00f3w",
+        "address": "Niestach\u00f3w 167",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "3"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Lekkie zachmurzenie",
+                "temperature": "3"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Pochmurno",
+                "temperature": "2"
+            }
+        ]
+    },
+    {
+        "name": "Nowa Morawa",
+        "city": "Stronie \u015al\u0105skie",
+        "address": "Nowa Morawa",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Cz\u0119\u015bciowe zachmurzenie",
+                "temperature": "-1"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Przejrzyste niebo",
+                "temperature": "-1"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Pochmurno",
+                "temperature": "1"
+            }
+        ]
+    },
+    {
+        "name": "Nowa Osada",
+        "city": "Wis\u0142a",
+        "address": "ul. Partyzant\u00f3w 24",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "1",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Cz\u0119\u015bciowe zachmurzenie",
+                "temperature": "0"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Przejrzyste niebo",
+                "temperature": "2"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Deszcz ze \u015bniegiem",
+                "temperature": "1"
+            }
+        ]
+    },
+    {
+        "name": "Nowy Giera\u0142t\u00f3w",
+        "city": "Nowy Giera\u0142t\u00f3w",
+        "address": "Nowy Giera\u0142t\u00f3w",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Cz\u0119\u015bciowe zachmurzenie",
+                "temperature": "-1"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Lekkie zachmurzenie",
+                "temperature": "1"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Pochmurno",
+                "temperature": "2"
+            }
+        ]
+    },
+    {
+        "name": "Oazaski",
+        "city": "Strzy\u017c\u00f3w",
+        "address": "ul. Kombatant\u00f3w 33",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "1"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Cz\u0119\u015bciowe zachmurzenie",
+                "temperature": "3"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Pochmurno",
+                "temperature": "2"
+            }
+        ]
+    },
+    {
+        "name": "Obidowa",
+        "city": "Obidowa",
+        "address": "Obidowa",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "1",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "0"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Lekkie zachmurzenie",
+                "temperature": "3"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "\u015anieg",
+                "temperature": "2"
+            }
+        ]
+    },
+    {
+        "name": "Okocim SKI",
+        "city": "Brzesko",
+        "address": "Mickiewicza",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "3"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Cz\u0119\u015bciowe zachmurzenie",
+                "temperature": "4"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Pochmurno",
+                "temperature": "3"
+            }
+        ]
+    },
+    {
+        "name": "Jastrz\u0119bica SKI",
+        "city": "K\u0119pka 3",
+        "address": "Przy\u0142\u0119k\u00f3w",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "1",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "2"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Lekkie zachmurzenie",
+                "temperature": "2"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Deszcz ze \u015bniegiem",
+                "temperature": "1"
+            }
+        ]
+    },
+    {
+        "name": "Pi\u0119kna G\u00f3ra",
+        "city": "Konikowo",
+        "address": "Konikowo 11",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Cz\u0119\u015bciowe zachmurzenie",
+                "temperature": "2"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Przelotny deszcz",
+                "temperature": "2"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Lekkie zachmurzenie",
+                "temperature": "4"
+            }
+        ]
+    },
+    {
+        "name": "Pod \u015anie\u017ck\u0105 - CAR",
+        "city": "Karpacz",
+        "address": "My\u015bliwska 13",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Przejrzyste niebo",
+                "temperature": "-1"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Przejrzyste niebo",
+                "temperature": "6"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Mg\u0142a",
+                "temperature": "1"
+            }
+        ]
+    },
+    {
+        "name": "Polana Ziele\u0144ska",
+        "city": "Wis\u0142a",
+        "address": "ul. Malinka",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "1",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Cz\u0119\u015bciowe zachmurzenie",
+                "temperature": "0"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Przejrzyste niebo",
+                "temperature": "2"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Deszcz ze \u015bniegiem",
+                "temperature": "1"
+            }
+        ]
+    },
+    {
+        "name": "Polanki-Ski",
+        "city": "Szczawa",
+        "address": "Szczawa 106",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "1",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "1"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Lekkie zachmurzenie",
+                "temperature": "5"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Deszcz ze \u015bniegiem",
+                "temperature": "2"
+            }
+        ]
+    },
+    {
+        "name": "Polczak\u00f3wka",
+        "city": "Rabka-Zdr\u00f3j",
+        "address": "ul. Zaryte",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "19.1",
+                "day_name": "Nd.",
+                "clouds": "Lekkie opady \u015bniegu",
+                "temperature": "0"
+            },
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "0"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Przejrzyste niebo",
+                "temperature": "3"
+            }
+        ]
+    },
+    {
+        "name": "Poniwiec",
+        "city": "Ustro\u0144",
+        "address": "Akacjowa 107",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "1"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Lekkie zachmurzenie",
+                "temperature": "2"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Deszcz ze \u015bniegiem",
+                "temperature": "1"
+            }
+        ]
+    },
+    {
+        "name": "Raj u Rzetelskiego",
+        "city": "Chrzan\u00f3w IV",
+        "address": "Chrzan\u00f3w IV",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "2"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Przejrzyste niebo",
+                "temperature": "3"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Cz\u0119\u015bciowe zachmurzenie",
+                "temperature": "2"
+            }
+        ]
+    },
+    {
+        "name": "Relaks",
+        "city": "Karpacz",
+        "address": "ul. Obro\u0144c\u00f3w Pokoju 4",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Przejrzyste niebo",
+                "temperature": "-1"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Przejrzyste niebo",
+                "temperature": "6"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Mg\u0142a",
+                "temperature": "1"
+            }
+        ]
+    },
+    {
+        "name": "Rowienki",
+        "city": "Wis\u0142a",
+        "address": "ul. Cie\u015blar\u00f3w 15a",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "1",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Cz\u0119\u015bciowe zachmurzenie",
+                "temperature": "0"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Przejrzyste niebo",
+                "temperature": "2"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Deszcz ze \u015bniegiem",
+                "temperature": "1"
+            }
+        ]
+    },
+    {
+        "name": "Rybno",
+        "city": "\u0141om\u017ca",
+        "address": "Rybno 16",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "3"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Pochmurno",
+                "temperature": "4"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Lekkie zachmurzenie",
+                "temperature": "4"
+            }
+        ]
+    },
+    {
+        "name": "Ryterski Raj",
+        "city": "Rytro",
+        "address": "Rytro 302",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "1"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Cz\u0119\u015bciowe zachmurzenie",
+                "temperature": "6"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Pochmurno",
+                "temperature": "4"
+            }
+        ]
+    },
+    {
+        "name": "Sabat",
+        "city": "Krajno-Zag\u00f3rze",
+        "address": "Krajno-Zag\u00f3rze 43c",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "0"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Przejrzyste niebo",
+                "temperature": "1"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Pochmurno",
+                "temperature": "0"
+            }
+        ]
+    },
+    {
+        "name": "Sami Swoi",
+        "city": "Gliczar\u00f3w Dolny",
+        "address": "Gliczar\u00f3w Dolny 69a",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "4",
+        "weather": [
+            {
+                "day": "19.1",
+                "day_name": "Nd.",
+                "clouds": "\u015anieg",
+                "temperature": "0"
+            },
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "0"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Przejrzyste niebo",
+                "temperature": "5"
+            }
+        ]
+    },
+    {
+        "name": "Siepraw-Ski",
+        "city": "Siepraw",
+        "address": "Siepraw 800",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "2"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Cz\u0119\u015bciowe zachmurzenie",
+                "temperature": "3"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Pochmurno",
+                "temperature": "2"
+            }
+        ]
+    },
+    {
+        "name": "Sudety Lift",
+        "city": "Szklarska Por\u0119ba",
+        "address": "ul. Turystyczna 25a",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Cz\u0119\u015bciowe zachmurzenie",
+                "temperature": "-5"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Lekkie zachmurzenie",
+                "temperature": "-2"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Mg\u0142a",
+                "temperature": "-4"
+            }
+        ]
+    },
+    {
+        "name": "Magura",
+        "city": "Ma\u0142ast\u00f3w",
+        "address": "Ma\u0142ast\u00f3w 27",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "1",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "0"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Cz\u0119\u015bciowe zachmurzenie",
+                "temperature": "5"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Pochmurno",
+                "temperature": "3"
+            }
+        ]
+    },
+    {
+        "name": "Suche Ski",
+        "city": "Suche",
+        "address": "Suche 60a",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "2",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Mg\u0142a",
+                "temperature": "-2"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Lekkie zachmurzenie",
+                "temperature": "3"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "\u015anieg",
+                "temperature": "1"
+            }
+        ]
+    },
+    {
+        "name": "Skrzyczne",
+        "city": "Szczyrk",
+        "address": "ul. My\u015bliwska 45",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "1",
+        "weather": [
+            {
+                "day": "19.1",
+                "day_name": "Nd.",
+                "clouds": "Lekkie opady \u015bniegu",
+                "temperature": "-4"
+            },
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "-4"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Przejrzyste niebo",
+                "temperature": "-4"
+            }
+        ]
+    },
+    {
+        "name": "Smerekowiec",
+        "city": "Smerekowiec",
+        "address": "Smerekowiec",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "1"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Cz\u0119\u015bciowe zachmurzenie",
+                "temperature": "5"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Pochmurno",
+                "temperature": "2"
+            }
+        ]
+    },
+    {
+        "name": "Smole\u0144 SKI",
+        "city": "Smole\u0144",
+        "address": "Smole\u0144 18",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "2"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Cz\u0119\u015bciowe zachmurzenie",
+                "temperature": "2"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Pochmurno",
+                "temperature": "0"
+            }
+        ]
+    },
+    {
+        "name": "\u015arodula Sport",
+        "city": "Sosnowiec",
+        "address": "3 Maja 51",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "3"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Cz\u0119\u015bciowe zachmurzenie",
+                "temperature": "3"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Pochmurno",
+                "temperature": "1"
+            }
+        ]
+    },
+    {
+        "name": "Stara Studnica SKI",
+        "city": "Stara Studnica",
+        "address": "",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "1"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Pochmurno",
+                "temperature": "2"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Cz\u0119\u015bciowe zachmurzenie",
+                "temperature": "5"
+            }
+        ]
+    },
+    {
+        "name": "Stacja Narciarska Stok",
+        "city": "Wis\u0142a",
+        "address": "ul. Jawornik 52a",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "1",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Cz\u0119\u015bciowe zachmurzenie",
+                "temperature": "0"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Przejrzyste niebo",
+                "temperature": "2"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Deszcz ze \u015bniegiem",
+                "temperature": "1"
+            }
+        ]
+    },
+    {
+        "name": "Sul\u00f3w",
+        "city": "Sul\u00f3w",
+        "address": "Sul\u00f3w 54",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "2"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Przejrzyste niebo",
+                "temperature": "3"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Pochmurno",
+                "temperature": "2"
+            }
+        ]
+    },
+    {
+        "name": "\u015awi\u0119ta G\u00f3ra",
+        "city": "Lubawka",
+        "address": "Lipowa",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Lekkie zachmurzenie",
+                "temperature": "1"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Lekkie zachmurzenie",
+                "temperature": "3"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Pochmurno",
+                "temperature": "2"
+            }
+        ]
+    },
+    {
+        "name": "Sza\u0144ce",
+        "city": "Koniak\u00f3w",
+        "address": "Koniak\u00f3w 871",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "-1"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Przejrzyste niebo",
+                "temperature": "-1"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Pochmurno",
+                "temperature": "0"
+            }
+        ]
+    },
+    {
+        "name": "G\u00f3rka Szcz\u0119\u015bliwicka",
+        "city": "Warszawa",
+        "address": "ul. Drawska 22",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "3"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Przejrzyste niebo",
+                "temperature": "4"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Lekkie zachmurzenie",
+                "temperature": "6"
+            }
+        ]
+    },
+    {
+        "name": "Szopowe",
+        "city": "Szopowe",
+        "address": "",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "1"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Lekkie zachmurzenie",
+                "temperature": "3"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Pochmurno",
+                "temperature": "2"
+            }
+        ]
+    },
+    {
+        "name": "Szus",
+        "city": "Koniak\u00f3w",
+        "address": "Koniak\u00f3w 680",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "-1"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Przejrzyste niebo",
+                "temperature": "-1"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Pochmurno",
+                "temperature": "0"
+            }
+        ]
+    },
+    {
+        "name": "Szyndzielnia",
+        "city": "Bielsko-Bia\u0142a",
+        "address": "Al. Armii Krajowej 366",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "-3"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Lekkie zachmurzenie",
+                "temperature": "-2"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Lekkie opady \u015bniegu",
+                "temperature": "-3"
+            }
+        ]
+    },
+    {
+        "name": "S\u0142awicki Raj",
+        "city": "S\u0142awice Szlacheckie",
+        "address": "S\u0142awice Szlacheckie",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "3"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Cz\u0119\u015bciowe zachmurzenie",
+                "temperature": "4"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Pochmurno",
+                "temperature": "1"
+            }
+        ]
+    },
+    {
+        "name": "S\u0142otwiny",
+        "city": "Krynica-Zdr\u00f3j",
+        "address": "ul. S\u0142otwi\u0144ska 53",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Cz\u0119\u015bciowe zachmurzenie",
+                "temperature": "-1"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Lekkie zachmurzenie",
+                "temperature": "5"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Lekkie opady \u015bniegu",
+                "temperature": "5"
+            }
+        ]
+    },
+    {
+        "name": "Koninki",
+        "city": "Koninki",
+        "address": "Por\u0119ba Wielka 251",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "1",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "0"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Lekkie zachmurzenie",
+                "temperature": "3"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "\u015anieg",
+                "temperature": "1"
+            }
+        ]
+    },
+    {
+        "name": "Toko-Land",
+        "city": "Bia\u0142y Dunajec",
+        "address": "ul. Gen Galicy",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "4",
+        "weather": [
+            {
+                "day": "19.1",
+                "day_name": "Nd.",
+                "clouds": "\u015anieg",
+                "temperature": "0"
+            },
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "0"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Przejrzyste niebo",
+                "temperature": "5"
+            }
+        ]
+    },
+    {
+        "name": "Tumlin SportSki",
+        "city": "Tumlin",
+        "address": "Podgr\u00f3d 43 B",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "2"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Przejrzyste niebo",
+                "temperature": "3"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Pochmurno",
+                "temperature": "2"
+            }
+        ]
+    },
+    {
+        "name": "U Bolka",
+        "city": "Mi\u0119dzyg\u00f3rze",
+        "address": "ul. Pocztowa 6",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Cz\u0119\u015bciowe zachmurzenie",
+                "temperature": "0"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Przejrzyste niebo",
+                "temperature": "-1"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Pochmurno",
+                "temperature": "1"
+            }
+        ]
+    },
+    {
+        "name": "Wiciarka",
+        "city": "Szklarska Por\u0119ba",
+        "address": "Szklarska Por\u0119ba - Jakuszyce",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "-2"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Lekkie zachmurzenie",
+                "temperature": "1"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Mg\u0142a",
+                "temperature": "-1"
+            }
+        ]
+    },
+    {
+        "name": "Wielka Sowa",
+        "city": "Potoczek",
+        "address": "Potoczek",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Cz\u0119\u015bciowe zachmurzenie",
+                "temperature": "-3"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Lekkie zachmurzenie",
+                "temperature": "-2"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Pochmurno",
+                "temperature": "-1"
+            }
+        ]
+    },
+    {
+        "name": "Winterpol Zieleniec",
+        "city": "Zieleniec",
+        "address": "ul. Zieleniec 72a",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "19.1",
+                "day_name": "Nd.",
+                "clouds": "Lekkie opady \u015bniegu",
+                "temperature": "-2"
+            },
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Cz\u0119\u015bciowe zachmurzenie",
+                "temperature": "-1"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Lekkie zachmurzenie",
+                "temperature": "0"
+            }
+        ]
+    },
+    {
+        "name": "Winterpol Karpacz",
+        "city": "Karpacz",
+        "address": "Ul. Turystyczna 5",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Lekkie zachmurzenie",
+                "temperature": "-1"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Lekkie zachmurzenie",
+                "temperature": "3"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Mg\u0142a",
+                "temperature": "1"
+            }
+        ]
+    },
+    {
+        "name": "Wit\u00f3w-Ski",
+        "city": "Wit\u00f3w",
+        "address": "Wit\u00f3w 205c",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "2",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "-2"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Lekkie zachmurzenie",
+                "temperature": "3"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "\u015anieg",
+                "temperature": "1"
+            }
+        ]
+    },
+    {
+        "name": "Wyci\u0105g KUBA",
+        "city": "Istebna",
+        "address": "Kubalonka",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "0"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Przejrzyste niebo",
+                "temperature": "0"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Lekkie opady \u015bniegu",
+                "temperature": "1"
+            }
+        ]
+    },
+    {
+        "name": "Zadzia\u0142",
+        "city": "Nowy Targ",
+        "address": "os. Zadzia\u0142 13",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "19.1",
+                "day_name": "Nd.",
+                "clouds": "Pochmurno",
+                "temperature": "-1"
+            },
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "-1"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Przejrzyste niebo",
+                "temperature": "3"
+            }
+        ]
+    },
+    {
+        "name": "Zagro\u0144",
+        "city": "Istebna",
+        "address": "Istebna 1588",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "0"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Przejrzyste niebo",
+                "temperature": "0"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Lekkie opady \u015bniegu",
+                "temperature": "1"
+            }
+        ]
+    },
+    {
+        "name": "Zajazd G\u0142\u0119bce",
+        "city": "Wis\u0142a",
+        "address": "G\u0142\u0119bce 32d",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Pochmurno",
+                "temperature": "0"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Lekkie zachmurzenie",
+                "temperature": "0"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Lekkie opady \u015bniegu",
+                "temperature": "0"
+            }
+        ]
+    },
+    {
+        "name": "Przywidz",
+        "city": "Przywidz",
+        "address": "ul. Gda\u0144ska 26",
+        "condition_min": null,
+        "condition_max": null,
+        "condition_equal": "0",
+        "update_time": "2017-01-01 00:00:00",
+        "status": " nieczynny",
+        "snow_fall": "0",
+        "weather": [
+            {
+                "day": "20.1",
+                "day_name": "Pon.",
+                "clouds": "Cz\u0119\u015bciowe zachmurzenie",
+                "temperature": "2"
+            },
+            {
+                "day": "21.1",
+                "day_name": "Wt.",
+                "clouds": "Pochmurno",
+                "temperature": "3"
+            },
+            {
+                "day": "22.1",
+                "day_name": "\u015ar.",
+                "clouds": "Przejrzyste niebo",
+                "temperature": "4"
+            }
+        ]
+    }
+]
