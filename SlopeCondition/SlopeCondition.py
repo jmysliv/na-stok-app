@@ -77,8 +77,9 @@ def get_slope_condition():
             print(e)
             pass
 
-    with open('slopes.json', 'w') as outfile:
-        json.dump(slopes, outfile, indent=4)
+    db.drop_collection(db.slopes)
+    for slope in slopes:
+        db.slopes.insert_one(slope)
 
     print('done')
 
