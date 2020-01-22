@@ -23,7 +23,7 @@ export const getSlopes = (req: Request, res: Response) => {
     });
 };
 
-cron.schedule("* 0 * * * *", () => {
+cron.schedule("0 0 * * * *", () => {
     request("http://127.0.0.1:5000/", (error, response) =>  {
         if (error) {
             console.log(error);

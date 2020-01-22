@@ -1,13 +1,19 @@
 import cookieParser from "cookie-parser";
 import cors from "cors";
-import express from "express";
+import express, { NextFunction } from "express";
+import jwt from "jsonwebtoken";
 import mongoose from "mongoose";
 import logger from "morgan";
 import path from "path";
+import { Socket } from "socket.io";
+import socketioJwt from "socketio-jwt";
+import {config} from "./auth/env.config";
 import authRouter from "./auth/route";
+import messageRouter from "./routes/messages";
 import slopesRouter from "./routes/slopes";
 import tripRouter from "./routes/trips";
 import userRouter from "./routes/users";
+import {socketConfig} from "./socket";
 
 mongoose.connect("mongodb://localhost/na-stok-app", {useUnifiedTopology: true, useNewUrlParser: true});
 const db = mongoose.connection;
@@ -27,8 +33,30 @@ app.use("/trips", tripRouter);
 app.use("/slopes", slopesRouter);
 app.use("/auth", authRouter);
 app.use("/users", userRouter);
+app.use("/messages", messageRouter);
 
-app.listen(3000, "localhost", (e) => {
+const server = app.listen(3000, "localhost", (e) => {
     console.log("running");
 });
+
+const io = socketConfig.init(server);
+io.use((socket: Socket, next: NextFunction) => {
+    if (socket.handshake.query && socket.handshake.query.token) {
+      jwt.verify(socket.handshake.query.token, config.jwt_secret , (err: Error) => {
+        if (err) {
+            socket.disconnect();
+            return next(new Error("Authentication error"));
+        } else {
+            next();
+        }
+      });
+    } else {
+        socket.disconnect();
+        next(new Error("Authentication error"));
+    }
+  })
+  .on("connection", (socket: any) => {
+     console.log("Socket connected: " + socket.id);
+  });
+
 export default app;

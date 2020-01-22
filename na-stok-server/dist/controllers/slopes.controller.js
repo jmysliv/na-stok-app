@@ -26,7 +26,7 @@ exports.getSlopes = (req, res) => {
         }
     });
 };
-node_cron_1.default.schedule("* 0 * * * *", () => {
+node_cron_1.default.schedule("0 0 * * * *", () => {
     request_1.default("http://127.0.0.1:5000/", (error, response) => {
         if (error) {
             console.log(error);

@@ -1,6 +1,5 @@
 from bs4 import BeautifulSoup
 import requests
-import json
 import threading
 from flask import Flask
 from flask_caching import Cache
