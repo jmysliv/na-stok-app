@@ -13,7 +13,7 @@ exports.validJWTNeeded = (req, res, next) => {
                 return res.status(401).send();
             }
             else {
-                req.body.jwt = jsonwebtoken_1.default.verify(authorization[1], env_config_1.config.jwt_secret);
+                req.user = jsonwebtoken_1.default.verify(authorization[1], env_config_1.config.jwt_secret);
                 return next();
             }
         }

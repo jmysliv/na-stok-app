@@ -31,6 +31,11 @@ const tripSchema = new mongoose.Schema({
     },
 });
 
+export interface ITrips {
+    creator: string;
+    participants: string[];
+
+}
 const TripModel = mongoose.model("Trips", tripSchema);
 mongoose.set("useFindAndModify", false);
 

@@ -12,6 +12,7 @@ const morgan_1 = __importDefault(require("morgan"));
 const path_1 = __importDefault(require("path"));
 const env_config_1 = require("./auth/env.config");
 const route_1 = __importDefault(require("./auth/route"));
+const me_1 = __importDefault(require("./routes/me"));
 const messages_1 = __importDefault(require("./routes/messages"));
 const slopes_1 = __importDefault(require("./routes/slopes"));
 const trips_1 = __importDefault(require("./routes/trips"));
@@ -35,18 +36,21 @@ app.use("/slopes", slopes_1.default);
 app.use("/auth", route_1.default);
 app.use("/users", users_1.default);
 app.use("/messages", messages_1.default);
+app.use("/me", me_1.default);
 const server = app.listen(3000, "localhost", (e) => {
     console.log("running");
 });
-const io = socket_1.socketConfig.init(server);
+const socketManager = socket_1.SocketManager.getInstance();
+const io = socketManager.init(server);
 io.use((socket, next) => {
     if (socket.handshake.query && socket.handshake.query.token) {
-        jsonwebtoken_1.default.verify(socket.handshake.query.token, env_config_1.config.jwt_secret, (err) => {
+        jsonwebtoken_1.default.verify(socket.handshake.query.token, env_config_1.config.jwt_secret, (err, decodedToken) => {
             if (err) {
                 socket.disconnect();
                 return next(new Error("Authentication error"));
             }
             else {
+                socketManager.addSocketUser(socket.id, decodedToken._id);
                 next();
             }
         });
@@ -58,6 +62,9 @@ io.use((socket, next) => {
 })
     .on("connection", (socket) => {
     console.log("Socket connected: " + socket.id);
+    socket.on("disconnect", () => {
+        socketManager.removeSocketUser(socket.id);
+    });
 });
 exports.default = app;
 //# sourceMappingURL=app.js.map

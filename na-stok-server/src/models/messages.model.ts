@@ -19,6 +19,13 @@ const messageSchema = new mongoose.Schema({
     },
 });
 
+export interface IMessage {
+    authorName: string;
+    content: string;
+    tripId: string;
+    dateTime: Date;
+}
+
 const MessageModel = mongoose.model("Messages", messageSchema);
 mongoose.set("useFindAndModify", false);
 

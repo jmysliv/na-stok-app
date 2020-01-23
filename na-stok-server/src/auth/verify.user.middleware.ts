@@ -16,11 +16,7 @@ export const isPasswordAndUserMatch = (req: Request, res: Response, next: NextFu
                 const salt = passwordFields[0];
                 const hash = crypto.createHmac("sha512", salt).update(req.body.password).digest("base64");
                 if (hash === passwordFields[1]) {
-                    req.body = {
-                        email: user.email,
-                        id: user._id,
-                        provider: "email",
-                    };
+                    req.user = user;
                     return next();
                 } else {
                     return res.status(400).send({errors: ["Invalid e-mail or password"]});
@@ -30,7 +26,7 @@ export const isPasswordAndUserMatch = (req: Request, res: Response, next: NextFu
 };
 
 export const checkIfAdmin = (req: Request, res: Response, next: NextFunction) => {
-        if (req.body.jwt._id === "admin") {
+        if (req.user.email === "admin@admin.com") {
             return next();
         } else {
             return res.status(403).send();

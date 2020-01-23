@@ -1,5 +1,6 @@
 import { NextFunction, Request, Response } from "express";
 import jwt from "jsonwebtoken";
+import { IUser } from "./../models/user.model";
 import {config} from "./env.config";
 
 export const validJWTNeeded = (req: Request, res: Response, next: NextFunction) => {
@@ -9,7 +10,7 @@ export const validJWTNeeded = (req: Request, res: Response, next: NextFunction) 
             if (authorization[0] !== "Bearer") {
                 return res.status(401).send();
             } else {
-                req.body.jwt = jwt.verify(authorization[1], config.jwt_secret);
+                req.user = jwt.verify(authorization[1], config.jwt_secret) as IUser;
                 return next();
             }
 

@@ -9,11 +9,12 @@ import { Socket } from "socket.io";
 import socketioJwt from "socketio-jwt";
 import {config} from "./auth/env.config";
 import authRouter from "./auth/route";
+import meRouter from "./routes/me";
 import messageRouter from "./routes/messages";
 import slopesRouter from "./routes/slopes";
 import tripRouter from "./routes/trips";
 import userRouter from "./routes/users";
-import {socketConfig} from "./socket";
+import {SocketManager} from "./socket";
 
 mongoose.connect("mongodb://localhost/na-stok-app", {useUnifiedTopology: true, useNewUrlParser: true});
 const db = mongoose.connection;
@@ -34,19 +35,22 @@ app.use("/slopes", slopesRouter);
 app.use("/auth", authRouter);
 app.use("/users", userRouter);
 app.use("/messages", messageRouter);
+app.use("/me", meRouter);
 
 const server = app.listen(3000, "localhost", (e) => {
     console.log("running");
 });
 
-const io = socketConfig.init(server);
+const socketManager = SocketManager.getInstance();
+const io = socketManager.init(server);
 io.use((socket: Socket, next: NextFunction) => {
     if (socket.handshake.query && socket.handshake.query.token) {
-      jwt.verify(socket.handshake.query.token, config.jwt_secret , (err: Error) => {
+      jwt.verify(socket.handshake.query.token, config.jwt_secret , (err: Error, decodedToken: any) => {
         if (err) {
             socket.disconnect();
             return next(new Error("Authentication error"));
         } else {
+            socketManager.addSocketUser(socket.id, decodedToken._id);
             next();
         }
       });
@@ -57,6 +61,9 @@ io.use((socket: Socket, next: NextFunction) => {
   })
   .on("connection", (socket: any) => {
      console.log("Socket connected: " + socket.id);
+     socket.on("disconnect", () => {
+       socketManager.removeSocketUser(socket.id);
+     });
   });
 
 export default app;

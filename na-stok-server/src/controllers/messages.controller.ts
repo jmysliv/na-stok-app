@@ -1,6 +1,8 @@
 import { Request, Response } from "express";
 import MessageModel from "../models/messages.model";
-import { socketConfig } from "./../socket";
+import TripModel from "../models/trip.model";
+import { ITrips } from "./../models/trip.model";
+import { SocketManager } from "./../socket";
 
 export const postMessage = (req: Request, res: Response) => {
     const message = new MessageModel(req.body);
@@ -10,10 +12,31 @@ export const postMessage = (req: Request, res: Response) => {
                 message: err,
         });
         } else {
-            delete req.body.jwt;
-            const io = socketConfig.getio();
-            io.emit("message", req.body);
-            res.status(201).send();
+            delete req.user;
+            const socketManager = SocketManager.getInstance();
+            const io = socketManager.getio();
+            const tripParticipants: string[] = [];
+            TripModel.findById(req.body.tripId, (error, trip: ITrips) => {
+                tripParticipants.push(trip.creator);
+                trip.participants.forEach( (participant) => {
+                    tripParticipants.push(participant);
+                });
+            }).then( () => {
+                let socketUsers = socketManager.getSocketUsers();
+                socketUsers = socketUsers.filter((socketUser) => {
+                    let flag = false;
+                    tripParticipants.forEach( (participant) => {
+                        if (socketUser.userId === participant) {
+                            flag  = true;
+                        }
+                    });
+                    return flag;
+                });
+                socketUsers.forEach( (socketUser) => {
+                    io.to(`${socketUser.socketId}`).emit("message", req.body);
+                });
+                res.status(201).send();
+            });
         }
     });
 

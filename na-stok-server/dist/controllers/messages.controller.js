@@ -4,6 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const messages_model_1 = __importDefault(require("../models/messages.model"));
+const trip_model_1 = __importDefault(require("../models/trip.model"));
 const socket_1 = require("./../socket");
 exports.postMessage = (req, res) => {
     const message = new messages_model_1.default(req.body);
@@ -14,10 +15,31 @@ exports.postMessage = (req, res) => {
             });
         }
         else {
-            delete req.body.jwt;
-            const io = socket_1.socketConfig.getio();
-            io.emit("message", req.body);
-            res.status(201).send();
+            delete req.user;
+            const socketManager = socket_1.SocketManager.getInstance();
+            const io = socketManager.getio();
+            const tripParticipants = [];
+            trip_model_1.default.findById(req.body.tripId, (error, trip) => {
+                tripParticipants.push(trip.creator);
+                trip.participants.forEach((participant) => {
+                    tripParticipants.push(participant);
+                });
+            }).then(() => {
+                let socketUsers = socketManager.getSocketUsers();
+                socketUsers = socketUsers.filter((socketUser) => {
+                    let flag = false;
+                    tripParticipants.forEach((participant) => {
+                        if (socketUser.userId === participant) {
+                            flag = true;
+                        }
+                    });
+                    return flag;
+                });
+                socketUsers.forEach((socketUser) => {
+                    io.to(`${socketUser.socketId}`).emit("message", req.body);
+                });
+                res.status(201).send();
+            });
         }
     });
 };
