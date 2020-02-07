@@ -12,20 +12,24 @@ class LoginBloc extends Bloc<LoginEvent, LoginState>{
         _userRepository = userRepository;
 
   @override
-  LoginState get initialState => LoginInitial();
+  LoginState get initialState => LoginState.initial();
 
   @override
   Stream<LoginState> mapEventToState(LoginEvent event) async* {
     if (event is LoginButtonPressed) {
-        yield LoginLoading();
+        yield LoginState.loading();
         try {
           await _userRepository.signInWithCredentials(event.email, event.password);
-          yield LoginSuccess();
-        } catch (error) {
-          yield LoginFailure(error: error);
+          yield LoginState.success();
+        } catch (_) {
+          yield LoginState.failure();
         }
+    } else if (event is emailTouched) {
+      yield state.update(true, state.passwordTouched);
+    } else if (event is passwordTouched) {
+      yield state.update(state.emailTouched, true);
     }
   }
-  
+
 
 }

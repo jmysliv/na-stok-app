@@ -11,7 +11,8 @@ class UserRepository{
     return await true;
   }
 
-  Future<void> signUp({String email, String password}) async {
+  Future<void> signUp({String email, String password, String name}) async {
+    signInWithCredentials(email, password);
     return await true;
   }
 
