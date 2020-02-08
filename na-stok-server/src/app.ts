@@ -37,7 +37,7 @@ app.use("/users", userRouter);
 app.use("/messages", messageRouter);
 app.use("/me", meRouter);
 
-const server = app.listen(3000, "localhost", (e) => {
+const server = app.listen(3000, "0.0.0.0", (e) => {
     console.log("running");
 });
 

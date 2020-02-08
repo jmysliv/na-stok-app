@@ -38,7 +38,7 @@ class RegisterScreen extends StatelessWidget {
                       content: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text('Registration Failure'),
+                          Text('Podany email jest już używany'),
                           Icon(Icons.error),
                         ],
                       ),

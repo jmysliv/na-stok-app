@@ -28,7 +28,7 @@ class LoginScreen extends StatelessWidget{
                 SnackBar(
                   content: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [Text('Login Failure'), Icon(Icons.error)],
+                    children: [Text('Podane dane są nieprawidłowe'), Icon(Icons.error)],
                   ),
                   backgroundColor: Colors.red,
                 ),

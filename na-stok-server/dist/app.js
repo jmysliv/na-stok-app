@@ -37,7 +37,7 @@ app.use("/auth", route_1.default);
 app.use("/users", users_1.default);
 app.use("/messages", messages_1.default);
 app.use("/me", me_1.default);
-const server = app.listen(3000, "localhost", (e) => {
+const server = app.listen(3000, "0.0.0.0", (e) => {
     console.log("running");
 });
 const socketManager = socket_1.SocketManager.getInstance();
