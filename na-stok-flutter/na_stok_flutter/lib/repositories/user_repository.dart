@@ -51,7 +51,11 @@ class UserRepository{
 
   Future<User> getUser() async {
      final response = await http.get('$url/me', headers: setUpHeaders());
-     User user = User.fromJson(jsonDecode(response.body));
-     return user;
+     if (response.statusCode == 200){
+       User user = User.fromJson(jsonDecode(response.body));
+       return user;
+     } else {
+        throw Exception('Failed to load user');
+     }
   }
 }

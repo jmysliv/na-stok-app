@@ -51,7 +51,6 @@ class RegisterScreen extends StatelessWidget {
               builder: (context, state) {
                 return Center(
                   child: Container(
-                    color: Colors.white,
                     child: Padding(
                       padding: const EdgeInsets.all(36.0),
                       child: new SingleChildScrollView(

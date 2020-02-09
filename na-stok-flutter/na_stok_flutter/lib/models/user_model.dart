@@ -19,7 +19,7 @@ class User {
         "email": "$email",
       });
   @override
-  String toString() => '{ _id: $_id, name: $name, email: $email';
+  String toString() => '{ _id: $_id, name: $name, email: $email}';
 }
 
 class UserWithPassword{
@@ -41,7 +41,7 @@ class UserWithPassword{
         "email": "$email"
       });
   @override
-  String toString() => '{ password: $password, name: $name, email: $email';
+  String toString() => '{ password: $password, name: $name, email: $email}';
 }
 
 class UserToAuth{
@@ -60,6 +60,6 @@ class UserToAuth{
         "email": "$email"
       });
   @override
-  String toString() => '{ password: $password, email: $email';
+  String toString() => '{ password: $password, email: $email}';
 
 }

@@ -6,7 +6,6 @@ class SplashScreen extends StatelessWidget {
     return Scaffold(
         body: Center(
           child: Container(
-            color: Colors.white,
             child: Padding(
               padding: const EdgeInsets.all(36.0),
               child: Column(
@@ -19,6 +18,13 @@ class SplashScreen extends StatelessWidget {
                       fit: BoxFit.contain,
                     ),
                   ),
+                  SizedBox(height: 45.0),
+                  new CircularProgressIndicator(
+                    value: null,
+                  ),
+                  SizedBox(height: 45.0),
+                  Text('Ładowanie danych',
+                  style: TextStyle(fontFamily: 'Montserrat', fontSize: 20.0))
                 ],
               ),
             ),
