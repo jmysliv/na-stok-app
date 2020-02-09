@@ -7,6 +7,8 @@ class RegisterState {
   final bool nameTouched;
   final bool isSuccess;
   final bool isFailure;
+  final bool isLoading;
+
 
 
   RegisterState({
@@ -15,6 +17,7 @@ class RegisterState {
     @required this.nameTouched,
     @required this.isSuccess,
     @required this.isFailure,
+    @required this.isLoading
   });
 
   factory RegisterState.initial() {
@@ -24,6 +27,7 @@ class RegisterState {
       nameTouched: false,
       isSuccess: false,
       isFailure: false,
+      isLoading: false,
     );
   }
 
@@ -34,6 +38,7 @@ class RegisterState {
       nameTouched: true,
       isSuccess: false,
       isFailure: false,
+      isLoading: true,
     );
   }
 
@@ -44,6 +49,7 @@ class RegisterState {
       nameTouched: true,
       isSuccess: false,
       isFailure: true,
+      isLoading: false,
     );
   }
 
@@ -54,6 +60,18 @@ class RegisterState {
         nameTouched: true,
         isSuccess: true,
         isFailure: false,
+      isLoading: false,
+    );
+  }
+
+  factory RegisterState.timeout() {
+    return RegisterState(
+      emailTouched: true,
+      passwordTouched: true,
+      nameTouched: true,
+      isSuccess: false,
+      isFailure: true,
+      isLoading: true,
     );
   }
 
@@ -64,6 +82,7 @@ class RegisterState {
       nameTouched: nameTouched,
       isSuccess: false,
       isFailure: false,
+      isLoading: this.isLoading,
     );
  }
 
@@ -75,6 +94,7 @@ class RegisterState {
       nameTouched: $nameTouched,
       isSuccess: $isSuccess,
       isFailure: $isFailure,
+      isLoading: $isLoading,
     }''';
   }
 }

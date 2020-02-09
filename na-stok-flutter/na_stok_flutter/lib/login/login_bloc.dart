@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:na_stok_flutter/login/login.dart';
 import 'package:na_stok_flutter/repositories/user_repository.dart';
 import 'package:meta/meta.dart';
@@ -19,14 +21,15 @@ class LoginBloc extends Bloc<LoginEvent, LoginState>{
     if (event is LoginButtonPressed) {
         yield LoginState.loading();
         try {
-          await _userRepository.signInWithCredentials(event.email, event.password);
+          await _userRepository.signInWithCredentials(event.email, event.password).timeout(const Duration(seconds: 5));
           yield LoginState.success();
-        } catch (_) {
-          yield LoginState.failure();
+        } catch (exception) {
+          if(exception is TimeoutException) yield LoginState.timeout();
+          else yield LoginState.failure();
         }
-    } else if (event is emailTouched) {
+    } else if (event is EmailTouched) {
       yield state.update(true, state.passwordTouched);
-    } else if (event is passwordTouched) {
+    } else if (event is PasswordTouched) {
       yield state.update(state.emailTouched, true);
     }
   }

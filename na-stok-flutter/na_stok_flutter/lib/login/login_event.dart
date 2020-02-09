@@ -8,9 +8,9 @@ abstract class LoginEvent extends Equatable{
   List<Object> get props => [];
 }
 
-class emailTouched extends LoginEvent{}
+class EmailTouched extends LoginEvent{}
 
-class passwordTouched extends LoginEvent{}
+class PasswordTouched extends LoginEvent{}
 
 class LoginButtonPressed extends LoginEvent{
   final String email;
@@ -26,6 +26,6 @@ class LoginButtonPressed extends LoginEvent{
 
   @override
   String toString() {
-    return 'Submitted { email: $email, password: $password }';
+    return 'LoginButtonPressed { email: $email, password: $password }';
   }
 }

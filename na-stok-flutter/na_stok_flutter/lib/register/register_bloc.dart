@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:na_stok_flutter/register/register.dart';
 import 'package:meta/meta.dart';
 import 'package:na_stok_flutter/repositories/user_repository.dart';
@@ -30,10 +32,11 @@ class RegisterBloc extends Bloc<RegisterEvent, RegisterState>{
           email: event.email,
           password: event.password,
           name: event.name
-        );
+        ).timeout(const Duration(seconds: 5));
         yield RegisterState.success();
-      } catch (_) {
-        yield RegisterState.failure();
+      } catch (exception) {
+        if(exception is TimeoutException) yield RegisterState.timeout();
+        else yield RegisterState.failure();
       }
     }
   }

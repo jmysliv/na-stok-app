@@ -1,6 +1,10 @@
 import mongoose from "mongoose";
 
 const messageSchema = new mongoose.Schema({
+    authorId: {
+        required: true,
+        type: String,
+    },
     authorName: {
         required: true,
         type: String,
@@ -20,6 +24,7 @@ const messageSchema = new mongoose.Schema({
 });
 
 export interface IMessage {
+    authorId: string;
     authorName: string;
     content: string;
     tripId: string;

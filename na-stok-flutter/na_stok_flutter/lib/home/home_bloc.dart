@@ -16,14 +16,14 @@ class HomeBloc extends Bloc<HomeEvent, HomeState>{
       if(event is ShowSlopes){
         yield HomeLoading();
         try{
-          yield HomeSlopes( await slopeRepository.getSlopes());
+          yield HomeSlopes( await slopeRepository.getSlopes().timeout(const Duration(seconds: 5)));
         } catch(_){
           yield HomeFailure();
         }
       } else if(event is ShowMyProfile){
         try{
           yield HomeLoading();
-          yield HomeMyProfile( await userRepository.getUser());
+          yield HomeMyProfile( await userRepository.getUser().timeout(const Duration(seconds: 5)));
         } catch(_){
           yield HomeFailure();
         }

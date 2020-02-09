@@ -19,6 +19,15 @@ class HomeSlopes extends HomeState{
   @override
   List<Object> get props => [slopes];
 
+  int maxSnow(){
+    int max = 0;
+    slopes.forEach( (slope) {
+      if(slope.conditionMin != null && slope.conditionMin > max) max = slope.conditionMin;
+      else if(slope.conditionEqual != null && slope.conditionEqual > max) max = slope.conditionEqual;
+    });
+    return max;
+  }
+
   @override
   String toString() => 'HomeSlopes { slopes: $slopes }';
 }

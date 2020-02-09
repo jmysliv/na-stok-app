@@ -26,11 +26,15 @@ class RegisterScreen extends StatelessWidget {
           create: (context) => RegisterBloc(userRepository: _userRepository),
           child: BlocListener<RegisterBloc, RegisterState>(
             listener: (context, state) {
-              if (state.isSuccess) {
+              if(state.isLoading && state.isFailure){
+                BlocProvider.of<AuthenticationBloc>(context).add(ErrorOccurred());
+                Navigator.of(context).pop();
+              }
+              else if (state.isSuccess) {
                 BlocProvider.of<AuthenticationBloc>(context).add(LoggedIn());
                 Navigator.of(context).pop();
               }
-              if (state.isFailure) {
+              else if (state.isFailure) {
                 Scaffold.of(context)
                   ..hideCurrentSnackBar()
                   ..showSnackBar(
@@ -45,6 +49,18 @@ class RegisterScreen extends StatelessWidget {
                       backgroundColor: Colors.red,
                     ),
                   );
+              }
+              else if(state.isLoading){
+                Scaffold.of(context)
+                  ..hideCurrentSnackBar()
+                  ..showSnackBar(
+                      SnackBar(
+                        content: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [Text('Trwa zakładanie konta, prosze czekać.'), CircularProgressIndicator()],
+                        ),
+                        backgroundColor: Colors.black,
+                      ));
               }
             },
             child: BlocBuilder<RegisterBloc, RegisterState>(

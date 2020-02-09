@@ -7,7 +7,7 @@ import 'package:na_stok_flutter/repositories/slope_repository.dart';
 import 'package:na_stok_flutter/repositories/user_repository.dart';
 import 'package:na_stok_flutter/screens/myProfile_screen.dart';
 import 'package:na_stok_flutter/screens/slopes_screen.dart';
-import 'package:na_stok_flutter/screens/splash_screen.dart';
+import 'package:na_stok_flutter/screens/loading_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   final User user;
@@ -27,11 +27,14 @@ class HomeScreen extends StatelessWidget {
           child: BlocBuilder<HomeBloc, HomeState>(
             builder: (context, state){
               if(state is HomeSlopes) {
-                return SlopesScreen(userRepository: _userRepository, slopes: state.slopes);
+                return SlopesScreen(userRepository: _userRepository, slopes: state.slopes, maxSnow: state.maxSnow());
               } else if (state is HomeMyProfile){
                 return MyProfileScreen(user: state.user, userRepository: _userRepository);
-              } else {
-                return SplashScreen();
+              } else if(state is HomeLoading){
+                  return LoadingScreen();
+              } else{
+                  BlocProvider.of<AuthenticationBloc>(context).add(ErrorOccurred());
+                  return LoadingScreen();
               }
         }
       ));

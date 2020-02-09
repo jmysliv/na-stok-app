@@ -18,6 +18,8 @@ class AuthenticationBloc extends Bloc<AuthenticationEvent, AuthenticationState>{
       yield* _mapLoggedInToState();
     } else if (event is LoggedOut) {
       yield* _mapLoggedOutToState();
+    } else if(event is ErrorOccurred){
+      yield ConnectionError();
     }
   }
 

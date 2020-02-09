@@ -6,6 +6,7 @@ class LoginState {
   final bool passwordTouched;
   final bool isSuccess;
   final bool isFailure;
+  final bool isLoading;
 
 
   LoginState({
@@ -13,6 +14,7 @@ class LoginState {
     @required this.passwordTouched,
     @required this.isSuccess,
     @required this.isFailure,
+    @required this.isLoading
   });
 
   factory LoginState.initial() {
@@ -21,6 +23,7 @@ class LoginState {
       passwordTouched: false,
       isSuccess: false,
       isFailure: false,
+      isLoading: false,
     );
   }
 
@@ -30,6 +33,7 @@ class LoginState {
       passwordTouched: true,
       isSuccess: false,
       isFailure: false,
+      isLoading: true,
     );
   }
 
@@ -39,6 +43,7 @@ class LoginState {
       passwordTouched: true,
       isSuccess: false,
       isFailure: true,
+      isLoading: false,
     );
   }
 
@@ -48,6 +53,17 @@ class LoginState {
       passwordTouched: true,
       isSuccess: true,
       isFailure: false,
+      isLoading: false,
+    );
+  }
+
+  factory LoginState.timeout(){
+    return LoginState(
+      emailTouched: true,
+      passwordTouched: true,
+      isSuccess: false,
+      isFailure: true,
+      isLoading: true,
     );
   }
 
@@ -57,16 +73,18 @@ class LoginState {
       passwordTouched: passwordTouched,
       isSuccess: false,
       isFailure: false,
+      isLoading: this.isLoading,
     );
   }
 
   @override
   String toString() {
-    return '''RegisterState {
+    return '''LoginState {
       emailTouched: $emailTouched,
       passwordTouched: $passwordTouched,
       isSuccess: $isSuccess,
       isFailure: $isFailure,
+      isLoading: $isLoading,
     }''';
   }
 }

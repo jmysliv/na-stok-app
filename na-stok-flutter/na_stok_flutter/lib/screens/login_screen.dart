@@ -21,7 +21,10 @@ class LoginScreen extends StatelessWidget{
     return Scaffold(
       body: BlocListener<LoginBloc, LoginState>(
             listener: (context, state) {
-            if (state.isFailure) {
+            if(state.isLoading && state.isFailure){
+              BlocProvider.of<AuthenticationBloc>(context).add(ErrorOccurred());
+            }
+            else if (state.isFailure) {
               Scaffold.of(context)
               ..hideCurrentSnackBar()
               ..showSnackBar(
@@ -34,8 +37,20 @@ class LoginScreen extends StatelessWidget{
                 ),
               );
             }
-            if (state.isSuccess) {
+            else if (state.isSuccess) {
               BlocProvider.of<AuthenticationBloc>(context).add(LoggedIn());
+            }
+            else if(state.isLoading){
+              Scaffold.of(context)
+                ..hideCurrentSnackBar()
+                ..showSnackBar(
+                  SnackBar(
+                    content: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [Text('Logowanie, prosze czekać'), CircularProgressIndicator()],
+                    ),
+                    backgroundColor: Colors.black,
+                  ));
             }
           },
         child: BlocBuilder<LoginBloc, LoginState>(
@@ -62,7 +77,7 @@ class LoginScreen extends StatelessWidget{
                           TextFormField(
                             controller: _emailController,
                             onChanged: (text) {
-                              BlocProvider.of<LoginBloc>(context).add(emailTouched());
+                              BlocProvider.of<LoginBloc>(context).add(EmailTouched());
                             },
                             autovalidate: true,
                             obscureText: false,
@@ -92,7 +107,7 @@ class LoginScreen extends StatelessWidget{
                           TextFormField(
                             controller: _passwordController,
                             onChanged: (text) {
-                              BlocProvider.of<LoginBloc>(context).add(passwordTouched());
+                              BlocProvider.of<LoginBloc>(context).add(PasswordTouched());
                             },
                             autovalidate: true,
                             obscureText: true,
@@ -126,8 +141,8 @@ class LoginScreen extends StatelessWidget{
                               padding: EdgeInsets.fromLTRB(
                                   20.0, 15.0, 20.0, 15.0),
                               onPressed: () {
-                                BlocProvider.of<LoginBloc>(context).add(emailTouched());
-                                BlocProvider.of<LoginBloc>(context).add(passwordTouched());
+                                BlocProvider.of<LoginBloc>(context).add(EmailTouched());
+                                BlocProvider.of<LoginBloc>(context).add(PasswordTouched());
                                 if (state.emailTouched &&
                                     state.passwordTouched &&
                                     _formKey.currentState.validate()) {

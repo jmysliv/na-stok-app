@@ -3,23 +3,23 @@ import 'dart:convert';
 class User {
   final String name;
   final String email;
-  final String _id;
+  final String id;
 
-  User(this.name, this.email, this._id);
+  User(this.name, this.email, this.id);
 
   User.fromJson(Map<String, dynamic> json)
       : name = json['name'],
         email = json['email'],
-        _id = json['_id'];
+        id = json['_id'];
 
   String toJson() =>
       jsonEncode({
-        "_id": "$_id",
+        "_id": "$id",
         "name": "$name",
         "email": "$email",
       });
   @override
-  String toString() => '{ _id: $_id, name: $name, email: $email}';
+  String toString() => '{ _id: $id, name: $name, email: $email}';
 }
 
 class UserWithPassword{

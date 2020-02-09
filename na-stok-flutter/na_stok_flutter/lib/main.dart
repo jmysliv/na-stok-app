@@ -5,9 +5,10 @@ import 'package:na_stok_flutter/authentication/authentication.dart';
 import 'package:na_stok_flutter/bloc-delegate.dart';
 import 'package:na_stok_flutter/login/login.dart';
 import 'package:na_stok_flutter/repositories/user_repository.dart';
+import 'package:na_stok_flutter/screens/error_screen.dart';
 import 'package:na_stok_flutter/screens/login_screen.dart';
 import 'package:na_stok_flutter/screens/home_screen.dart';
-import 'package:na_stok_flutter/screens/splash_screen.dart';
+import 'package:na_stok_flutter/screens/loading_screen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -45,11 +46,13 @@ class MyApp extends StatelessWidget {
               child: LoginScreen(userRepository: _userRepository),
             );
           }
-          if (state is Authenticated) {
+          else if (state is Authenticated) {
             return HomeScreen(user: state.user, userRepository: _userRepository);
           }
-          else {
-            return SplashScreen();
+          else if (state is Uninitialized){
+            return LoadingScreen();
+          } else {
+            return ErrorScreen();
           }
         },
       ),
