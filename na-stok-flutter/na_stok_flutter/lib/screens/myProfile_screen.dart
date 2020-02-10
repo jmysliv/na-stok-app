@@ -60,7 +60,7 @@ class MyProfileScreen extends StatelessWidget{
     );
   }
 
-  Widget _buildStatItem(String label, int count) {
+  Widget _buildStatItem(String label, String count) {
     TextStyle _statLabelTextStyle = TextStyle(
       fontFamily: 'Roboto',
       color: Colors.black,
@@ -72,42 +72,56 @@ class MyProfileScreen extends StatelessWidget{
       fontSize: 24.0,
       fontWeight: FontWeight.bold,
     );
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: <Widget>[
-        Text(
-          "$count",
-          style: _statCountTextStyle,
-        ),
-        Text(
-          label,
-          style: _statLabelTextStyle,
-        ),
-      ],
+    return Padding(
+        padding: EdgeInsets.symmetric(horizontal: 5.0, vertical: 5.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Text(
+              count,
+              style: _statCountTextStyle,
+            ),
+            Text(
+              label,
+              style: _statLabelTextStyle,
+            ),
+          ],
+        )
     );
   }
 
   Widget _buildStatContainer() {
     return Container(
-      height: 60.0,
+      height: 120.0,
       margin: EdgeInsets.only(top: 8.0),
       decoration: BoxDecoration(
         color: Color(0xFFEFF4F7),
       ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
+      child: Column(
         children: <Widget>[
-          Expanded(
-            flex: 1,
-            child: _buildStatItem("Liczba organizowanych wyjazdów", 0),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: <Widget>[
+              Expanded(
+                flex: 1,
+                child: _buildStatItem("Liczba organizowanych wyjazdów", "0"),
+              ),
+              Container(height: 54, child: VerticalDivider(color: Colors.black54, thickness: 1.0, indent: 8.0, endIndent: 1.0,)),
+              Expanded(
+                  flex: 1,
+                  child: _buildStatItem("Liczba wyjazdów", "0"),
+              )
+            ]
           ),
-          VerticalDivider(color: Colors.black54, thickness: 1.0, indent: 8.0, endIndent: 8.0,),
-          Expanded(
-              flex: 1,
-              child: _buildStatItem("Liczba wyjazdów", 0),
+          Divider(color: Colors.black54, thickness: 1.0, indent: 8.0, endIndent: 8.0,),
+          Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: <Widget>[
+                _buildStatItem("Ulubiony stok", "Ośla łąka"),
+              ]
           )
-        ],
-      ),
+        ]
+      )
     );
   }
 

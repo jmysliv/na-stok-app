@@ -9,9 +9,13 @@ const tripSchema = new mongoose.Schema({
         required: true,
         type: Date,
     },
-    geolocation: {
-        coordinates: [Number],
-        type: { type: String },
+    latitude: {
+        required: true,
+        type: Number,
+    },
+    longitude: {
+        required: true,
+        type: Number,
     },
     maxParticipants: {
         min: 1,
@@ -19,6 +23,9 @@ const tripSchema = new mongoose.Schema({
         type: Number,
     },
     participants: {
+        type: [String],
+    },
+    participantsRequest: {
         type: [String],
     },
     prize: {

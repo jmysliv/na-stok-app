@@ -1,6 +1,8 @@
 import 'package:equatable/equatable.dart';
 import 'package:na_stok_flutter/models/slope_model.dart';
+import 'package:na_stok_flutter/models/trips_model.dart';
 import 'package:na_stok_flutter/models/user_model.dart';
+import 'package:na_stok_flutter/repositories/trip_repository.dart';
 
 abstract class HomeState extends Equatable{
   const HomeState();
@@ -32,9 +34,35 @@ class HomeSlopes extends HomeState{
   String toString() => 'HomeSlopes { slopes: $slopes }';
 }
 
-class HomeTrips extends HomeState{}
+class HomeTrips extends HomeState{
+  final List<Trip> trips;
+  final TripRepository tripRepository;
+  final double maxDistance;
 
-class HomeMyTrips extends HomeState{}
+  const HomeTrips(this.tripRepository, this.trips, this.maxDistance);
+
+
+  @override
+  List<Object> get props => [trips];
+
+  @override
+  String toString() => 'HomeTrips { trips: $trips }';
+}
+
+class HomeMyTrips extends HomeState{
+  final List<Trip> myTrips;
+  final TripRepository tripRepository;
+  final double maxDistance;
+  const HomeMyTrips(this.tripRepository, this.myTrips, this.maxDistance);
+
+
+
+  @override
+  List<Object> get props => [myTrips];
+
+  @override
+  String toString() => 'HomeMyTrips { myTrips: $myTrips }';
+}
 
 class HomeMyProfile extends HomeState{
   final User user;
