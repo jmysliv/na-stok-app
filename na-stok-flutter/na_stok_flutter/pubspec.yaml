@@ -24,6 +24,7 @@ dependencies:
   percent_indicator: "^2.1.1"
   geolocator: ^5.2.1
   intl: ^0.16.1
+  weather_icons: ^2.0.0
   flutter:
     sdk: flutter
   # The following adds the Cupertino Icons font to your application.

@@ -31,7 +31,7 @@ class HomeScreen extends StatelessWidget {
           child: BlocBuilder<HomeBloc, HomeState>(
             builder: (context, state){
               if(state is HomeSlopes) {
-                return SlopesScreen(userRepository: _userRepository, slopes: state.slopes, maxSnow: state.maxSnow());
+                return SlopesScreen(userRepository: _userRepository, slopes: state.slopes, maxSnow: state.maxSnow(), tripRepository: tripRepository,);
               } else if (state is HomeMyProfile){
                 return MyProfileScreen(user: state.user, userRepository: _userRepository);
               } else if(state is HomeLoading){

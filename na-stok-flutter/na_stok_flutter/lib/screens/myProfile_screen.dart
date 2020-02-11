@@ -19,7 +19,7 @@ class MyProfileScreen extends StatelessWidget{
       decoration: BoxDecoration(
         image: DecorationImage(
           image: AssetImage('assets/images/drawer.jfif'),
-          fit: BoxFit.cover,
+          fit: BoxFit.fill,
         ),
       ),
     );

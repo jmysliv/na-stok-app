@@ -3,19 +3,19 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:na_stok_flutter/Widgets/drawer.dart';
 import 'package:na_stok_flutter/models/slope_filters_model.dart';
 import 'package:na_stok_flutter/models/slope_model.dart';
+import 'package:na_stok_flutter/repositories/trip_repository.dart';
 import 'package:na_stok_flutter/repositories/user_repository.dart';
+import 'package:na_stok_flutter/screens/slope_details_screen.dart';
 import 'package:na_stok_flutter/slopes_filters/slopes_filters.dart';
 import 'package:percent_indicator/percent_indicator.dart';
-
-
-
 
 class SlopesScreen extends StatelessWidget {
   final UserRepository userRepository;
   final List<Slope> slopes;
   final int maxSnow;
+  final TripRepository tripRepository;
 
-  SlopesScreen({Key key, @required this.userRepository, @required this.slopes, @required this.maxSnow})
+  SlopesScreen({Key key, @required this.userRepository, @required this.slopes, @required this.maxSnow, @required this.tripRepository})
       : super(key: key);
 
   @override
@@ -133,7 +133,11 @@ class SlopesScreen extends StatelessWidget {
                                             Icon(Icons.ac_unit, color: Colors.white, size: 30.0),
                                           ]
                                           ),
-                                        onTap: () {},
+                                        onTap: () {
+                                          Navigator.of(context).push(MaterialPageRoute(builder: (_) {
+                                                return SlopeDetailsScreen(slope, userRepository, tripRepository);
+                                              }));
+                                        },
                                       ),
                                     ),
                                   );
