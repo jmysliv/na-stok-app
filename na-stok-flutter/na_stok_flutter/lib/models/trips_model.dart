@@ -37,8 +37,8 @@ class Trip {
         "departureDateTime": "$departureDateTime",
         "maxParticipants": maxParticipants,
         "prize": prize,
-        "participants": "$participants",
-        "participantsRequests": "$participantsRequests",
+        "participants": participants,
+        "participantsRequests": participantsRequests,
         "slope": "$slope",
         "latitude": latitude,
         "longitude": longitude
@@ -47,8 +47,8 @@ class Trip {
   Future<double> calculateDistance() async {
     Position position = await Geolocator().getCurrentPosition(desiredAccuracy: LocationAccuracy.high);
     double distanceInMeters = await Geolocator().distanceBetween(position.latitude, position.longitude, latitude, longitude);
-    this.distance = distanceInMeters/1000;
-    return distanceInMeters/1000;
+    this.distance = distanceInMeters.roundToDouble()/1000;
+    return distanceInMeters.roundToDouble()/1000;
   }
 
   int calculateFreePlaces(){

@@ -13,7 +13,15 @@ abstract class HomeState extends Equatable{
 
 class HomeLoading extends HomeState{}
 
-class HomeFailure extends HomeState{}
+class HomeFailure extends HomeState{
+  final String errorMessage;
+  const HomeFailure(this.errorMessage);
+  @override
+  List<Object> get props => [errorMessage];
+
+  @override
+  String toString() => 'HomeFailure { error: $errorMessage }';
+}
 
 class HomeSlopes extends HomeState{
   final List<Slope> slopes;

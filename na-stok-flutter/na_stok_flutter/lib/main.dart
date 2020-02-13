@@ -52,7 +52,7 @@ class MyApp extends StatelessWidget {
           else if (state is Uninitialized){
             return LoadingScreen();
           } else {
-            return ErrorScreen();
+            return ErrorScreen((state as SomeError).errorMessage);
           }
         },
       ),

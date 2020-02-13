@@ -1,13 +1,20 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:na_stok_flutter/models/slope_model.dart';
 import 'package:na_stok_flutter/repositories/trip_repository.dart';
 import 'package:na_stok_flutter/repositories/user_repository.dart';
+import 'package:na_stok_flutter/screens/add_trip_screen.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:weather_icons/weather_icons.dart';
+import 'package:geolocator/geolocator.dart';
+import 'package:na_stok_flutter/authentication/authentication.dart';
 
 class SlopeDetailsScreen extends StatelessWidget {
   final Slope slope;
   final TripRepository tripRepository;
   final UserRepository userRepository;
+  final scaffoldKey = GlobalKey<ScaffoldState>();
 
   SlopeDetailsScreen(this.slope, this.userRepository, this.tripRepository);
 
@@ -256,9 +263,9 @@ class SlopeDetailsScreen extends StatelessWidget {
         ));
   }
 
-  Widget _buildButtonColumn(IconData icon, String label, BuildContext context) {
+  Widget _buildButtonColumn(IconData icon, String label, BuildContext context, Function onTap) {
     return MaterialButton(
-        onPressed: (){ Navigator.pop(context);},
+        onPressed: onTap,
         child: Column(
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.center,
@@ -293,7 +300,7 @@ class SlopeDetailsScreen extends StatelessWidget {
               children: <Widget>[
                 Expanded(
                   flex: 1,
-                  child: _buildButtonColumn(Icons.near_me, 'NAWIGUJ', context),
+                  child: _buildButtonColumn(Icons.near_me, 'NAWIGUJ', context, () => launchMapsUrl(context)),
                 ),
                 Container(height: 54,
                     child: VerticalDivider(color: Colors.black54,
@@ -302,7 +309,9 @@ class SlopeDetailsScreen extends StatelessWidget {
                       endIndent: 1.0,)),
                 Expanded(
                   flex: 1,
-                  child: _buildButtonColumn(Icons.add, 'ZAPLANUJ WYJAZD', context),
+                  child: _buildButtonColumn(Icons.add, 'ZAPLANUJ WYJAZD', context, () =>  Navigator.of(context).push(MaterialPageRoute(builder: (_) {
+                    return AddTripScreen(userRepository, tripRepository, slope);
+                  }))),
                 ),
           ])
         ],
@@ -316,6 +325,7 @@ class SlopeDetailsScreen extends StatelessWidget {
         .of(context)
         .size;
     return Scaffold(
+      key: scaffoldKey,
       appBar: AppBar(
         title: Text('Stok ${slope.name}'),
       ),
@@ -338,5 +348,37 @@ class SlopeDetailsScreen extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  void launchMapsUrl(BuildContext context) async {
+    try{
+      scaffoldKey.currentState ..hideCurrentSnackBar()
+        ..showSnackBar(
+            SnackBar(
+              content: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [Text('Ładowanie'), CircularProgressIndicator()],
+              ),
+              backgroundColor: Colors.black,
+            ));
+      Position position = await Geolocator().getCurrentPosition(desiredAccuracy: LocationAccuracy.high).timeout(const Duration(seconds: 10), onTimeout: () => throw TimeoutException("Żeby aplikacja działała poprawnie, proszę włączyć lokalizację w swoim telefonie, zezwolić aplikacji na dostęp do niej i uruchomić ponownie."));
+      String mapOptions = [
+        'origin=${position.latitude},${position.longitude}',
+        'destination=${slope.city}%2C+${slope.address.replaceAll(" ", "+").replaceAll(",", "%2C")}',
+        'travelmode=driving'
+      ].join('&');
+      final url = 'https://www.google.com/maps/dir/?api=1&$mapOptions';
+      if (await canLaunch(url)) {
+        await launch(url);
+        scaffoldKey.currentState..hideCurrentSnackBar();
+      } else {
+        throw 'Could not launch $url';
+      }
+    }catch(exception){
+      scaffoldKey.currentState..hideCurrentSnackBar();
+      Navigator.of(context).pop();
+      BlocProvider.of<AuthenticationBloc>(context).add(ErrorOccurred(errorMessage: (exception as TimeoutException).message));
+    }
+
   }
 }

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class ErrorScreen extends StatelessWidget {
+  final String errorMessage;
+  ErrorScreen(this.errorMessage);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,7 +22,7 @@ class ErrorScreen extends StatelessWidget {
                       ),
                     ),
                     SizedBox(height: 45.0),
-                    Text('Wychodzi na to, że nie masz połączenia z internetem, lub nastąpiły chwilowe problemy z serwerem. Sprawdź swoję połaczenie i uruchom aplikacje ponownie.',
+                    Text(errorMessage,
                         style: TextStyle(fontFamily: 'Montserrat', fontSize: 20.0))
                   ],
                 ),

@@ -1,4 +1,4 @@
-
+import 'package:meta/meta.dart';
 import 'package:equatable/equatable.dart';
 import 'package:na_stok_flutter/models/user_model.dart';
 
@@ -22,4 +22,18 @@ class Authenticated extends AuthenticationState{
 
 class Unauthenticated extends AuthenticationState {}
 
-class ConnectionError extends AuthenticationState{}
+class SomeError extends AuthenticationState{
+  final String errorMessage;
+
+  const SomeError({
+    @required this.errorMessage
+  });
+
+  @override
+  List<Object> get props => [errorMessage];
+
+  @override
+  String toString() {
+    return 'SomeError { error: $errorMessage }';
+  }
+}

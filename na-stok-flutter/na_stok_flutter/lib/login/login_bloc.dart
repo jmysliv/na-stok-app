@@ -21,7 +21,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState>{
     if (event is LoginButtonPressed) {
         yield LoginState.loading();
         try {
-          await _userRepository.signInWithCredentials(event.email, event.password).timeout(const Duration(seconds: 5));
+          await _userRepository.signInWithCredentials(event.email, event.password).timeout(const Duration(seconds: 10));
           yield LoginState.success();
         } catch (exception) {
           if(exception is TimeoutException) yield LoginState.timeout();

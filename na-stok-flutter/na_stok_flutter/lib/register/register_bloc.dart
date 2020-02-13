@@ -32,7 +32,7 @@ class RegisterBloc extends Bloc<RegisterEvent, RegisterState>{
           email: event.email,
           password: event.password,
           name: event.name
-        ).timeout(const Duration(seconds: 5));
+        ).timeout(const Duration(seconds: 10));
         yield RegisterState.success();
       } catch (exception) {
         if(exception is TimeoutException) yield RegisterState.timeout();

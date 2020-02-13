@@ -22,7 +22,7 @@ class LoginScreen extends StatelessWidget{
       body: BlocListener<LoginBloc, LoginState>(
             listener: (context, state) {
             if(state.isLoading && state.isFailure){
-              BlocProvider.of<AuthenticationBloc>(context).add(ErrorOccurred());
+              BlocProvider.of<AuthenticationBloc>(context).add(ErrorOccurred(errorMessage: 'Wychodzi na to, że nie masz połączenia z internetem, lub nastąpiły chwilowe problemy z serwerem. Sprawdź swoję połaczenie i uruchom aplikacje ponownie.'));
             }
             else if (state.isFailure) {
               Scaffold.of(context)

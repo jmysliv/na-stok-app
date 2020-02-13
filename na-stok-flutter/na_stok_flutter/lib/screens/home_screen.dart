@@ -41,7 +41,7 @@ class HomeScreen extends StatelessWidget {
               }else if(state is HomeMyTrips){
                 return TripsScreen(_userRepository, tripRepository, state.myTrips, "Moje wyjazdy", state.maxDistance);
               }else{
-                  BlocProvider.of<AuthenticationBloc>(context).add(ErrorOccurred());
+                  BlocProvider.of<AuthenticationBloc>(context).add(ErrorOccurred(errorMessage: (state as HomeFailure).errorMessage));
                   return LoadingScreen();
               }
         }
