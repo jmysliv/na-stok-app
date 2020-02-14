@@ -60,6 +60,7 @@ class RegisterScreen extends StatelessWidget {
                           children: [Text('Trwa zakładanie konta, prosze czekać.'), CircularProgressIndicator()],
                         ),
                         backgroundColor: Colors.black,
+                        duration: Duration(seconds: 10),
                       ));
               }
             },

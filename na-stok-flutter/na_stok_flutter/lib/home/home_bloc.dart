@@ -25,14 +25,17 @@ class HomeBloc extends Bloc<HomeEvent, HomeState>{
         try{
           yield HomeSlopes( await slopeRepository.getSlopes().timeout(const Duration(seconds: 10), onTimeout: () => throw TimeoutException('Wychodzi na to, że nie masz połączenia z internetem, lub nastąpiły chwilowe problemy z serwerem. Sprawdź swoję połaczenie i uruchom aplikacje ponownie.')));
         } catch(exception){
-          yield HomeFailure((exception as TimeoutException).message);
+          if(exception is TimeoutException) yield HomeFailure(exception.message);
+          else yield HomeFailure(exception.toString());
         }
       } else if(event is ShowMyProfile){
         try{
           yield HomeLoading();
-          yield HomeMyProfile( await userRepository.getUser().timeout(const Duration(seconds: 10), onTimeout: () => throw TimeoutException('Wychodzi na to, że nie masz połączenia z internetem, lub nastąpiły chwilowe problemy z serwerem. Sprawdź swoję połaczenie i uruchom aplikacje ponownie.')));
+          List<Trip> trips = await tripRepository.getTrips().timeout(const Duration(seconds: 10), onTimeout: () => throw TimeoutException('Wychodzi na to, że nie masz połączenia z internetem, lub nastąpiły chwilowe problemy z serwerem. Sprawdź swoję połaczenie i uruchom aplikacje ponownie.'));
+          yield HomeMyProfile( await userRepository.getUser().timeout(const Duration(seconds: 10), onTimeout: () => throw TimeoutException('Wychodzi na to, że nie masz połączenia z internetem, lub nastąpiły chwilowe problemy z serwerem. Sprawdź swoję połaczenie i uruchom aplikacje ponownie.')), trips);
         } catch(exception){
-          yield HomeFailure((exception as TimeoutException).message);
+          if(exception is TimeoutException) yield HomeFailure(exception.message);
+          else yield HomeFailure(exception.toString());
         }
       } else if(event is ShowTrips){
         try{
@@ -40,7 +43,8 @@ class HomeBloc extends Bloc<HomeEvent, HomeState>{
           List<Trip> trips = await tripRepository.getTrips().timeout(const Duration(seconds: 10), onTimeout: () => throw TimeoutException('Wychodzi na to, że nie masz połączenia z internetem, lub nastąpiły chwilowe problemy z serwerem. Sprawdź swoję połaczenie i uruchom aplikacje ponownie.'));
           yield HomeTrips(tripRepository, trips, await calculateMaxDistance(trips));
         } catch(exception){
-          yield HomeFailure((exception as TimeoutException).message);
+          if(exception is TimeoutException) yield HomeFailure(exception.message);
+          else yield HomeFailure(exception.toString());
         }
 
       } else if (event is ShowMyTrips){
@@ -58,7 +62,8 @@ class HomeBloc extends Bloc<HomeEvent, HomeState>{
           
           yield HomeMyTrips(tripRepository, trips, await calculateMaxDistance(trips));
         } catch(exception){
-          yield HomeFailure((exception as TimeoutException).message);
+          if(exception is TimeoutException) yield HomeFailure(exception.message);
+          else yield HomeFailure(exception.toString());
         }
 
       }

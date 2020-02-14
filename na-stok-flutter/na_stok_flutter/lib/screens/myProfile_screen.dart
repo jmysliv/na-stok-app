@@ -1,15 +1,16 @@
 import 'package:na_stok_flutter/Widgets/drawer.dart';
-import 'package:na_stok_flutter/authentication/authentication.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:na_stok_flutter/models/user_model.dart';
 import 'package:na_stok_flutter/repositories/user_repository.dart';
 
 class MyProfileScreen extends StatelessWidget{
   final User user;
   final UserRepository _userRepository;
+  final String favouriteSlope;
+  final int tripsNumber;
+  final int tripCreatorNumber;
 
-  MyProfileScreen({Key key, @required this.user, UserRepository userRepository})
+  MyProfileScreen({Key key, @required this.user, UserRepository userRepository, this.favouriteSlope, this.tripCreatorNumber, this.tripsNumber})
       : _userRepository = userRepository,
         super(key: key);
 
@@ -104,12 +105,12 @@ class MyProfileScreen extends StatelessWidget{
             children: <Widget>[
               Expanded(
                 flex: 1,
-                child: _buildStatItem("Liczba organizowanych wyjazdów", "0"),
+                child: _buildStatItem("Liczba organizowanych wyjazdów", "$tripCreatorNumber"),
               ),
               Container(height: 54, child: VerticalDivider(color: Colors.black54, thickness: 1.0, indent: 8.0, endIndent: 1.0,)),
               Expanded(
                   flex: 1,
-                  child: _buildStatItem("Liczba wyjazdów", "0"),
+                  child: _buildStatItem("Liczba wyjazdów", "$tripsNumber"),
               )
             ]
           ),
@@ -117,7 +118,7 @@ class MyProfileScreen extends StatelessWidget{
           Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: <Widget>[
-                _buildStatItem("Ulubiony stok", "Ośla łąka"),
+                _buildStatItem("Ulubiony stok", "$favouriteSlope"),
               ]
           )
         ]

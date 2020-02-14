@@ -23,6 +23,6 @@ class SlopesFiltersLoaded extends SlopesFiltersState {
 
   @override
   String toString() {
-    return 'SlopesFiltersLoaded { filteredTodos: $filteredSlopes, activeFilter: $activeFilter, activeSorting: $activeSorting }';
+    return 'SlopesFiltersLoaded { filteredSlopes: $filteredSlopes, activeFilter: $activeFilter, activeSorting: $activeSorting }';
   }
 }

@@ -74,10 +74,11 @@ class HomeMyTrips extends HomeState{
 
 class HomeMyProfile extends HomeState{
   final User user;
-  const HomeMyProfile(this.user);
+  final List<Trip> trips;
+  const HomeMyProfile(this.user, this.trips);
   @override
   List<Object> get props => [user];
 
   @override
-  String toString() => 'HomeMyProfile { user: $user }';
+  String toString() => 'HomeMyProfile { user: $user, trips: $trips }';
 }

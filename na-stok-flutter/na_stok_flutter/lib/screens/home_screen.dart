@@ -33,7 +33,7 @@ class HomeScreen extends StatelessWidget {
               if(state is HomeSlopes) {
                 return SlopesScreen(userRepository: _userRepository, slopes: state.slopes, maxSnow: state.maxSnow(), tripRepository: tripRepository,);
               } else if (state is HomeMyProfile){
-                return MyProfileScreen(user: state.user, userRepository: _userRepository);
+                return MyProfileScreen(user: state.user, userRepository: _userRepository, favouriteSlope: state.user.favouriteSlope(state.trips), tripsNumber: state.user.calculateTrips(state.trips), tripCreatorNumber: state.user.calculateCreator(state.trips));
               } else if(state is HomeLoading){
                   return LoadingScreen();
               } else if(state is HomeTrips){

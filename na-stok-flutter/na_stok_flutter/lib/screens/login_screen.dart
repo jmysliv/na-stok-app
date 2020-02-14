@@ -50,6 +50,7 @@ class LoginScreen extends StatelessWidget{
                       children: [Text('Logowanie, prosze czekać'), CircularProgressIndicator()],
                     ),
                     backgroundColor: Colors.black,
+                    duration: Duration(seconds: 10),
                   ));
             }
           },
