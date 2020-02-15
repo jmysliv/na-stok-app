@@ -44,32 +44,34 @@ class HomeSlopes extends HomeState{
 
 class HomeTrips extends HomeState{
   final List<Trip> trips;
+  final List<Slope> slopes;
   final TripRepository tripRepository;
   final double maxDistance;
 
-  const HomeTrips(this.tripRepository, this.trips, this.maxDistance);
+  const HomeTrips(this.tripRepository, this.trips, this.maxDistance, this.slopes);
 
 
   @override
-  List<Object> get props => [trips];
+  List<Object> get props => [trips, slopes];
 
   @override
-  String toString() => 'HomeTrips { trips: $trips }';
+  String toString() => 'HomeTrips { trips: $trips, slopes: $slopes }';
 }
 
 class HomeMyTrips extends HomeState{
   final List<Trip> myTrips;
+  final List<Slope> slopes;
   final TripRepository tripRepository;
   final double maxDistance;
-  const HomeMyTrips(this.tripRepository, this.myTrips, this.maxDistance);
+  const HomeMyTrips(this.tripRepository, this.myTrips, this.maxDistance, this.slopes);
 
 
 
   @override
-  List<Object> get props => [myTrips];
+  List<Object> get props => [myTrips, slopes];
 
   @override
-  String toString() => 'HomeMyTrips { myTrips: $myTrips }';
+  String toString() => 'HomeMyTrips { myTrips: $myTrips, slopes: $slopes }';
 }
 
 class HomeMyProfile extends HomeState{

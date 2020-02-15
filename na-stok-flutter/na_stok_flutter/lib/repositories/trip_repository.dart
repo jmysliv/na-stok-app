@@ -18,6 +18,18 @@ class TripRepository{
     }
   }
 
+  Future<Trip> getTrip(String id) async {
+    final response = await http.get('$url/trips/$id', headers: _userRepository.setUpHeaders());
+    if(response.statusCode == 200){
+      Trip trip = Trip.fromJson(jsonDecode(response.body));
+      await trip.getAddress();
+      await trip.getParticipantList(_userRepository);
+      return trip;
+    } else {
+      throw Exception('Failed to get trips');
+    }
+  }
+
   Future<void> insertTrip(Trip trip) async {
     print(trip);
     final response = await http.post('$url/trips', body: trip.toJson(), headers: _userRepository.setUpHeaders());

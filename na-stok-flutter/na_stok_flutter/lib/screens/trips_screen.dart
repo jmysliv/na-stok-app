@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 import 'package:na_stok_flutter/Widgets/drawer.dart';
+import 'package:na_stok_flutter/models/slope_model.dart';
 import 'package:na_stok_flutter/models/trips_filter_model.dart';
 import 'package:na_stok_flutter/models/trips_model.dart';
 import 'package:na_stok_flutter/repositories/trip_repository.dart';
 import 'package:na_stok_flutter/repositories/user_repository.dart';
+import 'package:na_stok_flutter/screens/trip_details_screen.dart';
 import 'package:na_stok_flutter/trips_filters/trips_filter.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 import 'package:intl/intl.dart';
@@ -14,10 +15,11 @@ class TripsScreen extends StatelessWidget{
   final UserRepository userRepository;
   final TripRepository tripRepository;
   final List<Trip> trips;
+  final List<Slope> slopes;
   final String title;
   final double maxDistance;
 
-  TripsScreen(this.userRepository, this.tripRepository, this.trips, this.title, this.maxDistance);
+  TripsScreen(this.userRepository, this.tripRepository, this.trips, this.title, this.maxDistance, this.slopes);
 
   @override
   Widget build(BuildContext context) {
@@ -141,7 +143,15 @@ class TripsScreen extends StatelessWidget{
                                         Icon(Icons.attach_money, color: Colors.white, size: 30.0),
                                       ]
                                   ),
-                                  onTap: () {},
+                                  onTap: () {
+                                    Slope specialSlope = null;
+                                    for(Slope slope in this.slopes){
+                                      if(slope.name == trip.slope) specialSlope = slope;
+                                    }
+                                    Navigator.of(context).push(MaterialPageRoute(builder: (_) {
+                                      return TripDetailsScreen(tripRepository, userRepository, trip.id, specialSlope);
+                                    }));
+                                  },
                                 ),
                               ),
                             );

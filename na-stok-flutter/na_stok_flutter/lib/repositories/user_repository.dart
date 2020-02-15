@@ -58,4 +58,14 @@ class UserRepository{
         throw Exception('Failed to load user');
      }
   }
+
+  Future<User> getUserById(String id) async{
+    final response = await http.get('$url/users/$id', headers: setUpHeaders());
+    if (response.statusCode == 200){
+      User user = User.fromJson(jsonDecode(response.body));
+      return user;
+    } else {
+      throw Exception('Failed to load user');
+    }
+  }
 }

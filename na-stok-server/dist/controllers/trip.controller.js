@@ -20,13 +20,23 @@ exports.insertTrip = (req, res) => {
     });
 };
 exports.getTripByID = (req, res) => {
-    trip_model_1.default.findById(req.params.id).then((result) => {
-        res.status(200).send(result);
+    trip_model_1.default.findById(req.params.id, (err, result) => {
+        if (err) {
+            res.status(500).send(err);
+        }
+        else {
+            res.status(200).send(result);
+        }
     });
 };
 exports.getTrips = (req, res) => {
-    trip_model_1.default.find().then((result) => {
-        res.status(200).send(result);
+    trip_model_1.default.find((err, result) => {
+        if (err) {
+            res.status(500).send(err);
+        }
+        else {
+            res.status(200).send(result);
+        }
     });
 };
 exports.putTrip = (req, res) => {

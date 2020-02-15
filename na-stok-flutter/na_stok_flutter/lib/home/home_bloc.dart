@@ -1,7 +1,7 @@
 import 'dart:async';
-
 import 'package:na_stok_flutter/home/home.dart';
 import 'package:bloc/bloc.dart';
+import 'package:na_stok_flutter/models/slope_model.dart';
 import 'package:na_stok_flutter/models/trips_model.dart';
 import 'package:na_stok_flutter/models/user_model.dart';
 import 'package:na_stok_flutter/repositories/slope_repository.dart';
@@ -41,7 +41,8 @@ class HomeBloc extends Bloc<HomeEvent, HomeState>{
         try{
           yield HomeLoading();
           List<Trip> trips = await tripRepository.getTrips().timeout(const Duration(seconds: 10), onTimeout: () => throw TimeoutException('Wychodzi na to, że nie masz połączenia z internetem, lub nastąpiły chwilowe problemy z serwerem. Sprawdź swoję połaczenie i uruchom aplikacje ponownie.'));
-          yield HomeTrips(tripRepository, trips, await calculateMaxDistance(trips));
+          List<Slope> slopes = await slopeRepository.getSlopes().timeout(const Duration(seconds: 10), onTimeout: () => throw TimeoutException('Wychodzi na to, że nie masz połączenia z internetem, lub nastąpiły chwilowe problemy z serwerem. Sprawdź swoję połaczenie i uruchom aplikacje ponownie.'));
+          yield HomeTrips(tripRepository, trips, await calculateMaxDistance(trips), slopes);
         } catch(exception){
           if(exception is TimeoutException) yield HomeFailure(exception.message);
           else yield HomeFailure(exception.toString());
@@ -59,8 +60,8 @@ class HomeBloc extends Bloc<HomeEvent, HomeState>{
             });
             return flag;
           }).toList();
-          
-          yield HomeMyTrips(tripRepository, trips, await calculateMaxDistance(trips));
+          List<Slope> slopes = await slopeRepository.getSlopes().timeout(const Duration(seconds: 10), onTimeout: () => throw TimeoutException('Wychodzi na to, że nie masz połączenia z internetem, lub nastąpiły chwilowe problemy z serwerem. Sprawdź swoję połaczenie i uruchom aplikacje ponownie.'));
+          yield HomeMyTrips(tripRepository, trips, await calculateMaxDistance(trips), slopes);
         } catch(exception){
           if(exception is TimeoutException) yield HomeFailure(exception.message);
           else yield HomeFailure(exception.toString());

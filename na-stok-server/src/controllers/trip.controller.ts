@@ -18,14 +18,22 @@ export const insertTrip = (req: Request, res: Response) => {
 };
 
 export const getTripByID = (req: Request, res: Response) => {
-    TripModel.findById(req.params.id).then((result) => {
-        res.status(200).send(result);
+    TripModel.findById(req.params.id, (err, result) => {
+        if (err) {
+            res.status(500).send(err);
+        } else {
+            res.status(200).send(result);
+        }
     });
 };
 
 export const getTrips = (req: Request, res: Response) => {
-    TripModel.find().then((result) => {
-        res.status(200).send(result);
+    TripModel.find((err, result) => {
+        if (err) {
+            res.status(500).send(err);
+        } else {
+            res.status(200).send(result);
+        }
     });
 };
 

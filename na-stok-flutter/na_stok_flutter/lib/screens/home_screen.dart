@@ -37,9 +37,9 @@ class HomeScreen extends StatelessWidget {
               } else if(state is HomeLoading){
                   return LoadingScreen();
               } else if(state is HomeTrips){
-                return TripsScreen(_userRepository, tripRepository, state.trips, "Wyjazdy", state.maxDistance);
+                return TripsScreen(_userRepository, tripRepository, state.trips, "Wyjazdy", state.maxDistance, state.slopes);
               }else if(state is HomeMyTrips){
-                return TripsScreen(_userRepository, tripRepository, state.myTrips, "Moje wyjazdy", state.maxDistance);
+                return TripsScreen(_userRepository, tripRepository, state.myTrips, "Moje wyjazdy", state.maxDistance, state.slopes);
               }else{
                   BlocProvider.of<AuthenticationBloc>(context).add(ErrorOccurred(errorMessage: (state as HomeFailure).errorMessage));
                   return LoadingScreen();
