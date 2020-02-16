@@ -1,18 +1,14 @@
-import 'package:na_stok_flutter/Widgets/drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:na_stok_flutter/models/user_model.dart';
-import 'package:na_stok_flutter/repositories/user_repository.dart';
 
-class MyProfileScreen extends StatelessWidget{
+class UserProfileScreen extends StatelessWidget{
   final User user;
-  final UserRepository _userRepository;
   final String favouriteSlope;
   final int tripsNumber;
   final int tripCreatorNumber;
 
-  MyProfileScreen({Key key, @required this.user, UserRepository userRepository, this.favouriteSlope, this.tripCreatorNumber, this.tripsNumber})
-      : _userRepository = userRepository,
-        super(key: key);
+  UserProfileScreen({Key key, @required this.user, this.favouriteSlope, this.tripCreatorNumber, this.tripsNumber})
+      :super(key: key);
 
   Widget _buildCoverImage(Size screenSize) {
     return Container(
@@ -37,9 +33,9 @@ class MyProfileScreen extends StatelessWidget{
     return Padding(
         padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
         child: Text(
-        user.name,
-        style: _nameTextStyle,
-      ));
+          user.name,
+          style: _nameTextStyle,
+        ));
   }
 
   Widget _buildEmail(BuildContext context) {
@@ -93,36 +89,36 @@ class MyProfileScreen extends StatelessWidget{
 
   Widget _buildStatContainer() {
     return Container(
-      height: 120.0,
-      margin: EdgeInsets.only(top: 8.0),
-      decoration: BoxDecoration(
-        color: Color(0xFFEFF4F7),
-      ),
-      child: Column(
-        children: <Widget>[
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
+        height: 120.0,
+        margin: EdgeInsets.only(top: 8.0),
+        decoration: BoxDecoration(
+          color: Color(0xFFEFF4F7),
+        ),
+        child: Column(
             children: <Widget>[
-              Expanded(
-                flex: 1,
-                child: _buildStatItem("Liczba organizowanych wyjazdów", "$tripCreatorNumber"),
+              Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: <Widget>[
+                    Expanded(
+                      flex: 1,
+                      child: _buildStatItem("Liczba organizowanych wyjazdów", "$tripCreatorNumber"),
+                    ),
+                    Container(height: 54, child: VerticalDivider(color: Colors.black54, thickness: 1.0, indent: 8.0, endIndent: 1.0,)),
+                    Expanded(
+                      flex: 1,
+                      child: _buildStatItem("Liczba wyjazdów", "$tripsNumber"),
+                    )
+                  ]
               ),
-              Container(height: 54, child: VerticalDivider(color: Colors.black54, thickness: 1.0, indent: 8.0, endIndent: 1.0,)),
-              Expanded(
-                  flex: 1,
-                  child: _buildStatItem("Liczba wyjazdów", "$tripsNumber"),
+              Divider(color: Colors.black54, thickness: 1.0, indent: 8.0, endIndent: 8.0,),
+              Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: <Widget>[
+                    _buildStatItem("Ulubiony stok", "$favouriteSlope"),
+                  ]
               )
             ]
-          ),
-          Divider(color: Colors.black54, thickness: 1.0, indent: 8.0, endIndent: 8.0,),
-          Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: <Widget>[
-                _buildStatItem("Ulubiony stok", "$favouriteSlope"),
-              ]
-          )
-        ]
-      )
+        )
     );
   }
 
@@ -130,26 +126,25 @@ class MyProfileScreen extends StatelessWidget{
   Widget build(BuildContext context) {
     Size screenSize = MediaQuery.of(context).size;
     return Scaffold(
-        drawer: HomeDrawer(),
-        appBar: AppBar(
-          title: Text( 'Mój Profil' ),
-        ),
-        body: Stack(
-            children: <Widget>[
-              _buildCoverImage(screenSize),
-               SingleChildScrollView(
-                  child: Column(
-                    children: <Widget>[
-                      SizedBox(height: screenSize.height / 2.6),
-                      _buildName(),
-                      _buildEmail(context),
-                      _buildStatContainer(),
-                    ],
-                  ),
-                ),
-            ],
+      appBar: AppBar(
+        title: Text( 'Profil' ),
+      ),
+      body: Stack(
+        children: <Widget>[
+          _buildCoverImage(screenSize),
+          SingleChildScrollView(
+            child: Column(
+              children: <Widget>[
+                SizedBox(height: screenSize.height / 2.6),
+                _buildName(),
+                _buildEmail(context),
+                _buildStatContainer(),
+              ],
+            ),
           ),
-        );
+        ],
+      ),
+    );
   }
 
 }

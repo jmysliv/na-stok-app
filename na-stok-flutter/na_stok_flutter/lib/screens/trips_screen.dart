@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:na_stok_flutter/Widgets/drawer.dart';
+import 'package:na_stok_flutter/home/home.dart';
 import 'package:na_stok_flutter/models/slope_model.dart';
 import 'package:na_stok_flutter/models/trips_filter_model.dart';
 import 'package:na_stok_flutter/models/trips_model.dart';
@@ -19,10 +20,12 @@ class TripsScreen extends StatelessWidget{
   final String title;
   final double maxDistance;
 
+
   TripsScreen(this.userRepository, this.tripRepository, this.trips, this.title, this.maxDistance, this.slopes);
 
   @override
   Widget build(BuildContext context) {
+    final homeBloc = BlocProvider.of<HomeBloc>(context);
     return BlocProvider<TripsFiltersBloc>(
         create: (context) => TripsFiltersBloc(this.trips)..add(UpdateTripsFilter(TripsFilters.actual, TripsSortedBy.time)),
         child: BlocBuilder<TripsFiltersBloc, TripsFiltersState>(
@@ -148,8 +151,8 @@ class TripsScreen extends StatelessWidget{
                                     for(Slope slope in this.slopes){
                                       if(slope.name == trip.slope) specialSlope = slope;
                                     }
-                                    Navigator.of(context).push(MaterialPageRoute(builder: (_) {
-                                      return TripDetailsScreen(tripRepository, userRepository, trip.id, specialSlope);
+                                    Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+                                      return BlocProvider.value(value: homeBloc, child: TripDetailsScreen(tripRepository, userRepository, trip.id, specialSlope));
                                     }));
                                   },
                                 ),

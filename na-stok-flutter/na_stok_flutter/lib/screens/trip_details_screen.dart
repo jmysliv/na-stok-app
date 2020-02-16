@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
@@ -8,6 +9,8 @@ import 'package:na_stok_flutter/repositories/trip_repository.dart';
 import 'package:na_stok_flutter/repositories/user_repository.dart';
 import 'package:na_stok_flutter/home/home.dart';
 import 'package:na_stok_flutter/screens/loading_screen.dart';
+import 'package:na_stok_flutter/screens/slope_details_screen.dart';
+import 'package:na_stok_flutter/screens/user_profile_screen.dart';
 import 'package:na_stok_flutter/trip_details/trip_details.dart';
 import 'package:na_stok_flutter/authentication/authentication.dart';
 
@@ -32,7 +35,7 @@ class TripDetailsScreen extends StatelessWidget{
     );
   }
 
-  Widget _buildItem(String label, String count, IconData icon) {
+  Widget _buildItem(String label, String count, IconData icon, Function onTap) {
     TextStyle _statStyle = TextStyle(
       fontFamily: 'Roboto',
       color: Colors.black,
@@ -49,48 +52,52 @@ class TripDetailsScreen extends StatelessWidget{
           title: Row(
             children: <Widget>[
               Icon(icon),
-              Text(
-                count,
-                style: _statStyle,
-                overflow: TextOverflow.ellipsis,
-              ),
+              Expanded(
+                  child: Text(
+                  count,
+                  style: _statStyle,
+                ),
+              )
             ],
           ),
           trailing: (label == "Stok:") ? Icon(Icons.arrow_forward_ios) : null,
-          onTap: () {},
+          onTap: onTap,
         ),
     );
   }
 
-  Widget _buildItemsContainer(Trip trip) {
+  Widget _buildItemsContainer(Trip trip, BuildContext context) {
     return Container(
-        margin: EdgeInsets.only(top: 8.0),
         decoration: BoxDecoration(
           color: Color(0xFFEFF4F7),
         ),
         child: Column(
             children: <Widget>[
-              _buildItem("Stok:", "${trip.slope}", Icons.landscape),
+              _buildItem("Stok:", "${trip.slope}", Icons.landscape, () {
+                Navigator.of(context).push(MaterialPageRoute(builder: (_) {
+                  return SlopeDetailsScreen(slope, userRepository, tripRepository);
+                }));
+              }),
               Divider(color: Colors.black54,
                 thickness: 1.0,
                 indent: 8.0,
                 endIndent: 8.0,),
-              _buildItem("Kiedy:", "${DateFormat.yMd().add_Hm().format(DateTime.parse(trip.departureDateTime))}", Icons.event),
+              _buildItem("Kiedy:", "${DateFormat.yMd().add_Hm().format(DateTime.parse(trip.departureDateTime))}", Icons.event, () => {}),
               Divider(color: Colors.black54,
                 thickness: 1.0,
                 indent: 8.0,
                 endIndent: 8.0,),
-              _buildItem("Z kąd:", "${trip.address}", Icons.place),
+              _buildItem("Z kąd:", "${trip.address}", Icons.place, () => {}),
               Divider(color: Colors.black54,
                 thickness: 1.0,
                 indent: 8.0,
                 endIndent: 8.0,),
-              _buildItem("Wolne miejsca:", "${trip.calculateFreePlaces()}", Icons.people),
+              _buildItem("Wolne miejsca:", "${trip.calculateFreePlaces()}", Icons.people, () => {}),
               Divider(color: Colors.black54,
                 thickness: 1.0,
                 indent: 8.0,
                 endIndent: 8.0,),
-              _buildItem("Cena:", "${trip.prize}", Icons.attach_money),
+              _buildItem("Cena:", "${trip.prize}", Icons.attach_money, () => {}),
             ]
         )
     );
@@ -98,109 +105,56 @@ class TripDetailsScreen extends StatelessWidget{
 
 
   Widget _buildButton(IconData icon, String label, BuildContext context, Function onTap, Color color) {
-    return MaterialButton(
-        onPressed: onTap,
-        color: color,
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(icon, color: Colors.white),
-            Container(
-              margin: const EdgeInsets.only(top: 8),
-              child: Text(
-                label,
-                style: TextStyle(
-                  fontSize: 12,
-                  fontWeight: FontWeight.w400,
-                  color: Colors.white,
-                ),
-              ),
-            ),
-          ],
-        ));
-  }
-
-  Widget builtParticipantList(Trip trip){
-    return Column(
-      children: <Widget>[
-        Text("Uczestnicy:", textAlign: TextAlign.center, style: TextStyle(fontSize: 24.0),),
-        ListView.builder(
-            scrollDirection: Axis.vertical,
-            shrinkWrap: true,
-            physics: ScrollPhysics(),
-            itemCount: trip.participantUsers.length,
-            itemBuilder: (context, index) {
-              final User user = trip.participantUsers[index];
-              return ListTile(
-                contentPadding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
-                leading: Container(
-                    padding: EdgeInsets.only(right: 12.0),
-                    decoration: new BoxDecoration(
-                        border: new Border(
-                            right: new BorderSide(width: 1.0, color: Colors.black))),
-                    child:  Icon(Icons.person, color: Colors.black, size: 30.0),
-                ),
-                title: Text(
-                  user.name,
-                  style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
-                ),
-                subtitle: Text( (trip.creatorId == user.id) ? "Organizator" : "Uczestnik",
-                  style: TextStyle(color: Colors.black),
-                ),
-                trailing: Column(
-                    children: <Widget> [
-                      Icon(Icons.arrow_forward_ios, color: Colors.black, size: 30.0),
-                    ]
-                ),
-                onTap: () {},
-              );
-              }
-            )
-      ]
+    return  Padding(
+        padding: EdgeInsets.symmetric(horizontal: 5.0, vertical: 10.0),
+        child:  MaterialButton(
+            onPressed: onTap,
+            color: color,
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 5.0, vertical: 8.0),
+              child:Column(
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(icon, color: Colors.white),
+                  Container(
+                    margin: const EdgeInsets.only(top: 2.0),
+                    child: Text(
+                      label,
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.w400,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                ],
+              ))
+        )
     );
   }
 
-  Widget builtParticipantRequestList(Trip trip){
-    return Column(
-        children: <Widget>[
-          Text("Uczestnicy do zatwierdzenia:", textAlign: TextAlign.center, style: TextStyle(fontSize: 24.0),),
-          ListView.builder(
-              scrollDirection: Axis.vertical,
-              shrinkWrap: true,
-              physics: ScrollPhysics(),
-              itemCount: trip.participantUsers.length,
-              itemBuilder: (context, index) {
-                final User user = trip.participantUsers[index];
-                return Dismissible(
-                  key: ValueKey(user),
-                  background: Container(
-                    color: Colors.red,
-                    padding: EdgeInsets.symmetric(horizontal: 20),
-                    alignment: AlignmentDirectional.centerStart,
-                    child: Icon(
-                      Icons.delete,
-                      color: Colors.white,
-                    ),
-                  ),
-                  secondaryBackground: Container(
-                    color: Colors.green,
-                    padding: EdgeInsets.symmetric(horizontal: 20),
-                    alignment: AlignmentDirectional.centerEnd,
-                    child: Icon(
-                      Icons.check_circle,
-                      color: Colors.white,
-                    ),
-                  ),
-                  onDismissed: (direction){},
-                  child: ListTile(
+  Widget builtParticipantList(Trip trip, BuildContext context){
+    return Padding(
+        padding: EdgeInsets.symmetric(horizontal: 5.0, vertical: 5.0),
+        child:Column(
+          children: <Widget>[
+            Text("Uczestnicy:", textAlign: TextAlign.center, style: TextStyle(fontSize: 24.0),),
+            ListView.builder(
+                scrollDirection: Axis.vertical,
+                shrinkWrap: true,
+                physics: ScrollPhysics(),
+                itemCount: trip.participantUsers.length,
+                itemBuilder: (context, index) {
+                  final User user = trip.participantUsers[index];
+                  return ListTile(
                     contentPadding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
                     leading: Container(
-                      padding: EdgeInsets.only(right: 12.0),
-                      decoration: new BoxDecoration(
-                          border: new Border(
-                              right: new BorderSide(width: 1.0, color: Colors.black))),
-                      child:  Icon(Icons.person, color: Colors.black, size: 30.0),
+                        padding: EdgeInsets.only(right: 12.0),
+                        decoration: new BoxDecoration(
+                            border: new Border(
+                                right: new BorderSide(width: 1.0, color: Colors.black))),
+                        child:  Icon(Icons.person, color: Colors.black, size: 30.0),
                     ),
                     title: Text(
                       user.name,
@@ -209,18 +163,101 @@ class TripDetailsScreen extends StatelessWidget{
                     subtitle: Text( (trip.creatorId == user.id) ? "Organizator" : "Uczestnik",
                       style: TextStyle(color: Colors.black),
                     ),
-                    trailing: Column(
-                        children: <Widget> [
-                          Icon(Icons.arrow_forward_ios, color: Colors.black, size: 30.0),
-                        ]
+                    trailing: Container(
+                      padding: EdgeInsets.only(left: 12.0),
+                      child: Icon(Icons.arrow_forward_ios, color: Colors.black, size: 30.0),
                     ),
-                    onTap: () {},
-                  ),
-                );
+                    onTap: () async {
+                      try{
+                        List<Trip> trips = await tripRepository.getTrips().timeout(const Duration(seconds: 10), onTimeout: () => throw TimeoutException('Wychodzi na to, że nie masz połączenia z internetem, lub nastąpiły chwilowe problemy z serwerem. Sprawdź swoję połaczenie i uruchom aplikacje ponownie.'));;
+                        Navigator.of(context).push(MaterialPageRoute(builder: (_) {
+                          return UserProfileScreen(user: user, favouriteSlope: user.favouriteSlope(trips), tripCreatorNumber: user.calculateCreator(trips), tripsNumber: user.calculateTrips(trips),);
+                        }));
+                      } catch(exception){
+                        Navigator.of(context).pop();
+                        BlocProvider.of<AuthenticationBloc>(context).add(ErrorOccurred(errorMessage: (exception as TimeoutException).message));
+                      }
+                    },
+                  );
+                  }
+                )
+          ]
+        )
+    );
+  }
 
-              }
-          )
-        ]
+  Widget builtParticipantRequestList(Trip trip, BuildContext context){
+    return Padding(
+        padding: EdgeInsets.symmetric(horizontal: 5.0, vertical: 5.0),
+        child:Column(
+            children: <Widget>[
+              Text("Uczestnicy do zatwierdzenia:", textAlign: TextAlign.center, style: TextStyle(fontSize: 24.0),),
+              ListView.builder(
+                  scrollDirection: Axis.vertical,
+                  shrinkWrap: true,
+                  physics: ScrollPhysics(),
+                  itemCount: trip.participantRequestUsers.length,
+                  itemBuilder: (newContext, index) {
+                    final User user = trip.participantRequestUsers[index];
+                    return Dismissible(
+                      key: ValueKey(user),
+                      background: Container(
+                        color: Colors.red,
+                        padding: EdgeInsets.symmetric(horizontal: 20),
+                        alignment: AlignmentDirectional.centerStart,
+                        child: Icon(
+                          Icons.delete,
+                          color: Colors.white,
+                        ),
+                      ),
+                      secondaryBackground: Container(
+                        color: Colors.green,
+                        padding: EdgeInsets.symmetric(horizontal: 20),
+                        alignment: AlignmentDirectional.centerEnd,
+                        child: Icon(
+                          Icons.check_circle,
+                          color: Colors.white,
+                        ),
+                      ),
+                      onDismissed: (direction){},
+                      child: ListTile(
+                        contentPadding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
+                        leading: Container(
+                          padding: EdgeInsets.only(right: 12.0),
+                          decoration: new BoxDecoration(
+                              border: new Border(
+                                  right: new BorderSide(width: 1.0, color: Colors.black))),
+                          child:  Icon(Icons.person, color: Colors.black, size: 30.0),
+                        ),
+                        title: Text(
+                          user.name,
+                          style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+                        ),
+                        subtitle: Text( (trip.creatorId == user.id) ? "Organizator" : "Uczestnik",
+                          style: TextStyle(color: Colors.black),
+                        ),
+                        trailing: Container(
+                            padding: EdgeInsets.only(left: 12.0),
+                            child: Icon(Icons.arrow_forward_ios, color: Colors.black, size: 30.0),
+                        ),
+                        onTap: () async {
+                          try{
+                            List<Trip> trips = await tripRepository.getTrips().timeout(const Duration(seconds: 10), onTimeout: () => throw TimeoutException('Wychodzi na to, że nie masz połączenia z internetem, lub nastąpiły chwilowe problemy z serwerem. Sprawdź swoję połaczenie i uruchom aplikacje ponownie.'));;
+                            Navigator.of(context).push(MaterialPageRoute(builder: (_) {
+                              return UserProfileScreen(user: user, favouriteSlope: user.favouriteSlope(trips), tripCreatorNumber: user.calculateCreator(trips), tripsNumber: user.calculateTrips(trips),);
+                            }));
+                          } catch(exception){
+                            Navigator.of(context).pop();
+                            BlocProvider.of<AuthenticationBloc>(context).add(ErrorOccurred(errorMessage: (exception as TimeoutException).message));
+                          }
+                        },
+                      ),
+                    );
+
+                  }
+              )
+            ]
+        )
     );
   }
 
@@ -268,9 +305,10 @@ class TripDetailsScreen extends StatelessWidget{
                           child: Column(
                             children: <Widget>[
                               _buildCoverImage(screenSize),
-                              _buildItemsContainer(trip),
+                              _buildItemsContainer(trip, context),
                               _buildButton(Icons.cancel, "Odwołaj wyjazd", context, () => {}, Colors.orange),
-                              builtParticipantList(trip),
+                              builtParticipantList(trip, context),
+                              SizedBox(height: 70.0,)
                             ],
                           ),
                         ),
@@ -284,9 +322,9 @@ class TripDetailsScreen extends StatelessWidget{
                           child: Column(
                             children: <Widget>[
                               _buildCoverImage(screenSize),
-                              _buildItemsContainer(trip),
+                              _buildItemsContainer(trip, context),
                               _buildButton(Icons.add, "Dołącz", context, () => {}, Colors.green),
-                              builtParticipantList(trip),
+                              builtParticipantList(trip, context),
                             ],
                           ),
                         ),
@@ -300,9 +338,10 @@ class TripDetailsScreen extends StatelessWidget{
                           child: Column(
                             children: <Widget>[
                               _buildCoverImage(screenSize),
-                              _buildItemsContainer(trip),
+                              _buildItemsContainer(trip, context),
                               _buildButton(Icons.exit_to_app, "Zrezygnuj", context, () => {}, Colors.red),
-                              builtParticipantList(trip),
+                              builtParticipantList(trip, context),
+                              SizedBox(height: 70.0,)
                             ],
                           ),
                         ),
@@ -325,8 +364,8 @@ class TripDetailsScreen extends StatelessWidget{
                           child: Column(
                             children: <Widget>[
                               _buildCoverImage(screenSize),
-                              _buildItemsContainer(trip),
-                              builtParticipantList(trip),
+                              _buildItemsContainer(trip, context),
+                              builtParticipantList(trip, context),
                             ],
                           ),
                         ),
@@ -340,10 +379,11 @@ class TripDetailsScreen extends StatelessWidget{
                           child: Column(
                             children: <Widget>[
                               _buildCoverImage(screenSize),
-                              _buildItemsContainer(trip),
+                              _buildItemsContainer(trip, context),
                               _buildButton(Icons.cancel, "Odwołaj wyjazd", context, () => {}, Colors.orange),
-                              builtParticipantList(trip),
-                              builtParticipantRequestList(trip),
+                              builtParticipantList(trip, context),
+                              builtParticipantRequestList(trip, context),
+                              SizedBox(height: 70.0,)
                             ],
                           ),
                         ),
@@ -357,9 +397,9 @@ class TripDetailsScreen extends StatelessWidget{
                           child: Column(
                             children: <Widget>[
                               _buildCoverImage(screenSize),
-                              _buildItemsContainer(trip),
+                              _buildItemsContainer(trip, context),
                               _buildButton(Icons.access_time, "Oczekiwanie na akceptacje", context, () => {}, Colors.grey),
-                              builtParticipantList(trip),
+                              builtParticipantList(trip, context),
                             ],
                           ),
                         ),
@@ -373,8 +413,8 @@ class TripDetailsScreen extends StatelessWidget{
                           child: Column(
                             children: <Widget>[
                               _buildCoverImage(screenSize),
-                              _buildItemsContainer(trip),
-                              builtParticipantList(trip),
+                              _buildItemsContainer(trip, context),
+                              builtParticipantList(trip, context),
                             ],
                           ),
                         ),
@@ -388,9 +428,9 @@ class TripDetailsScreen extends StatelessWidget{
                           child: Column(
                             children: <Widget>[
                               _buildCoverImage(screenSize),
-                              _buildItemsContainer(trip),
+                              _buildItemsContainer(trip, context),
                               _buildButton(Icons.do_not_disturb, "Brak wolnych miejsc", context, () => {}, Colors.black),
-                              builtParticipantList(trip),
+                              builtParticipantList(trip, context),
                             ],
                           ),
                         ),

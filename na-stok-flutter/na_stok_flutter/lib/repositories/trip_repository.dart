@@ -24,6 +24,7 @@ class TripRepository{
       Trip trip = Trip.fromJson(jsonDecode(response.body));
       await trip.getAddress();
       await trip.getParticipantList(_userRepository);
+      await trip.getParticipantRequestList(_userRepository);
       return trip;
     } else {
       throw Exception('Failed to get trips');

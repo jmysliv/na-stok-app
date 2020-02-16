@@ -17,6 +17,7 @@ class Trip {
   double distance;
   String address;
   List<User> participantUsers = List<User>();
+  List<User> participantRequestUsers = List<User>();
 
   Trip(this.longitude, this.latitude, this.slope, this.participantsRequests, this.prize, this.maxParticipants, this.participants, this.departureDateTime, this.creatorId, this.id);
 
@@ -81,6 +82,16 @@ class Trip {
       participantUsers.add(user);
     }
     this.participantUsers = participantUsers;
+    return participantUsers;
+  }
+
+  Future<List<User>> getParticipantRequestList(UserRepository userRepository) async{
+    List<User> participantUsers = List<User>();
+    for(String participantId in this.participantsRequests){
+      User user = await userRepository.getUserById(participantId);
+      participantUsers.add(user);
+    }
+    this.participantRequestUsers = participantUsers;
     return participantUsers;
   }
 
