@@ -8,6 +8,7 @@ import 'package:na_stok_flutter/models/user_model.dart';
 import 'package:na_stok_flutter/repositories/trip_repository.dart';
 import 'package:na_stok_flutter/repositories/user_repository.dart';
 import 'package:na_stok_flutter/home/home.dart';
+import 'package:na_stok_flutter/screens/chat_screen.dart';
 import 'package:na_stok_flutter/screens/loading_screen.dart';
 import 'package:na_stok_flutter/screens/slope_details_screen.dart';
 import 'package:na_stok_flutter/screens/user_profile_screen.dart';
@@ -276,10 +277,14 @@ class TripDetailsScreen extends StatelessWidget{
     );
   }
 
-  Widget floatingButton(){
+  Widget floatingButton(BuildContext context){
     return FloatingActionButton(
-    child: Icon(Icons.message),
-    onPressed: (){}
+      child: Icon(Icons.message),
+      onPressed: (){
+        Navigator.of(context).push(MaterialPageRoute(builder: (_) {
+        return ChatScreen(tripId: tripId, userRepository: userRepository,);
+      }));
+    }
     );
   }
 
@@ -500,9 +505,9 @@ class TripDetailsScreen extends StatelessWidget{
                 })
               ),
               floatingActionButton:  BlocBuilder<TripDetailsBloc, TripDetailsState>(
-                builder: (context, state) {
+                builder: (newcontext, state) {
                   if(state is ParticipantTrip || state is CreatorFullTrip || state is CreatorTrip){
-                    return floatingButton();
+                    return floatingButton(context);
                   } else return Container();
               }),
           ));

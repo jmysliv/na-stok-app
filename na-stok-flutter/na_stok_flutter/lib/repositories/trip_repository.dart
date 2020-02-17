@@ -32,7 +32,6 @@ class TripRepository{
   }
 
   Future<void> insertTrip(Trip trip) async {
-    print(trip);
     final response = await http.post('$url/trips', body: trip.toJson(), headers: _userRepository.setUpHeaders());
     if (response.statusCode == 201){
       return;

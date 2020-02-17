@@ -63,6 +63,7 @@ io.use((socket, next) => {
     .on("connection", (socket) => {
     console.log("Socket connected: " + socket.id);
     socket.on("disconnect", () => {
+        console.log("Socket disconnected: " + socket.id);
         socketManager.removeSocketUser(socket.id);
     });
 });
