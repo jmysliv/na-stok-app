@@ -98,8 +98,10 @@ class TripDetailsBloc extends Bloc<TripDetailsEvent, TripDetailsState> {
   }
 
   Future<Trip> updateAndGetNewOne(Trip trip) async{
+    print(trip);
     await tripRepository.updateTrip(trip);
     Trip newTrip = await tripRepository.getTrip(trip.id);
+    print(newTrip);
     return newTrip;
   }
 

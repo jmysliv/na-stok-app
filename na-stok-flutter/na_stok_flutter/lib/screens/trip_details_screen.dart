@@ -19,7 +19,6 @@ class TripDetailsScreen extends StatelessWidget{
   final TripRepository tripRepository;
   final Slope slope;
   final String tripId;
-  final _keyScaffold = GlobalKey<ScaffoldState>();
 
   TripDetailsScreen(this.tripRepository, this.userRepository, this.tripId, this.slope);
 
@@ -219,7 +218,23 @@ class TripDetailsScreen extends StatelessWidget{
                           color: Colors.white,
                         ),
                       ),
-                      onDismissed: (direction){},
+                      onDismissed: (direction){
+                        if (direction == DismissDirection.startToEnd) {
+                          if(DateTime.parse(trip.departureDateTime).isAfter(DateTime.now())){
+                            BlocProvider.of<TripDetailsBloc>(context).add(DiscardSbFromTrip(trip, user.id));
+                          }
+                          else{
+                            BlocProvider.of<TripDetailsBloc>(context).add(InitTrip(trip.id));
+                          }
+                        } else {
+                          if(DateTime.parse(trip.departureDateTime).isAfter(DateTime.now())){
+                            BlocProvider.of<TripDetailsBloc>(context).add(AcceptSbToTrip(trip, user.id));
+                          }
+                          else{
+                            BlocProvider.of<TripDetailsBloc>(context).add(InitTrip(trip.id));
+                          }
+                        }
+                      },
                       child: ListTile(
                         contentPadding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
                         leading: Container(
@@ -277,7 +292,6 @@ class TripDetailsScreen extends StatelessWidget{
     return BlocProvider<TripDetailsBloc>(
         create: (context) => TripDetailsBloc(userRepository, tripRepository)..add(InitTrip(tripId)),
         child:Scaffold(
-          key: _keyScaffold,
           appBar: AppBar(
             leading: IconButton(
                 icon: Icon(Icons.arrow_back),
@@ -289,173 +303,209 @@ class TripDetailsScreen extends StatelessWidget{
             ),
             title: Text('Szczegóły wyjazdu'),
           ),
-          body:  BlocBuilder<TripDetailsBloc, TripDetailsState>(
-                builder: (context, state) {
-                  if(state is TripFailure){
-                    Navigator.of(context).pop();
-                    BlocProvider.of<AuthenticationBloc>(context).add(ErrorOccurred(errorMessage:  state.errorMessage));
-                    return Text(state.errorMessage);
-                  } else if(state is InitialTrip) {
-                    return LoadingScreen();
-                  } else if(state is CreatorFullTrip){
-                    Trip trip = state.trip;
-                    return Stack(
-                      children: <Widget>[
-                        SingleChildScrollView(
-                          child: Column(
-                            children: <Widget>[
-                              _buildCoverImage(screenSize),
-                              _buildItemsContainer(trip, context),
-                              _buildButton(Icons.cancel, "Odwołaj wyjazd", context, () => {}, Colors.orange),
-                              builtParticipantList(trip, context),
-                              SizedBox(height: 70.0,)
-                            ],
-                          ),
-                        ),
-                      ],
-                    );
-                  } else if(state is NotParticipantTrip){
-                    Trip trip = state.trip;
-                    return Stack(
-                      children: <Widget>[
-                        SingleChildScrollView(
-                          child: Column(
-                            children: <Widget>[
-                              _buildCoverImage(screenSize),
-                              _buildItemsContainer(trip, context),
-                              _buildButton(Icons.add, "Dołącz", context, () => {}, Colors.green),
-                              builtParticipantList(trip, context),
-                            ],
-                          ),
-                        ),
-                      ],
-                    );
-                  } else if(state is ParticipantTrip){
-                    Trip trip = state.trip;
-                    return Stack(
-                      children: <Widget>[
-                        SingleChildScrollView(
-                          child: Column(
-                            children: <Widget>[
-                              _buildCoverImage(screenSize),
-                              _buildItemsContainer(trip, context),
-                              _buildButton(Icons.exit_to_app, "Zrezygnuj", context, () => {}, Colors.red),
-                              builtParticipantList(trip, context),
-                              SizedBox(height: 70.0,)
-                            ],
-                          ),
-                        ),
-                      ],
-                    );
-                  } else if(state is LoadingTrip){
-                    Trip trip = state.trip;
-                    _keyScaffold.currentState..hideCurrentSnackBar()
-                      ..showSnackBar(
-                          SnackBar(
-                            content: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [Text('Ładowanie'), CircularProgressIndicator()],
+          body: BlocListener<TripDetailsBloc, TripDetailsState>(
+                listener: (context, state) {
+                  if(state is LoadingTrip) {
+                    Scaffold.of(context)..hideCurrentSnackBar()
+                    ..showSnackBar(
+                      SnackBar(
+                        content: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [Text('Ładowanie'), CircularProgressIndicator()],
+                      ),
+                      backgroundColor: Colors.black,
+                      ));
+                    } else{
+                      Scaffold.of(context)..removeCurrentSnackBar();
+                    }
+                  },
+                  child: BlocBuilder<TripDetailsBloc, TripDetailsState>(
+                    builder: (context, state) {
+                      if(state is TripFailure){
+                        Navigator.of(context).pop();
+                        BlocProvider.of<AuthenticationBloc>(context).add(ErrorOccurred(errorMessage:  state.errorMessage));
+                        return Text(state.errorMessage);
+                      } else if(state is InitialTrip) {
+                        return LoadingScreen();
+                      } else if(state is CreatorFullTrip){
+                        Trip trip = state.trip;
+                        return Stack(
+                          children: <Widget>[
+                            SingleChildScrollView(
+                              child: Column(
+                                children: <Widget>[
+                                  _buildCoverImage(screenSize),
+                                  _buildItemsContainer(trip, context),
+                                  _buildButton(Icons.cancel, "Odwołaj wyjazd", context, () {
+                                      if(DateTime.parse(trip.departureDateTime).isAfter(DateTime.now())){
+                                          BlocProvider.of<TripDetailsBloc>(context).add(CancelTrip(trip.id));
+                                    } else {
+                                        BlocProvider.of<TripDetailsBloc>(context).add(InitTrip(trip.id));
+                                    }
+                                  }, Colors.orange),
+                                  builtParticipantList(trip, context),
+                                  SizedBox(height: 70.0,)
+                                ],
+                              ),
                             ),
-                            backgroundColor: Colors.black,
-                          ));
-                    return Stack(
-                      children: <Widget>[
-                        SingleChildScrollView(
-                          child: Column(
+                          ],
+                        );
+                      } else if(state is NotParticipantTrip){
+                        Trip trip = state.trip;
+                        return Stack(
+                          children: <Widget>[
+                            SingleChildScrollView(
+                              child: Column(
+                                children: <Widget>[
+                                  _buildCoverImage(screenSize),
+                                  _buildItemsContainer(trip, context),
+                                  _buildButton(Icons.add, "Dołącz", context, () {
+                                    if(DateTime.parse(trip.departureDateTime).isAfter(DateTime.now())){
+                                      BlocProvider.of<TripDetailsBloc>(context).add(JoinTrip(trip));
+                                    }
+                                    else{
+                                      BlocProvider.of<TripDetailsBloc>(context).add(InitTrip(trip.id));
+                                    }
+                                  }, Colors.green),
+                                  builtParticipantList(trip, context),
+                                ],
+                              ),
+                            ),
+                          ],
+                        );
+                      } else if(state is ParticipantTrip){
+                        Trip trip = state.trip;
+                        return Stack(
+                          children: <Widget>[
+                            SingleChildScrollView(
+                              child: Column(
+                                children: <Widget>[
+                                  _buildCoverImage(screenSize),
+                                  _buildItemsContainer(trip, context),
+                                  _buildButton(Icons.exit_to_app, "Zrezygnuj", context, () {
+                                    if(DateTime.parse(trip.departureDateTime).isAfter(DateTime.now())){
+                                      BlocProvider.of<TripDetailsBloc>(context).add(LeaveTrip(trip));
+                                    }
+                                    else{
+                                      BlocProvider.of<TripDetailsBloc>(context).add(InitTrip(trip.id));
+                                    }
+                                  }, Colors.red),
+                                  builtParticipantList(trip, context),
+                                  SizedBox(height: 70.0,)
+                                ],
+                              ),
+                            ),
+                          ],
+                        );
+                      } else if(state is LoadingTrip){
+                        Trip trip = state.trip;
+                        return Stack(
                             children: <Widget>[
-                              _buildCoverImage(screenSize),
-                              _buildItemsContainer(trip, context),
-                              builtParticipantList(trip, context),
+                              SingleChildScrollView(
+                                child: Column(
+                                  children: <Widget>[
+                                    _buildCoverImage(screenSize),
+                                    _buildItemsContainer(trip, context),
+                                    builtParticipantList(trip, context),
+                                  ],
+                                ),
+                              ),
                             ],
-                          ),
-                        ),
-                      ],
-                    );
-                  } else if(state is CreatorTrip){
-                    Trip trip = state.trip;
-                    return Stack(
-                      children: <Widget>[
-                        SingleChildScrollView(
-                          child: Column(
-                            children: <Widget>[
-                              _buildCoverImage(screenSize),
-                              _buildItemsContainer(trip, context),
-                              _buildButton(Icons.cancel, "Odwołaj wyjazd", context, () => {}, Colors.orange),
-                              builtParticipantList(trip, context),
-                              builtParticipantRequestList(trip, context),
-                              SizedBox(height: 70.0,)
-                            ],
-                          ),
-                        ),
-                      ],
-                    );
-                  } else if(state is AwaitingTrip){
-                    Trip trip = state.trip;
-                    return Stack(
-                      children: <Widget>[
-                        SingleChildScrollView(
-                          child: Column(
-                            children: <Widget>[
-                              _buildCoverImage(screenSize),
-                              _buildItemsContainer(trip, context),
-                              _buildButton(Icons.access_time, "Oczekiwanie na akceptacje", context, () => {}, Colors.grey),
-                              builtParticipantList(trip, context),
-                            ],
-                          ),
-                        ),
-                      ],
-                    );
-                  } else if(state is OldTrip) {
-                    Trip trip = state.trip;
-                    return Stack(
-                      children: <Widget>[
-                        SingleChildScrollView(
-                          child: Column(
-                            children: <Widget>[
-                              _buildCoverImage(screenSize),
-                              _buildItemsContainer(trip, context),
-                              builtParticipantList(trip, context),
-                            ],
-                          ),
-                        ),
-                      ],
-                    );
-                  } else if(state is NotEnoughPlaceTrip){
-                    Trip trip = state.trip;
-                    return Stack(
-                      children: <Widget>[
-                        SingleChildScrollView(
-                          child: Column(
-                            children: <Widget>[
-                              _buildCoverImage(screenSize),
-                              _buildItemsContainer(trip, context),
-                              _buildButton(Icons.do_not_disturb, "Brak wolnych miejsc", context, () => {}, Colors.black),
-                              builtParticipantList(trip, context),
-                            ],
-                          ),
-                        ),
-                      ],
-                    );
-                  } else {
-                    return Container(
-                      child: Center(
-                          child: Column(
-                            children: <Widget>[
-                              Text("Ups, wygląda na to, że wyjazd został usunięty, lub nastąpił niespotykany problem.")
-                            ],
-                          ),
-                        ),
-                    );
-                  }
+                          );
+                      } else if(state is CreatorTrip){
+                        Trip trip = state.trip;
+                        return Stack(
+                          children: <Widget>[
+                            SingleChildScrollView(
+                              child: Column(
+                                children: <Widget>[
+                                  _buildCoverImage(screenSize),
+                                  _buildItemsContainer(trip, context),
+                                  _buildButton(Icons.cancel, "Odwołaj wyjazd", context, ()  {
+                                    if(DateTime.parse(trip.departureDateTime).isAfter(DateTime.now())){
+                                      BlocProvider.of<TripDetailsBloc>(context).add(CancelTrip(trip.id));
+                                    }
+                                    else{
+                                      BlocProvider.of<TripDetailsBloc>(context).add(InitTrip(trip.id));
+                                    }
+                                  }, Colors.orange),
+                                  builtParticipantList(trip, context),
+                                  builtParticipantRequestList(trip, context),
+                                  SizedBox(height: 70.0,)
+                                ],
+                              ),
+                            ),
+                          ],
+                        );
+                      } else if(state is AwaitingTrip){
+                        Trip trip = state.trip;
+                        return Stack(
+                          children: <Widget>[
+                            SingleChildScrollView(
+                              child: Column(
+                                children: <Widget>[
+                                  _buildCoverImage(screenSize),
+                                  _buildItemsContainer(trip, context),
+                                  _buildButton(Icons.access_time, "Oczekiwanie na akceptacje", context, () => {}, Colors.grey),
+                                  builtParticipantList(trip, context),
+                                ],
+                              ),
+                            ),
+                          ],
+                        );
+                      } else if(state is OldTrip) {
+                        Trip trip = state.trip;
+                        return Stack(
+                          children: <Widget>[
+                            SingleChildScrollView(
+                              child: Column(
+                                children: <Widget>[
+                                  _buildCoverImage(screenSize),
+                                  _buildItemsContainer(trip, context),
+                                  builtParticipantList(trip, context),
+                                ],
+                              ),
+                            ),
+                          ],
+                        );
+                      } else if(state is NotEnoughPlaceTrip){
+                        Trip trip = state.trip;
+                        return Stack(
+                          children: <Widget>[
+                            SingleChildScrollView(
+                              child: Column(
+                                children: <Widget>[
+                                  _buildCoverImage(screenSize),
+                                  _buildItemsContainer(trip, context),
+                                  _buildButton(Icons.do_not_disturb, "Brak wolnych miejsc", context, () => {}, Colors.black),
+                                  builtParticipantList(trip, context),
+                                ],
+                              ),
+                            ),
+                          ],
+                        );
+                      } else {
+                        return Container(
+                          child: Center(
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: <Widget>[
+                                  Text("Ups, wygląda na to, że wyjazd został usunięty, lub nastąpił niespotykany problem.")
+                                ],
+                              ),
+                            ),
+                        );
+                      }
 
-            }),
-          floatingActionButton:  BlocBuilder<TripDetailsBloc, TripDetailsState>(
-            builder: (context, state) {
-              if(state is ParticipantTrip || state is CreatorFullTrip || state is CreatorTrip){
-                return floatingButton();
-              } else return Container();
-          })
-      ));
+                })
+              ),
+              floatingActionButton:  BlocBuilder<TripDetailsBloc, TripDetailsState>(
+                builder: (context, state) {
+                  if(state is ParticipantTrip || state is CreatorFullTrip || state is CreatorTrip){
+                    return floatingButton();
+                  } else return Container();
+              }),
+          ));
   }
 
 

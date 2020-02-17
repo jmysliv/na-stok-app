@@ -31,7 +31,7 @@ class Trip {
         latitude = json['latitude'],
         longitude = json['longitude'],
         participants = (json['participants'] == null) ? [] : new List<String>.from(json['participants']),
-        participantsRequests = (json['participantsRequests'] == null) ? [] : new List<String>.from(json['participantsRequests']),
+        participantsRequests = (json['participantsRequest'] == null) ? [] : new List<String>.from(json['participantsRequest']),
         distance = 0,
         address = "unsetted";
 
@@ -43,7 +43,7 @@ class Trip {
         "maxParticipants": maxParticipants,
         "prize": prize,
         "participants": participants,
-        "participantsRequests": participantsRequests,
+        "participantsRequest": participantsRequests,
         "slope": "$slope",
         "latitude": latitude,
         "longitude": longitude
