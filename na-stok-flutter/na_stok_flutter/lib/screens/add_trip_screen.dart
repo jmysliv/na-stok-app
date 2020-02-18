@@ -156,7 +156,7 @@ class AddState extends State<AddTripScreen>{
                         currentDate = date.toIso8601String().substring(0, 10);
                         setState(() {
                         });
-                      }, currentTime: DateTime.now(), locale: LocaleType.en);
+                      }, currentTime: DateTime.now(), locale: LocaleType.pl);
                 }, context, " $currentDate", Icons.date_range),
                 SizedBox(
                   height: 20.0,
@@ -169,7 +169,7 @@ class AddState extends State<AddTripScreen>{
                       showTitleActions: true, onConfirm: (time) {
                         currentTime = time.toIso8601String().substring(11, 19);
                         setState(() {});
-                      }, currentTime: DateTime.now(), locale: LocaleType.en);
+                      }, currentTime: DateTime.now(), locale: LocaleType.pl);
                   setState(() {});
                 }, context, " $currentTime", Icons.access_time),
                 SizedBox(

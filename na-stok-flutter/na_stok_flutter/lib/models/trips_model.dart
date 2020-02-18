@@ -49,8 +49,7 @@ class Trip {
         "longitude": longitude
       });
 
-  Future<double> calculateDistance() async {
-    Position position = await Geolocator().getCurrentPosition(desiredAccuracy: LocationAccuracy.high);
+  Future<double> calculateDistance(Position position) async {
     double distanceInMeters = await Geolocator().distanceBetween(position.latitude, position.longitude, latitude, longitude);
     this.distance = distanceInMeters.roundToDouble()/1000;
     return distanceInMeters.roundToDouble()/1000;

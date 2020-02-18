@@ -128,7 +128,7 @@ class TripsScreen extends StatelessWidget{
                                       Expanded(
                                           flex: 3,
                                           child: Container(
-                                            child: new LinearPercentIndicator(
+                                            child: (DateTime.parse(trip.departureDateTime).isAfter(DateTime.now())) ? new LinearPercentIndicator(
                                               backgroundColor: Colors.green,
                                               width: 111.0,
                                               lineHeight: 20.0,
@@ -136,13 +136,13 @@ class TripsScreen extends StatelessWidget{
                                               center: Text("${trip.distance}km", style: TextStyle(fontSize: 14.0),),
                                               linearStrokeCap: LinearStrokeCap.butt,
                                               progressColor: Colors.red,
-                                            ),
+                                            ) : Container(),
                                           )),
                                     ],
                                   ),
                                   trailing: Column(
                                       children: <Widget> [
-                                        Text("${trip.prize}	zł", style: TextStyle(color: Colors.white, fontSize: 15.0)),
+                                        Text("${trip.prize}", style: TextStyle(color: Colors.white, fontSize: 15.0)),
                                         Icon(Icons.attach_money, color: Colors.white, size: 30.0),
                                       ]
                                   ),

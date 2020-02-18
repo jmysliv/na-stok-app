@@ -33,4 +33,8 @@ class Message{
   ChatMessage parseToChatMessage(){
     return ChatMessage(id: id, text: this.content, user: ChatUser(name: authorName, uid: authorId), createdAt: DateTime.parse(dateTime));
   }
+
+  String toString(){
+    return "authorId: $authorId, authorName: $authorName, content: $content, dateTime: $dateTime, tripId: $tripId";
+  }
 }

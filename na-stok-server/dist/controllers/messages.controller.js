@@ -36,7 +36,7 @@ exports.postMessage = (req, res) => {
                     return flag;
                 });
                 socketUsers.forEach((socketUser) => {
-                    io.to(`${socketUser.socketId}`).emit("message", req.body);
+                    io.to(`${socketUser.socketId}`).emit("message", result);
                 });
                 res.status(201).send();
             });

@@ -1,4 +1,3 @@
-import 'dart:convert';
 import 'package:dash_chat/dash_chat.dart';
 import 'package:flutter/material.dart';
 import 'package:socket_io_client/socket_io_client.dart' as IO;
@@ -7,6 +6,8 @@ import 'package:na_stok_flutter/models/user_model.dart';
 import 'package:na_stok_flutter/repositories/message_repository.dart';
 import 'package:na_stok_flutter/repositories/user_repository.dart';
 import 'package:na_stok_flutter/screens/loading_screen.dart';
+import 'package:intl/intl.dart';
+import 'package:intl/date_symbol_data_local.dart';
 
 class ChatScreen extends StatefulWidget{
   final String tripId;
@@ -48,7 +49,6 @@ class ChatScreenState extends State<ChatScreen>{
       });
       socket.connect();
     });
-
     super.initState();
   }
 
@@ -96,9 +96,17 @@ class ChatScreenState extends State<ChatScreen>{
                 child: Text(chatUser.name, style: TextStyle( fontFamily: 'Roboto', color: Colors.black, fontSize: 13.0, fontWeight: FontWeight.bold,), overflow: TextOverflow.ellipsis,),
               );
             },
+            dateFormat: initializeDate(),
+            timeFormat: DateFormat.Hm(),
           )
       );
     }
+
+  }
+
+  DateFormat initializeDate(){
+    initializeDateFormatting('pl', null);
+    return DateFormat.yMMMMEEEEd('pl');
 
   }
 }

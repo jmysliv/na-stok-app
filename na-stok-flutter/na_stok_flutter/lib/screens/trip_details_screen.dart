@@ -87,7 +87,7 @@ class TripDetailsScreen extends StatelessWidget{
                 thickness: 1.0,
                 indent: 8.0,
                 endIndent: 8.0,),
-              _buildItem("Z kąd:", "${trip.address}", Icons.place, () => {}),
+              _buildItem("Skąd wyjazd:", "${trip.address}", Icons.place, () => {}),
               Divider(color: Colors.black54,
                 thickness: 1.0,
                 indent: 8.0,
@@ -192,6 +192,7 @@ class TripDetailsScreen extends StatelessWidget{
         child:Column(
             children: <Widget>[
               Text("Uczestnicy do zatwierdzenia:", textAlign: TextAlign.center, style: TextStyle(fontSize: 24.0),),
+              Text("Przesuń by zatwierdzić", textAlign: TextAlign.center, style: TextStyle(fontSize: 14.0, color: Colors.grey),),
               ListView.builder(
                   scrollDirection: Axis.vertical,
                   shrinkWrap: true,
