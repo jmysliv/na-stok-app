@@ -31,6 +31,7 @@ dependencies:
   numberpicker: ^1.1.0
   socket_io_client: ^0.9.7+2
   dash_chat: ^1.0.15
+  shared_preferences: ^0.5.6+2
   flutter:
     sdk: flutter
   # The following adds the Cupertino Icons font to your application.

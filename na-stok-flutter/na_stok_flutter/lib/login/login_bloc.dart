@@ -27,10 +27,6 @@ class LoginBloc extends Bloc<LoginEvent, LoginState>{
           if(exception is TimeoutException) yield LoginState.timeout();
           else yield LoginState.failure();
         }
-    } else if (event is EmailTouched) {
-      yield state.update(true, state.passwordTouched);
-    } else if (event is PasswordTouched) {
-      yield state.update(state.emailTouched, true);
     }
   }
 

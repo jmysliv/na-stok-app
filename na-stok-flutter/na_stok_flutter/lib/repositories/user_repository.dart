@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:http/http.dart' as http;
 import 'package:na_stok_flutter/models/user_model.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class UserRepository{
   String token;
@@ -23,6 +24,8 @@ class UserRepository{
     final response = await http.post('$url/auth', body: userToAuth.toJson(), headers: setUpHeaders());
     if (response.statusCode == 201){
       this.token = jsonDecode(response.body)['accessToken'];
+      final SharedPreferences prefs = await SharedPreferences.getInstance();
+      prefs.setString("token", this.token);
     } else {
       // If that response was not OK, throw an error.
 
@@ -42,10 +45,14 @@ class UserRepository{
   }
 
   Future<void> signOut() async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.setString("token", null);
     this.token = null;
   }
 
   Future<bool> isSignedIn() async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    this.token = prefs.getString('token');
     return this.token != null;
   }
 

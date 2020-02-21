@@ -5,15 +5,10 @@ import { config } from "./env.config";
 
 export const login = (req: Request, res: Response) => {
     try {
-        const refreshId = req.user._id + config.jwt_secret;
-        const salt = crypto.randomBytes(16).toString("base64");
-        const hash = crypto.createHmac("sha512", salt).update(refreshId).digest("base64");
-        req.body.refreshKey = salt;
-        const token = jwt.sign(JSON.stringify(req.user), config.jwt_secret);
-        const b = new Buffer(hash);
-        const refresToken = b.toString("base64");
-        res.status(201).send({accessToken: token, refreshToken: refresToken});
+        const token = jwt.sign(JSON.parse(JSON.stringify(req.user)), config.jwt_secret, {expiresIn: 86400});
+        res.status(201).send({accessToken: token});
     } catch (err) {
+        console.log(err);
         res.status(500).send({errors: err});
     }
 };

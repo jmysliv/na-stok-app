@@ -19,13 +19,7 @@ class RegisterBloc extends Bloc<RegisterEvent, RegisterState>{
   Stream<RegisterState> mapEventToState(
       RegisterEvent event,
       ) async* {
-    if (event is emailTouched) {
-      yield state.update(true, state.passwordTouched, state.nameTouched);
-    } else if (event is passwordTouched) {
-      yield state.update(state.emailTouched, true, state.nameTouched);
-    } else if (event is nameTouched) {
-      yield state.update(state.emailTouched, state.passwordTouched, true);
-    }else if (event is Submitted){
+   if (event is Submitted){
       yield RegisterState.loading();
       try {
         await _userRepository.signUp(

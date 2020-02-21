@@ -64,9 +64,7 @@ class RegisterScreen extends StatelessWidget {
                       ));
               }
             },
-            child: BlocBuilder<RegisterBloc, RegisterState>(
-              builder: (context, state) {
-                return Center(
+            child: Center(
                   child: Container(
                     child: Padding(
                       padding: const EdgeInsets.all(36.0),
@@ -80,10 +78,6 @@ class RegisterScreen extends StatelessWidget {
                             SizedBox(height: 45.0),
                               TextFormField(
                                 controller: _nameController,
-                                onChanged: (text){
-                                  BlocProvider.of<RegisterBloc>(context).add(nameTouched());
-                                },
-                                autovalidate: true,
                                 obscureText: false,
                                 style: TextStyle(fontFamily: 'Montserrat', fontSize: 20.0),
                                 decoration: InputDecoration(
@@ -92,7 +86,6 @@ class RegisterScreen extends StatelessWidget {
                                     border:
                                     OutlineInputBorder(borderRadius: BorderRadius.circular(32.0))),
                                 validator: (value){
-                                  if(state.nameTouched == false) return null;
                                   if(value.isEmpty) {
                                     return "Pole nie może być puste";
                                   }
@@ -102,10 +95,6 @@ class RegisterScreen extends StatelessWidget {
                               SizedBox(height: 25.0),
                             TextFormField(
                               controller: _emailController,
-                              onChanged: (text){
-                                BlocProvider.of<RegisterBloc>(context).add(emailTouched());
-                              },
-                              autovalidate: true,
                               obscureText: false,
                               style: TextStyle(fontFamily: 'Montserrat', fontSize: 20.0),
                               decoration: InputDecoration(
@@ -114,7 +103,6 @@ class RegisterScreen extends StatelessWidget {
                                 border:
                                 OutlineInputBorder(borderRadius: BorderRadius.circular(32.0))),
                               validator: (value){
-                                if(state.emailTouched == false) return null;
                                 if(value.isEmpty) {
                                   return "Pole nie może być puste";
                                 }
@@ -127,11 +115,7 @@ class RegisterScreen extends StatelessWidget {
                             SizedBox(height: 25.0),
                             TextFormField(
                               controller: _passwordController,
-                              onChanged: (text){
-                                BlocProvider.of<RegisterBloc>(context).add(passwordTouched());
-                              },
                               obscureText: true,
-                              autovalidate: true,
                               style: TextStyle(fontFamily: 'Montserrat', fontSize: 20.0),
                               decoration: InputDecoration(
                                 contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
@@ -139,7 +123,6 @@ class RegisterScreen extends StatelessWidget {
                                 border:
                                 OutlineInputBorder(borderRadius: BorderRadius.circular(32.0))),
                               validator: (value){
-                                if(state.passwordTouched == false) return null;
                               if(value.isEmpty) {
                                 return "Pole nie może być puste";
                               }
@@ -158,10 +141,7 @@ class RegisterScreen extends StatelessWidget {
                                 minWidth: MediaQuery.of(context).size.width,
                                 padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
                                 onPressed: () async {
-                                  BlocProvider.of<RegisterBloc>(context).add(nameTouched());
-                                  BlocProvider.of<RegisterBloc>(context).add(emailTouched());
-                                  BlocProvider.of<RegisterBloc>(context).add(passwordTouched());
-                                  if(state.emailTouched && state.passwordTouched && state.nameTouched &&_formKey.currentState.validate()){
+                                  if(_formKey.currentState.validate()){
                                     BlocProvider.of<RegisterBloc>(context).add(Submitted(email: this._emailController.text, password: this._passwordController.text, name: _nameController.text));
                                   }
                                 },
@@ -178,7 +158,6 @@ class RegisterScreen extends StatelessWidget {
                       ),
                     ),
                    ),
-                  );}
                 ),
             ),
           ),

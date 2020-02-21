@@ -54,9 +54,7 @@ class LoginScreen extends StatelessWidget{
                   ));
             }
           },
-        child: BlocBuilder<LoginBloc, LoginState>(
-          builder: (context, state) {
-            return Center(
+        child: Center(
               child: Container(
                 child: Padding(
                   padding: const EdgeInsets.all(36.0),
@@ -77,10 +75,6 @@ class LoginScreen extends StatelessWidget{
                           SizedBox(height: 45.0),
                           TextFormField(
                             controller: _emailController,
-                            onChanged: (text) {
-                              BlocProvider.of<LoginBloc>(context).add(EmailTouched());
-                            },
-                            autovalidate: true,
                             obscureText: false,
                             style: TextStyle(
                                 fontFamily: 'Montserrat', fontSize: 20.0),
@@ -92,7 +86,6 @@ class LoginScreen extends StatelessWidget{
                                 OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(32.0))),
                             validator: (value) {
-                              if (state.emailTouched == false) return null;
                               if (value.isEmpty) {
                                 return "Pole nie może być puste";
                               }
@@ -107,10 +100,6 @@ class LoginScreen extends StatelessWidget{
                           SizedBox(height: 25.0),
                           TextFormField(
                             controller: _passwordController,
-                            onChanged: (text) {
-                              BlocProvider.of<LoginBloc>(context).add(PasswordTouched());
-                            },
-                            autovalidate: true,
                             obscureText: true,
                             style: TextStyle(
                                 fontFamily: 'Montserrat', fontSize: 20.0),
@@ -122,7 +111,6 @@ class LoginScreen extends StatelessWidget{
                                 OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(32.0))),
                             validator: (value) {
-                              if (state.passwordTouched == false) return null;
                               if (value.isEmpty) {
                                 return "Pole nie może być puste";
                               }
@@ -142,11 +130,7 @@ class LoginScreen extends StatelessWidget{
                               padding: EdgeInsets.fromLTRB(
                                   20.0, 15.0, 20.0, 15.0),
                               onPressed: () {
-                                BlocProvider.of<LoginBloc>(context).add(EmailTouched());
-                                BlocProvider.of<LoginBloc>(context).add(PasswordTouched());
-                                if (state.emailTouched &&
-                                    state.passwordTouched &&
-                                    _formKey.currentState.validate()) {
+                                if (_formKey.currentState.validate()) {
                                   BlocProvider.of<LoginBloc>(context).add(
                                       LoginButtonPressed(
                                           email: this._emailController.text,
@@ -202,8 +186,7 @@ class LoginScreen extends StatelessWidget{
                   ),
                 ),
               ),
-            );
-          }),
+            )
       ),
     );
   }

@@ -8,12 +8,6 @@ abstract class RegisterEvent extends Equatable{
   List<Object> get props => [];
 }
 
-class emailTouched extends RegisterEvent{}
-
-class passwordTouched extends RegisterEvent{}
-
-class nameTouched extends RegisterEvent{}
-
 class Submitted extends RegisterEvent {
   final String email;
   final String password;
