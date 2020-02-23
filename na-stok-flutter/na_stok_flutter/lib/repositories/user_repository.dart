@@ -6,7 +6,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 class UserRepository{
   String token;
-  static const url = "http://192.168.43.53:3000";
+  static const url = "http://46.101.198.229:3000";
   UserRepository(){
     this.token = null;
   }

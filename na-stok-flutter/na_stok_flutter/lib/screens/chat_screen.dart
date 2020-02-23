@@ -38,7 +38,7 @@ class ChatScreenState extends State<ChatScreen>{
   @override
   void initState() {
     init();
-    socket = IO.io('http://192.168.43.53:3000/?token=${userRepository.token}', <String, dynamic>{
+    socket = IO.io('http://46.101.198.229:3000/?token=${userRepository.token}', <String, dynamic>{
       'transports': ['websocket'],
     });
     socket.on('message', (jsonData) {

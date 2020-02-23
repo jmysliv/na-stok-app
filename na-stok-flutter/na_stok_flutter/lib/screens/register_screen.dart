@@ -18,12 +18,12 @@ class RegisterScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
+    return BlocProvider<RegisterBloc>(
+      create: (context) => RegisterBloc(userRepository: _userRepository),
+      child:  Scaffold(
+        appBar: AppBar(
           title: Text('Załóż konto')),
-      body: Center(
-        child: BlocProvider<RegisterBloc>(
-          create: (context) => RegisterBloc(userRepository: _userRepository),
+        body: Center(
           child: BlocListener<RegisterBloc, RegisterState>(
             listener: (context, state) {
               if(state.isLoading && state.isFailure){
@@ -64,7 +64,9 @@ class RegisterScreen extends StatelessWidget {
                       ));
               }
             },
-            child: Center(
+            child: BlocBuilder<RegisterBloc, RegisterState>(
+                builder: (context, state){
+                return Center(
                   child: Container(
                     child: Padding(
                       padding: const EdgeInsets.all(36.0),
@@ -158,7 +160,8 @@ class RegisterScreen extends StatelessWidget {
                       ),
                     ),
                    ),
-                ),
+                );
+              }),
             ),
           ),
         ),

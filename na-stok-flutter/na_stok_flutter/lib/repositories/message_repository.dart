@@ -4,7 +4,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 class MessageRepository{
-  static const url = "http://192.168.43.53:3000";
+  static const url = "http://46.101.198.229:3000";
   UserRepository _userRepository;
   MessageRepository(this._userRepository);
 
