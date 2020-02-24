@@ -26,7 +26,7 @@ class LoginScreen extends StatelessWidget{
             }
             else if (state.isFailure) {
               Scaffold.of(context)
-              ..hideCurrentSnackBar()
+              ..removeCurrentSnackBar()
               ..showSnackBar(
                 SnackBar(
                   content: Row(
@@ -42,7 +42,7 @@ class LoginScreen extends StatelessWidget{
             }
             else if(state.isLoading){
               Scaffold.of(context)
-                ..hideCurrentSnackBar()
+                ..removeCurrentSnackBar()
                 ..showSnackBar(
                   SnackBar(
                     content: Row(

@@ -32,6 +32,7 @@ class AddState extends State<AddTripScreen>{
   int price;
   String address;
   TextEditingController _addressController = TextEditingController();
+  TextEditingController _moneyController = TextEditingController();
   final _keyScaffold = GlobalKey<ScaffoldState>();
 
 
@@ -133,8 +134,10 @@ class AddState extends State<AddTripScreen>{
                       theme: DatePickerTheme(
                         containerHeight: 210.0,
                       ),
-                      showTitleActions: true, onConfirm: (time) {
-                        currentTime = time.toIso8601String().substring(11, 19);
+                      showTitleActions: true,
+                      showSecondsColumn: false,
+                      onConfirm: (time) {
+                        currentTime = time.toIso8601String().substring(11, 19).replaceRange(6, 8, "00");
                         setState(() {});
                       }, currentTime: DateTime.now(), locale: LocaleType.pl);
                   setState(() {});
@@ -145,12 +148,18 @@ class AddState extends State<AddTripScreen>{
                 createPicker(() {
                   showDialog<int>(
                       context: context,
-                      builder: (BuildContext context) {
+                      builder: (BuildContext newContext) {
                         return NumberPickerDialog.integer(
                           minValue: 1,
                           maxValue: 50,
                           title: new Text("Wybierz maksymalną liczbę uczestników wyjazdu"),
                           initialIntegerValue: maxParticipants,
+                          cancelWidget:  FlatButton(
+                            child: new Text('Anuluj'),
+                            onPressed: () {
+                              Navigator.of(newContext).pop();
+                            },
+                          ),
                         );
                       }
                   ).then((int value) {
@@ -162,23 +171,7 @@ class AddState extends State<AddTripScreen>{
                 SizedBox(
                   height: 20.0,
                 ),
-                createPicker(() {
-                  showDialog<int>(
-                      context: context,
-                      builder: (BuildContext context) {
-                        return NumberPickerDialog.integer(
-                          minValue: 0,
-                          maxValue: 1000,
-                          title: new Text("Wybierz cenę, za którą weźmiesz inne osoby na wyjazd"),
-                          initialIntegerValue: price,
-                        );
-                      }
-                  ).then((int value) {
-                    if (value != null) {
-                      setState(() => price = value);
-                    }
-                  });
-                }, context, " $price", Icons.attach_money),
+                createPicker( () => showMoneyPicker(context), context, " $price", Icons.attach_money),
                 SizedBox(
                   height: 20.0,
                 ),
@@ -186,70 +179,86 @@ class AddState extends State<AddTripScreen>{
                 SizedBox(
                   height: 20.0,
                 ),
+                Material(
+                  elevation: 5.0,
+                  borderRadius: BorderRadius.circular(30.0),
+                  color: Colors.indigo,
+                  child: MaterialButton(
+                    minWidth: MediaQuery
+                        .of(context)
+                        .size
+                        .width,
+                    padding: EdgeInsets.fromLTRB(
+                        20.0, 15.0, 20.0, 15.0),
+                    onPressed: () async {
+                      if(currentTime == "Ustaw czas wyjazdu" || currentDate == "Ustaw datę wyjazdu") {
+                        _keyScaffold.currentState
+                          ..hideCurrentSnackBar()
+                          ..showSnackBar(
+                            SnackBar(
+                              content: Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [Text('Ustal date i godzinę wyjazdu'), Icon(Icons.error)],
+                              ),
+                              backgroundColor: Colors.red,
+                            ),
+                          );
+                        return;
+                      }
+                      try{
+                        _keyScaffold.currentState..hideCurrentSnackBar()
+                          ..showSnackBar(
+                              SnackBar(
+                                content: Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  children: [Text('Ładowanie'), CircularProgressIndicator()],
+                                ),
+                                backgroundColor: Colors.black,
+                              ));
+                        List<Placemark> placemark = await Geolocator().placemarkFromAddress(address).timeout(const Duration(seconds: 5), onTimeout: () => throw TimeoutException("Wprowadź poprawny adres"));
+                        Trip trip = Trip(placemark[0].position.longitude, placemark[0].position.latitude, slope.name, new List<String>(), price, maxParticipants, new List<String>(), DateTime.parse("${currentDate} ${currentTime}").add(Duration(hours: 1)).toIso8601String(), (await userRepository.getUser()).id, "id");
+                        tripRepository.insertTrip(trip).timeout(const Duration(seconds: 10), onTimeout: () => throw TimeoutException('Wychodzi na to, że nie masz połączenia z internetem, lub nastąpiły chwilowe problemy z serwerem. Sprawdź swoję połaczenie i uruchom aplikacje ponownie.')).then((value) {
+                          _keyScaffold.currentState..removeCurrentSnackBar()..showSnackBar(
+                              SnackBar(
+                                content: Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  children: [Text('Dodano wyjazd'), Icon(Icons.check)],
+                                ),
+                                backgroundColor: Colors.green,
+                                duration: Duration(seconds: 1),
+                              )).closed.then( (reason) =>  Navigator.of(context).pop());
+                        } );
+                      } catch(exception){
+                        if((exception is TimeoutException && exception.message == "Wprowadź poprawny adres") || exception is PlatformException){
+                          _keyScaffold.currentState..hideCurrentSnackBar()..showSnackBar(
+                            SnackBar(
+                              content: Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [Text("Wprowadź poprawny adres"), Icon(Icons.error)],
+                              ),
+                              backgroundColor: Colors.red,
+                            ),
+                          );
+                        } else {
+                          Navigator.of(context).pop();
+                          Navigator.of(context).pop();
+                          if(exception is TimeoutException) BlocProvider.of<AuthenticationBloc>(context).add(ErrorOccurred(errorMessage: exception.message));
+                          else  BlocProvider.of<AuthenticationBloc>(context).add(ErrorOccurred(errorMessage: exception.toString()));
+                        }
+                      }
+                    },
+                    child: Text("Stwórz wyjazd",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                            fontFamily: 'Montserrat', fontSize: 20.0)
+                            .copyWith(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold)),
+                  ),
+                ),
               ],
             ),
           )),
-      ),
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
-        onPressed: () async {
-          if(currentTime == "Ustaw czas wyjazdu" || currentDate == "Ustaw datę wyjazdu") {
-            _keyScaffold.currentState
-              ..hideCurrentSnackBar()
-              ..showSnackBar(
-                SnackBar(
-                  content: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [Text('Ustal date i godzinę wyjazdu'), Icon(Icons.error)],
-                  ),
-                  backgroundColor: Colors.red,
-                ),
-              );
-            return;
-          }
-          try{
-            _keyScaffold.currentState..hideCurrentSnackBar()
-              ..showSnackBar(
-                  SnackBar(
-                    content: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [Text('Ładowanie'), CircularProgressIndicator()],
-                    ),
-                    backgroundColor: Colors.black,
-                  ));
-            List<Placemark> placemark = await Geolocator().placemarkFromAddress(address).timeout(const Duration(seconds: 5), onTimeout: () => throw TimeoutException("Wprowadź poprawny adres"));
-            Trip trip = Trip(placemark[0].position.longitude, placemark[0].position.latitude, slope.name, new List<String>(), price, maxParticipants, new List<String>(), DateTime.parse("${currentDate} ${currentTime}").add(Duration(hours: 1)).toIso8601String(), (await userRepository.getUser()).id, "id");
-            tripRepository.insertTrip(trip).timeout(const Duration(seconds: 10), onTimeout: () => throw TimeoutException('Wychodzi na to, że nie masz połączenia z internetem, lub nastąpiły chwilowe problemy z serwerem. Sprawdź swoję połaczenie i uruchom aplikacje ponownie.')).then((value) {
-              _keyScaffold.currentState..removeCurrentSnackBar()..showSnackBar(
-                    SnackBar(
-                      content: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [Text('Dodano wyjazd'), Icon(Icons.check)],
-                      ),
-                      backgroundColor: Colors.green,
-                      duration: Duration(seconds: 1),
-                    )).closed.then( (reason) =>  Navigator.of(context).pop());
-            } );
-          } catch(exception){
-            if((exception is TimeoutException && exception.message == "Wprowadź poprawny adres") || exception is PlatformException){
-              _keyScaffold.currentState..hideCurrentSnackBar()..showSnackBar(
-                  SnackBar(
-                    content: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [Text("Wprowadź poprawny adres"), Icon(Icons.error)],
-                    ),
-                    backgroundColor: Colors.red,
-                  ),
-                );
-            } else {
-              Navigator.of(context).pop();
-              Navigator.of(context).pop();
-              if(exception is TimeoutException) BlocProvider.of<AuthenticationBloc>(context).add(ErrorOccurred(errorMessage: exception.message));
-              else  BlocProvider.of<AuthenticationBloc>(context).add(ErrorOccurred(errorMessage: exception.toString()));
-            }
-          }
-
-        },
       ),
     );
   }
@@ -265,8 +274,85 @@ class AddState extends State<AddTripScreen>{
               decoration: InputDecoration(hintText: "Adres"),
             ),
             actions: <Widget>[
+              Row(
+                children: <Widget>[
+                  Center(
+                    child: FlatButton(
+                      child: new Text('Użyj obecnej lokalizacji'),
+                      onPressed: () async {
+                        try{
+                          _keyScaffold.currentState..hideCurrentSnackBar()
+                            ..showSnackBar(
+                                SnackBar(
+                                  content: Row(
+                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                    children: [Text('Ładowanie'), CircularProgressIndicator()],
+                                  ),
+                                  backgroundColor: Colors.black,
+                                ));
+                          Navigator.of(newContext).pop();
+                          Position position = await Geolocator().getCurrentPosition(desiredAccuracy: LocationAccuracy.high).timeout(const Duration(seconds: 5), onTimeout: () => throw TimeoutException("Żeby aplikacja działała poprawnie, proszę włączyć lokalizację w swoim telefonie, zezwolić aplikacji na dostęp do niej i uruchomić ponownie."));
+                          List<Placemark> placemark = await Geolocator().placemarkFromCoordinates(position.latitude, position.longitude).timeout(const Duration(seconds: 5), onTimeout: () => throw TimeoutException("Żeby aplikacja działała poprawnie, proszę włączyć lokalizację w swoim telefonie, zezwolić aplikacji na dostęp do niej i uruchomić ponownie."));
+                          Placemark placeMark  = placemark[0];
+                          String street = placeMark.thoroughfare;
+                          String number = placeMark.subThoroughfare;
+                          String locality = placeMark.locality;
+                          String subLocality = placeMark.subLocality;
+                          String postalCode = placeMark.postalCode;
+                          address = "$street $number, ${subLocality}, ${locality}, ${postalCode}";
+                          _keyScaffold.currentState..hideCurrentSnackBar();
+                          setState(() {});
+                        }catch(exception){
+                          Navigator.of(context).pop();
+                          Navigator.of(context).pop();
+                          if(exception is TimeoutException) BlocProvider.of<AuthenticationBloc>(context).add(ErrorOccurred(errorMessage: exception.message));
+                          else  BlocProvider.of<AuthenticationBloc>(context).add(ErrorOccurred(errorMessage: exception.toString()));
+                        }
+                      },
+                    )
+                  )
+                ],
+              ),
+              Row(
+                children: <Widget>[
+                  Center(
+                    child: FlatButton(
+                      child: new Text('Anuluj'),
+                      onPressed: () {
+                        Navigator.of(newContext).pop();
+                      },
+                    )
+                  ),
+                  Center(
+                    child: FlatButton(
+                      child: new Text('OK'),
+                      onPressed: () {
+                        Navigator.of(newContext).pop();
+                        address = _addressController.text;
+                        setState(() {});
+                      },
+                   ),
+                  )
+                ],
+              )
+            ],
+          );
+        });
+  }
+
+  showMoneyPicker(BuildContext context){
+    return showDialog<int>(
+        context: context,
+        builder: (BuildContext newContext) {
+          return AlertDialog(
+            title: Text('Podaj cenę, za którą weźmiesz inne osoby na wyjazd', style: TextStyle(fontSize: 18.0)),
+            content: TextField(
+              controller: _moneyController,
+              keyboardType: TextInputType.number,
+            ),
+            actions: <Widget>[
               FlatButton(
-                child: new Text('Cancel'),
+                child: new Text('Anuluj'),
                 onPressed: () {
                   Navigator.of(newContext).pop();
                 },
@@ -275,43 +361,10 @@ class AddState extends State<AddTripScreen>{
                 child: new Text('OK'),
                 onPressed: () {
                   Navigator.of(newContext).pop();
-                  address = _addressController.text;
+                  price = int.parse(_moneyController.text);
                   setState(() {});
                 },
               ),
-              FlatButton(
-                child: new Text('Użyj obecnej lokalizacji'),
-                onPressed: () async {
-                  try{
-                    _keyScaffold.currentState..hideCurrentSnackBar()
-                      ..showSnackBar(
-                          SnackBar(
-                            content: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [Text('Ładowanie'), CircularProgressIndicator()],
-                            ),
-                            backgroundColor: Colors.black,
-                          ));
-                    Navigator.of(newContext).pop();
-                    Position position = await Geolocator().getCurrentPosition(desiredAccuracy: LocationAccuracy.high).timeout(const Duration(seconds: 5), onTimeout: () => throw TimeoutException("Żeby aplikacja działała poprawnie, proszę włączyć lokalizację w swoim telefonie, zezwolić aplikacji na dostęp do niej i uruchomić ponownie."));
-                    List<Placemark> placemark = await Geolocator().placemarkFromCoordinates(position.latitude, position.longitude).timeout(const Duration(seconds: 5), onTimeout: () => throw TimeoutException("Żeby aplikacja działała poprawnie, proszę włączyć lokalizację w swoim telefonie, zezwolić aplikacji na dostęp do niej i uruchomić ponownie."));
-                    Placemark placeMark  = placemark[0];
-                    String street = placeMark.thoroughfare;
-                    String number = placeMark.subThoroughfare;
-                    String locality = placeMark.locality;
-                    String subLocality = placeMark.subLocality;
-                    String postalCode = placeMark.postalCode;
-                    address = "$street $number, ${subLocality}, ${locality}, ${postalCode}";
-                    _keyScaffold.currentState..hideCurrentSnackBar();
-                    setState(() {});
-                  }catch(exception){
-                    Navigator.of(context).pop();
-                    Navigator.of(context).pop();
-                    if(exception is TimeoutException) BlocProvider.of<AuthenticationBloc>(context).add(ErrorOccurred(errorMessage: exception.message));
-                    else  BlocProvider.of<AuthenticationBloc>(context).add(ErrorOccurred(errorMessage: exception.toString()));
-                  }
-                },
-              )
             ],
           );
         });

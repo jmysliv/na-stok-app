@@ -62,7 +62,7 @@ class TripDetailsScreen extends StatelessWidget{
               )
             ],
           ),
-          trailing: (label == "Stok:") ? Icon(Icons.arrow_forward_ios) : null,
+          trailing: (label == "Stok:" && this.slope != null) ? Icon(Icons.arrow_forward_ios) : null,
           onTap: onTap,
         ),
     );
@@ -81,9 +81,12 @@ class TripDetailsScreen extends StatelessWidget{
         child: Column(
             children: <Widget>[
               _buildItem("Stok:", "${trip.slope}", Icons.landscape, () {
-                Navigator.of(context).push(MaterialPageRoute(builder: (_) {
-                  return SlopeDetailsScreen(slope, userRepository, tripRepository);
-                }));
+                if(slope == null) return;
+                else {
+                  Navigator.of(context).push(MaterialPageRoute(builder: (_) {
+                    return SlopeDetailsScreen(slope, userRepository, tripRepository);
+                  }));
+                }
               }),
               Divider(color: Colors.black54,
                 thickness: 1.0,
@@ -306,14 +309,6 @@ class TripDetailsScreen extends StatelessWidget{
         create: (context) => TripDetailsBloc(userRepository, tripRepository)..add(InitTrip(tripId)),
         child:Scaffold(
           appBar: AppBar(
-            leading: IconButton(
-                icon: Icon(Icons.arrow_back),
-                onPressed: (){
-                  Navigator.of(context).pop();
-                  if(BlocProvider.of<HomeBloc>(context).state is HomeMyTrips) BlocProvider.of<HomeBloc>(context).add(ShowMyTrips());
-                  else BlocProvider.of<HomeBloc>(context).add(ShowTrips());
-                }
-            ),
             title: Text('Szczegóły wyjazdu'),
           ),
           body: BlocListener<TripDetailsBloc, TripDetailsState>(

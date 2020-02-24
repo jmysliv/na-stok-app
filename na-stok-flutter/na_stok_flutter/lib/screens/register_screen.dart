@@ -36,7 +36,7 @@ class RegisterScreen extends StatelessWidget {
               }
               else if (state.isFailure) {
                 Scaffold.of(context)
-                  ..hideCurrentSnackBar()
+                  ..removeCurrentSnackBar()
                   ..showSnackBar(
                     SnackBar(
                       content: Row(
@@ -52,7 +52,7 @@ class RegisterScreen extends StatelessWidget {
               }
               else if(state.isLoading){
                 Scaffold.of(context)
-                  ..hideCurrentSnackBar()
+                  ..removeCurrentSnackBar()
                   ..showSnackBar(
                       SnackBar(
                         content: Row(
@@ -67,10 +67,10 @@ class RegisterScreen extends StatelessWidget {
             child: BlocBuilder<RegisterBloc, RegisterState>(
                 builder: (context, state){
                 return Center(
-                  child: Container(
-                    child: Padding(
-                      padding: const EdgeInsets.all(36.0),
-                      child: new SingleChildScrollView(
+                  child: SingleChildScrollView(
+                    child: Container(
+                      child: Padding(
+                        padding: const EdgeInsets.all(36.0),
                         child: Form(
                           key: _formKey,
                           child: Column(
@@ -90,6 +90,9 @@ class RegisterScreen extends StatelessWidget {
                                 validator: (value){
                                   if(value.isEmpty) {
                                     return "Pole nie może być puste";
+                                  }
+                                  if(value.length > 15){
+                                    return "Imię musi mieć mniej niż 15 liter";
                                   }
                                   return null;
                                 },
@@ -165,8 +168,31 @@ class RegisterScreen extends StatelessWidget {
                                 minWidth: MediaQuery.of(context).size.width,
                                 padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
                                 onPressed: () async {
+                                  Scaffold.of(context)
+                                  ..hideCurrentSnackBar()
+                                  ..showSnackBar(
+                                  SnackBar(
+                                    content: Row(
+                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                      children: [Text('Walidacja formularza'), CircularProgressIndicator()],
+                                    ),
+                                      backgroundColor: Colors.black,
+                                      duration: Duration(seconds: 1),
+                                    ));
                                   if(_formKey.currentState.validate()){
                                     BlocProvider.of<RegisterBloc>(context).add(Submitted(email: this._emailController.text, password: this._passwordController.text, name: _nameController.text));
+                                  } else{
+                                    Scaffold.of(context)
+                                      ..removeCurrentSnackBar()
+                                      ..showSnackBar(
+                                          SnackBar(
+                                            content: Row(
+                                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                              children: [Text('Błedne dane'), Icon(Icons.error)],
+                                            ),
+                                            backgroundColor: Colors.red,
+                                            duration: Duration(seconds: 1),
+                                          ));
                                   }
                                 },
                                 child: Text("Stwórz konto",

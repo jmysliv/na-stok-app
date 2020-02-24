@@ -8,6 +8,8 @@ import 'package:na_stok_flutter/repositories/user_repository.dart';
 import 'package:na_stok_flutter/screens/slope_details_screen.dart';
 import 'package:na_stok_flutter/bloc_/slopes_filters/slopes_filters.dart';
 import 'package:percent_indicator/percent_indicator.dart';
+import 'package:intl/intl.dart';
+import 'package:intl/date_symbol_data_local.dart';
 
 class SlopesScreen extends StatelessWidget {
   final UserRepository userRepository;
@@ -104,28 +106,42 @@ class SlopesScreen extends StatelessWidget {
                                         ),
 
 
-                                        subtitle: Row(
+                                        subtitle: Column(
                                           children: <Widget>[
-                                            Expanded(
-                                              flex: 2,
-                                              child: Padding(
-                                                  padding: EdgeInsets.only(left: 2.0),
-                                                  child: Text(slope.city,
-                                                      style: TextStyle(color: Colors.white))),
+                                            Row(
+                                              children: <Widget>[
+                                                Expanded(
+                                                  flex: 2,
+                                                  child: Padding(
+                                                      padding: EdgeInsets.only(left: 2.0),
+                                                      child: Text(slope.city,
+                                                          style: TextStyle(color: Colors.white))),
+                                                ),
+                                                Expanded(
+                                                    flex: 3,
+                                                    child: Container(
+                                                      child: new LinearPercentIndicator(
+                                                        width: 120.0,
+                                                        lineHeight: 20.0,
+                                                        percent: calculateProgress(slope),
+                                                        center: Text("${(slope.conditionMin != null) ? slope.conditionMin : slope.conditionEqual}cm śniegu", style: TextStyle(fontSize: 14.0),),
+                                                        linearStrokeCap: LinearStrokeCap.butt,
+                                                        progressColor: (slope.conditionMin != null) ? ((slope.conditionMin/maxSnow > 0.4) ? Colors.green : Colors.red): ((slope.conditionEqual != null) ? ((slope.conditionEqual/maxSnow > 0.4) ? Colors.green : Colors.red) : Colors.red),
+                                                      ),
+                                                    )),
+                                              ],
                                             ),
-                                            Expanded(
-                                                flex: 3,
-                                                child: Container(
-                                                  child: new LinearPercentIndicator(
-                                                    width: 120.0,
-                                                    lineHeight: 20.0,
-                                                    percent: calculateProgress(slope),
-                                                    center: Text("${(slope.conditionMin != null) ? slope.conditionMin : slope.conditionEqual}cm śniegu", style: TextStyle(fontSize: 14.0),),
-                                                    linearStrokeCap: LinearStrokeCap.butt,
-                                                    progressColor: (slope.conditionMin != null) ? ((slope.conditionMin/maxSnow > 0.4) ? Colors.green : Colors.red): ((slope.conditionEqual != null) ? ((slope.conditionEqual/maxSnow > 0.4) ? Colors.green : Colors.red) : Colors.red),
-                                                  ),
-                                                )),
-                                          ],
+                                            Padding(
+                                              padding: EdgeInsets.symmetric(vertical: 5.0, horizontal: 0.0),
+                                              child: Row(
+                                                children: <Widget>[
+                                                  Expanded(
+                                                      child: Text("Ostatnia aktualizacja: ${initializeDate().add_Hm().format(DateTime.parse(slope.updateTime))}", style: TextStyle(color: Colors.white, fontSize: 8.0, fontWeight: FontWeight.bold))
+                                                  )
+                                                ],
+                                              ),
+                                            )
+                                        ]
                                         ),
                                         trailing: Column(
                                           children: <Widget> [
@@ -153,5 +169,10 @@ class SlopesScreen extends StatelessWidget {
     else{
       return 0.01;
     }
+  }
+
+  DateFormat initializeDate(){
+    initializeDateFormatting('pl', null);
+    return DateFormat.yMMMd('pl');
   }
 }

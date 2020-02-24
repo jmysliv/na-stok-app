@@ -85,18 +85,18 @@ class TripsScreen extends StatelessWidget{
                     ),
                   ]
               ),
-              body: Container(
-                  child: RefreshIndicator(
-                    onRefresh: () {
-                      if(BlocProvider.of<HomeBloc>(context).state is HomeMyTrips) BlocProvider.of<HomeBloc>(context).add(ShowMyTrips());
-                      else BlocProvider.of<HomeBloc>(context).add(ShowTrips());
-                      return Future.delayed(Duration(milliseconds: 1));
-                     },
+              body: RefreshIndicator(
+                  onRefresh: () {
+                    if(BlocProvider.of<HomeBloc>(context).state is HomeMyTrips) BlocProvider.of<HomeBloc>(context).add(ShowMyTrips());
+                    else BlocProvider.of<HomeBloc>(context).add(ShowTrips());
+                    return Future.delayed(Duration(milliseconds: 1));
+                  },
+                  child: Container(
                     child: Center(
                       child: ListView.builder(
                           scrollDirection: Axis.vertical,
-                          shrinkWrap: true,
-                          physics: ScrollPhysics(),
+                          shrinkWrap: false,
+                          physics: AlwaysScrollableScrollPhysics(),
                           itemCount: filteredTrips.length,
                           itemBuilder: (context, index) {
                             final Trip trip = filteredTrips[index];
@@ -142,7 +142,7 @@ class TripsScreen extends StatelessWidget{
                                               width: 110.0,
                                               lineHeight: 20.0,
                                               percent: (maxDistance > 0) ? trip.distance/maxDistance : 0,
-                                              center: Text("${trip.distance}km", style: TextStyle(fontSize: 14.0),),
+                                              center: Text((trip.distance>1) ? "${trip.distance.round()}km" : "${trip.distance*1000}m", style: TextStyle(fontSize: 14.0),),
                                               linearStrokeCap: LinearStrokeCap.butt,
                                               progressColor: Colors.red,
                                             ) : Container(),
