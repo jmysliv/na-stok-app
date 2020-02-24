@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:na_stok_flutter/Widgets/drawer.dart';
-import 'package:na_stok_flutter/home/home.dart';
+import 'package:na_stok_flutter/bloc_/home/home.dart';
 import 'package:na_stok_flutter/models/slope_model.dart';
 import 'package:na_stok_flutter/models/trips_filter_model.dart';
 import 'package:na_stok_flutter/models/trips_model.dart';
 import 'package:na_stok_flutter/repositories/trip_repository.dart';
 import 'package:na_stok_flutter/repositories/user_repository.dart';
 import 'package:na_stok_flutter/screens/trip_details_screen.dart';
-import 'package:na_stok_flutter/trips_filters/trips_filter.dart';
+import 'package:na_stok_flutter/bloc_/trips_filters/trips_filter.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 import 'package:intl/intl.dart';
 
@@ -86,7 +86,13 @@ class TripsScreen extends StatelessWidget{
                   ]
               ),
               body: Container(
-                  child: Center(
+                  child: RefreshIndicator(
+                    onRefresh: () {
+                      if(BlocProvider.of<HomeBloc>(context).state is HomeMyTrips) BlocProvider.of<HomeBloc>(context).add(ShowMyTrips());
+                      else BlocProvider.of<HomeBloc>(context).add(ShowTrips());
+                      return Future.delayed(Duration(milliseconds: 1));
+                     },
+                    child: Center(
                       child: ListView.builder(
                           scrollDirection: Axis.vertical,
                           shrinkWrap: true,
@@ -96,13 +102,13 @@ class TripsScreen extends StatelessWidget{
                             final Trip trip = filteredTrips[index];
                             return Card(
                               elevation: 8.0,
-                              margin: new EdgeInsets.symmetric(horizontal: 10.0, vertical: 6.0),
+                              margin: new EdgeInsets.symmetric(horizontal: 5.0, vertical: 6.0),
                               child: Container(
                                 decoration: BoxDecoration(color: Colors.indigo),
                                 child:ListTile(
                                   contentPadding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
                                   leading: Container(
-                                    padding: EdgeInsets.only(right: 12.0),
+                                    padding: EdgeInsets.only(right: 5.0),
                                     decoration: new BoxDecoration(
                                         border: new Border(
                                             right: new BorderSide(width: 1.0, color: Colors.white24))),
@@ -120,17 +126,20 @@ class TripsScreen extends StatelessWidget{
                                   subtitle: Row(
                                     children: <Widget>[
                                       Expanded(
-                                        flex: 2,
+                                        flex: 3,
                                         child: Padding(
                                             padding: EdgeInsets.only(left: 2.0),
-                                            child: Text(DateFormat.yMd().add_Hm().format(DateTime.parse(trip.departureDateTime)), style: TextStyle(color: Colors.white))),
+                                            child: (DateTime.parse(trip.departureDateTime).isAfter(DateTime.now())) ? Text(
+                                                "Odległość od miejsca wyjazdu:", style: TextStyle(color: Colors.white, fontSize: 10.0)
+                                            ) : Text("Wyjazd już się odbył", style: TextStyle(color: Colors.white, fontSize: 10.0)),
+                                        )
                                       ),
                                       Expanded(
-                                          flex: 3,
+                                          flex: 4,
                                           child: Container(
                                             child: (DateTime.parse(trip.departureDateTime).isAfter(DateTime.now())) ? new LinearPercentIndicator(
                                               backgroundColor: Colors.green,
-                                              width: 111.0,
+                                              width: 110.0,
                                               lineHeight: 20.0,
                                               percent: (maxDistance > 0) ? trip.distance/maxDistance : 0,
                                               center: Text("${trip.distance}km", style: TextStyle(fontSize: 14.0),),
@@ -159,7 +168,7 @@ class TripsScreen extends StatelessWidget{
                               ),
                             );
                           }))
-              )
+              ))
           );
         }));
   }

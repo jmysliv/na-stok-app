@@ -75,3 +75,15 @@ class InitTrip extends TripDetailsEvent{
   @override
   String toString() => "InitTrip: {tripId: $tripId}";
 }
+
+
+class RefreshTrip extends TripDetailsEvent{
+  final Trip trip;
+  const RefreshTrip(this.trip);
+
+  @override
+  List<Object> get props => [trip];
+
+  @override
+  String toString() => "RefreshTrip: {trip: $trip}";
+}

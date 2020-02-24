@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:flutter/services.dart';
-import 'package:na_stok_flutter/authentication/authentication.dart';
+import 'package:na_stok_flutter/bloc_/authentication/authentication.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
@@ -53,36 +53,20 @@ class AddState extends State<AddTripScreen>{
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(5.0)),
       onPressed: onPressed,
-      child: Container(
-        alignment: Alignment.center,
-        height: 50.0,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: <Widget>[
-            Row(
-              children: <Widget>[
-                Container(
-                  child: Row(
-                    children: <Widget>[
-                      Icon(
-                        icon,
-                        size: 18.0,
-                        color: Colors.indigo,
-                      ),
-                      Text(
-                        text,
-                        overflow: TextOverflow.ellipsis,
-                        style: TextStyle(
-                            color: Colors.indigo,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 18.0),
-                      ),
-                    ],
-                  ),
-                )
-              ],
-            ),
-          ],
+      child: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 0.0, vertical: 5.0),
+        child: ListTile(
+          leading: Icon( icon, size: 18.0, color: Colors.indigo,),
+          title: Row(
+            children: <Widget>[
+              Expanded(
+                child: Text(
+                  text,
+                  style: TextStyle(fontSize: 18.0, color: Colors.indigo, fontWeight: FontWeight.bold),
+                ),
+              )
+            ],
+          ),
         ),
       ),
       color: Colors.white,
@@ -96,10 +80,10 @@ class AddState extends State<AddTripScreen>{
       appBar: AppBar(
         title: Text('Zaplanuj wyjazd na stok'),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
+      body: SingleChildScrollView(
         child: Container(
-          child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(16.0),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.center,
@@ -108,38 +92,21 @@ class AddState extends State<AddTripScreen>{
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(5.0)),
                   child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 0.0),
-                    child: Container(
-                      alignment: Alignment.center,
-                      height: 50.0,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 5.0),
+                    child: ListTile(
+                      leading: Icon( Icons.landscape, size: 18.0, color: Colors.indigo,),
+                      title: Row(
                         children: <Widget>[
-                          Row(
-                            children: <Widget>[
-                              Container(
-                                child: Row(
-                                  children: <Widget>[
-                                    Icon(
-                                      Icons.landscape,
-                                      size: 18.0,
-                                      color: Colors.indigo,
-                                    ),
-                                    Text(
-                                      " ${slope.name}",
-                                      style: TextStyle(
-                                          color: Colors.indigo,
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 18.0),
-                                    ),
-                                  ],
-                                ),
-                              )
-                            ],
-                          ),
+                          Expanded(
+                            child: Text(
+                              slope.name,
+                              style: TextStyle(fontSize: 18.0, color: Colors.indigo, fontWeight: FontWeight.bold),
+                            ),
+                          )
                         ],
                       ),
-                  )),
+                    ),
+                  ),
                   color: Colors.white,
                 ),
                 SizedBox(

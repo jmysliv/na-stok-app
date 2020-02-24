@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:bloc/bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:na_stok_flutter/authentication/authentication.dart';
+import 'package:na_stok_flutter/bloc_/authentication/authentication.dart';
 import 'package:na_stok_flutter/bloc-delegate.dart';
-import 'package:na_stok_flutter/login/login.dart';
+import 'package:na_stok_flutter/bloc_/login/login.dart';
 import 'package:na_stok_flutter/repositories/user_repository.dart';
 import 'package:na_stok_flutter/screens/error_screen.dart';
 import 'package:na_stok_flutter/screens/login_screen.dart';

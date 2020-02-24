@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:na_stok_flutter/register/register.dart';
+import 'package:na_stok_flutter/bloc_/register/register.dart';
 import 'package:meta/meta.dart';
 import 'package:na_stok_flutter/repositories/user_repository.dart';
 import 'package:bloc/bloc.dart';

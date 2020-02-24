@@ -30,7 +30,7 @@ class HomeSlopes extends HomeState{
   List<Object> get props => [slopes];
 
   int maxSnow(){
-    int max = 0;
+    int max = 1;
     slopes.forEach( (slope) {
       if(slope.conditionMin != null && slope.conditionMin > max) max = slope.conditionMin;
       else if(slope.conditionEqual != null && slope.conditionEqual > max) max = slope.conditionEqual;

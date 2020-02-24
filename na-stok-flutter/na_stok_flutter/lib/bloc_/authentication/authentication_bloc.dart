@@ -1,6 +1,6 @@
 
 import 'package:bloc/bloc.dart';
-import 'package:na_stok_flutter/authentication/authentication.dart';
+import 'package:na_stok_flutter/bloc_/authentication/authentication.dart';
 import 'package:na_stok_flutter/repositories/user_repository.dart';
 
 class AuthenticationBloc extends Bloc<AuthenticationEvent, AuthenticationState>{

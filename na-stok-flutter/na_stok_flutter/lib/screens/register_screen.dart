@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:na_stok_flutter/register/register.dart';
+import 'package:na_stok_flutter/bloc_/register/register.dart';
 import 'package:na_stok_flutter/repositories/user_repository.dart';
-import 'package:na_stok_flutter/authentication/authentication.dart';
+import 'package:na_stok_flutter/bloc_/authentication/authentication.dart';
 
 class RegisterScreen extends StatelessWidget {
   final UserRepository _userRepository;
@@ -134,6 +134,28 @@ class RegisterScreen extends StatelessWidget {
                                 return null;
                               },
                               ),
+                            SizedBox(height: 35.0),
+                            TextFormField(
+                              obscureText: true,
+                              style: TextStyle(fontFamily: 'Montserrat', fontSize: 20.0),
+                              decoration: InputDecoration(
+                                  contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
+                                  hintText: "Powtórz hasło",
+                                  border:
+                                  OutlineInputBorder(borderRadius: BorderRadius.circular(32.0))),
+                              validator: (value){
+                                if(value.isEmpty) {
+                                  return "Pole nie może być puste";
+                                }
+                                if(!RegExp(r'^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$').hasMatch(value)){
+                                  return "Hasło musi się składać z 8 liter, cyfr.";
+                                }
+                                if(value != _passwordController.text){
+                                  return "Hasła nie są takie same";
+                                }
+                                return null;
+                              },
+                            ),
                             SizedBox(height: 35.0),
                             Material(
                               elevation: 5.0,

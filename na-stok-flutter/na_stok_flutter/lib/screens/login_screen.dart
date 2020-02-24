@@ -1,8 +1,8 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:na_stok_flutter/login/login.dart';
+import 'package:na_stok_flutter/bloc_/login/login.dart';
 import 'package:na_stok_flutter/repositories/user_repository.dart';
 import 'package:flutter/material.dart';
-import 'package:na_stok_flutter/authentication/authentication.dart';
+import 'package:na_stok_flutter/bloc_/authentication/authentication.dart';
 import 'package:na_stok_flutter/screens/register_screen.dart';
 
 class LoginScreen extends StatelessWidget{

@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:geolocator/geolocator.dart';
-import 'package:na_stok_flutter/home/home.dart';
+import 'package:na_stok_flutter/bloc_/home/home.dart';
 import 'package:bloc/bloc.dart';
 import 'package:na_stok_flutter/models/slope_model.dart';
 import 'package:na_stok_flutter/models/trips_model.dart';
@@ -73,7 +73,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState>{
   
   Future<double> calculateMaxDistance(List<Trip> trips) async{
     double max = 0;
-    Position position = await Geolocator().getCurrentPosition(desiredAccuracy: LocationAccuracy.high);
+    Position position = await Geolocator().getCurrentPosition(desiredAccuracy: LocationAccuracy.high).timeout(const Duration(seconds: 10), onTimeout: () => throw TimeoutException("Żeby aplikacja działała poprawnie, proszę włączyć lokalizację w swoim telefonie, zezwolić aplikacji na dostęp do niej i uruchomić ponownie."));
     for(Trip trip in trips){
       if(DateTime.parse(trip.departureDateTime).isAfter(DateTime.now())){
         double tmp = await trip.calculateDistance(position).timeout(const Duration(seconds: 10), onTimeout: () => throw TimeoutException("Żeby aplikacja działała poprawnie, proszę włączyć lokalizację w swoim telefonie, zezwolić aplikacji na dostęp do niej i uruchomić ponownie."));

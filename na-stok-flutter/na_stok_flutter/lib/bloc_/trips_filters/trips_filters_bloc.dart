@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:na_stok_flutter/models/trips_filter_model.dart';
 import 'package:na_stok_flutter/models/trips_model.dart';
-import 'package:na_stok_flutter/trips_filters/trips_filter.dart';
+import 'package:na_stok_flutter/bloc_/trips_filters/trips_filter.dart';
 
 class TripsFiltersBloc extends Bloc<TripsFiltersEvent, TripsFiltersState> {
   final List<Trip> trips;

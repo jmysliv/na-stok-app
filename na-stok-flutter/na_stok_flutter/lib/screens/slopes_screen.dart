@@ -6,7 +6,7 @@ import 'package:na_stok_flutter/models/slope_model.dart';
 import 'package:na_stok_flutter/repositories/trip_repository.dart';
 import 'package:na_stok_flutter/repositories/user_repository.dart';
 import 'package:na_stok_flutter/screens/slope_details_screen.dart';
-import 'package:na_stok_flutter/slopes_filters/slopes_filters.dart';
+import 'package:na_stok_flutter/bloc_/slopes_filters/slopes_filters.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 
 class SlopesScreen extends StatelessWidget {
@@ -119,10 +119,10 @@ class SlopesScreen extends StatelessWidget {
                                                   child: new LinearPercentIndicator(
                                                     width: 120.0,
                                                     lineHeight: 20.0,
-                                                    percent: (slope.conditionMin != null) ? slope.conditionMin/maxSnow : slope.conditionEqual/maxSnow,
+                                                    percent: calculateProgress(slope),
                                                     center: Text("${(slope.conditionMin != null) ? slope.conditionMin : slope.conditionEqual}cm śniegu", style: TextStyle(fontSize: 14.0),),
                                                     linearStrokeCap: LinearStrokeCap.butt,
-                                                    progressColor: (slope.conditionMin != null) ? ((slope.conditionMin/maxSnow > 0.4) ? Colors.green : Colors.red): ((slope.conditionEqual/maxSnow > 0.4) ? Colors.green : Colors.red),
+                                                    progressColor: (slope.conditionMin != null) ? ((slope.conditionMin/maxSnow > 0.4) ? Colors.green : Colors.red): ((slope.conditionEqual != null) ? ((slope.conditionEqual/maxSnow > 0.4) ? Colors.green : Colors.red) : Colors.red),
                                                   ),
                                                 )),
                                           ],
@@ -145,5 +145,13 @@ class SlopesScreen extends StatelessWidget {
                       )
             );
             }));
+  }
+
+  double calculateProgress(Slope slope){
+    if(slope.conditionMin != null) return slope.conditionMin/this.maxSnow;
+    else if(slope.conditionEqual != null) return slope.conditionEqual/maxSnow;
+    else{
+      return 0.01;
+    }
   }
 }

@@ -8,7 +8,7 @@ import 'package:na_stok_flutter/screens/add_trip_screen.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:weather_icons/weather_icons.dart';
 import 'package:geolocator/geolocator.dart';
-import 'package:na_stok_flutter/authentication/authentication.dart';
+import 'package:na_stok_flutter/bloc_/authentication/authentication.dart';
 
 class SlopeDetailsScreen extends StatelessWidget {
   final Slope slope;

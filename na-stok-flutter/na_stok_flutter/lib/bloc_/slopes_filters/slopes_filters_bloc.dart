@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:na_stok_flutter/models/slope_filters_model.dart';
 import 'package:na_stok_flutter/models/slope_model.dart';
-import 'package:na_stok_flutter/slopes_filters/slopes_filters.dart';
+import 'package:na_stok_flutter/bloc_/slopes_filters/slopes_filters.dart';
 
 class SlopesFiltersBloc extends Bloc<SlopesFiltersEvent, SlopesFiltersState> {
   final List<Slope> slopes;

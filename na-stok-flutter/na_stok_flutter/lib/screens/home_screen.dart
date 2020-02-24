@@ -1,7 +1,7 @@
-import 'package:na_stok_flutter/authentication/authentication.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:na_stok_flutter/home/home.dart';
+import 'package:na_stok_flutter/bloc_/authentication/authentication.dart';
+import 'package:na_stok_flutter/bloc_/home/home.dart';
 import 'package:na_stok_flutter/models/user_model.dart';
 import 'package:na_stok_flutter/repositories/slope_repository.dart';
 import 'package:na_stok_flutter/repositories/trip_repository.dart';
