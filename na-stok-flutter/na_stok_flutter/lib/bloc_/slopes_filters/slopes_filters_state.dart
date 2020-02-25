@@ -15,14 +15,14 @@ class SlopesFiltersLoaded extends SlopesFiltersState {
   final List<Slope> filteredSlopes;
   final SlopesFilters activeFilter;
   final SlopesSortedBy activeSorting;
-
-  const SlopesFiltersLoaded(this.filteredSlopes, this.activeFilter, this.activeSorting);
+  final String activeSearch;
+  SlopesFiltersLoaded(this.filteredSlopes, this.activeFilter, this.activeSorting, this.activeSearch);
 
   @override
-  List<Object> get props => [filteredSlopes, activeFilter, activeSorting];
+  List<Object> get props => [filteredSlopes, activeFilter, activeSorting, activeSearch];
 
   @override
   String toString() {
-    return 'SlopesFiltersLoaded { filteredSlopes: $filteredSlopes, activeFilter: $activeFilter, activeSorting: $activeSorting }';
+    return 'SlopesFiltersLoaded { filteredSlopes: $filteredSlopes, activeFilter: $activeFilter, activeSorting: $activeSorting, search: $activeSearch}';
   }
 }

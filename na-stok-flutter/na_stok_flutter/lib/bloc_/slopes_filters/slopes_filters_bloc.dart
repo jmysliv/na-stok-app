@@ -16,13 +16,15 @@ class SlopesFiltersBloc extends Bloc<SlopesFiltersEvent, SlopesFiltersState> {
     if (event is UpdateFilter) {
       if (state is SlopesFiltersLoading) {
         List<Slope> filteredSlopes = filterSlopes(event.filter);
+        filteredSlopes = searchSlopes(event.search, filteredSlopes);
         filteredSlopes = sortSlopes(filteredSlopes, event.sorting);
-        yield SlopesFiltersLoaded(filteredSlopes, event.filter, event.sorting);
+        yield SlopesFiltersLoaded(filteredSlopes, event.filter, event.sorting, event.search);
       } else {
         yield SlopesFiltersLoading();
         List<Slope> filteredSlopes = filterSlopes(event.filter);
+        filteredSlopes = searchSlopes(event.search, filteredSlopes);
         filteredSlopes = sortSlopes(filteredSlopes, event.sorting);
-        yield SlopesFiltersLoaded(filteredSlopes, event.filter, event.sorting);
+        yield SlopesFiltersLoaded(filteredSlopes, event.filter, event.sorting, event.search);
       }
     }
   }
@@ -51,6 +53,14 @@ class SlopesFiltersBloc extends Bloc<SlopesFiltersEvent, SlopesFiltersState> {
         return aCondition.compareTo(bCondition);
       });
       return unSortedSlopes;
+    }
+  }
+
+  List<Slope> searchSlopes(String search, List<Slope> filteredSlopes) {
+    if (search == "") {
+      return filteredSlopes;
+    } else {
+      return filteredSlopes.where( (slope) => slope.name.toLowerCase().contains(search.toLowerCase())).toList();
     }
   }
 

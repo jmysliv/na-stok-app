@@ -8,12 +8,13 @@ abstract class SlopesFiltersEvent extends Equatable {
 class UpdateFilter extends SlopesFiltersEvent {
   final SlopesFilters filter;
   final SlopesSortedBy sorting;
+  final String search;
 
-  const UpdateFilter(this.filter, this.sorting);
-
-  @override
-  List<Object> get props => [filter, sorting];
+  const UpdateFilter(this.filter, this.sorting, this.search);
 
   @override
-  String toString() => 'UpdateFilter { filter: $filter, sorting: $sorting }';
+  List<Object> get props => [filter, sorting, search];
+
+  @override
+  String toString() => 'UpdateFilter { filter: $filter, sorting: $sorting, search: $search }';
 }

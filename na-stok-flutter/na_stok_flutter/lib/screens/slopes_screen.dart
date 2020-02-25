@@ -16,6 +16,7 @@ class SlopesScreen extends StatelessWidget {
   final List<Slope> slopes;
   final int maxSnow;
   final TripRepository tripRepository;
+  TextEditingController _slopeNameController = TextEditingController();
 
   SlopesScreen({Key key, @required this.userRepository, @required this.slopes, @required this.maxSnow, @required this.tripRepository})
       : super(key: key);
@@ -23,7 +24,7 @@ class SlopesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
       return BlocProvider<SlopesFiltersBloc>(
-        create: (context) => SlopesFiltersBloc(this.slopes)..add(UpdateFilter(SlopesFilters.all, SlopesSortedBy.updateTime)),
+        create: (context) => SlopesFiltersBloc(this.slopes)..add(UpdateFilter(SlopesFilters.all, SlopesSortedBy.updateTime, "")),
         child: BlocBuilder<SlopesFiltersBloc, SlopesFiltersState>(
           builder: (context, state) {
             List<Slope> filteredSlopes = (state is SlopesFiltersLoaded) ? state.filteredSlopes : this.slopes;
@@ -38,7 +39,7 @@ class SlopesScreen extends StatelessWidget {
                   actions: [
                     PopupMenuButton<SlopesFilters>(
                       onSelected: (filter) {
-                        BlocProvider.of<SlopesFiltersBloc>(context).add(UpdateFilter(filter, activeSorting));
+                        BlocProvider.of<SlopesFiltersBloc>(context).add(UpdateFilter(filter, activeSorting, _slopeNameController.text));
                       },
                       itemBuilder: (BuildContext context) => <PopupMenuItem<SlopesFilters>>[
                         PopupMenuItem<SlopesFilters>(
@@ -58,7 +59,7 @@ class SlopesScreen extends StatelessWidget {
                     ),
                     PopupMenuButton<SlopesSortedBy>(
                       onSelected: (sorting){
-                        BlocProvider.of<SlopesFiltersBloc>(context).add(UpdateFilter(activeFilter, sorting));
+                        BlocProvider.of<SlopesFiltersBloc>(context).add(UpdateFilter(activeFilter, sorting, _slopeNameController.text));
                       },
                       itemBuilder: (BuildContext context) => <PopupMenuItem<SlopesSortedBy>>[
                         PopupMenuItem<SlopesSortedBy>(
@@ -158,7 +159,42 @@ class SlopesScreen extends StatelessWidget {
                                     ),
                                   );
                                 }))
-                      )
+                      ),
+                floatingActionButton: FloatingActionButton(
+                    child: Icon(Icons.search),
+                    backgroundColor: Colors.grey,
+                    onPressed: (){
+                      showDialog<String>(
+                          context: context,
+                          builder: (BuildContext newContext) {
+                            return AlertDialog(
+                                title: Text('Wyszukaj stoku po nazwie', style: TextStyle(fontSize: 18.0)),
+                              content: TextField(
+                                controller: _slopeNameController,
+                                decoration: InputDecoration(hintText: "Nazwa stoku"),
+                                ),
+                              actions: <Widget>[
+                                FlatButton(
+                                  child: new Text('Wyczyść'),
+                                  onPressed: () {
+                                    _slopeNameController.text = "";
+                                    BlocProvider.of<SlopesFiltersBloc>(context).add(UpdateFilter(activeFilter, activeSorting, _slopeNameController.text));
+                                    Navigator.of(newContext).pop();
+                                  },
+                                ),
+                                FlatButton(
+                                  child: new Text('Szukaj'),
+                                  onPressed: () {
+                                    BlocProvider.of<SlopesFiltersBloc>(context).add(UpdateFilter(activeFilter, activeSorting, _slopeNameController.text));
+                                    Navigator.of(newContext).pop();
+                                  },
+                                ),
+                              ]
+                            );
+                          }
+                      );
+                    }
+                ),
             );
             }));
   }
