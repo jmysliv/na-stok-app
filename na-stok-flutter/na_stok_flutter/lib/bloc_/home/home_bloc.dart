@@ -41,28 +41,35 @@ class HomeBloc extends Bloc<HomeEvent, HomeState>{
       } else if(event is ShowTrips){
         try{
           yield HomeLoading();
-          List<Trip> trips = await tripRepository.getTrips().timeout(const Duration(seconds: 10), onTimeout: () => throw TimeoutException('Wychodzi na to, że nie masz połączenia z internetem, lub nastąpiły chwilowe problemy z serwerem. Sprawdź swoję połaczenie i uruchom aplikacje ponownie.'));
-          List<Slope> slopes = await slopeRepository.getSlopes().timeout(const Duration(seconds: 10), onTimeout: () => throw TimeoutException('Wychodzi na to, że nie masz połączenia z internetem, lub nastąpiły chwilowe problemy z serwerem. Sprawdź swoję połaczenie i uruchom aplikacje ponownie.'));
-          yield HomeTrips(tripRepository, trips, await calculateMaxDistance(trips), slopes);
+          if (!(await Geolocator().isLocationServiceEnabled())){
+            yield HomeTrips(tripRepository, [], 10000, [], true);
+          } else{
+            List<Trip> trips = await tripRepository.getTrips().timeout(const Duration(seconds: 10), onTimeout: () => throw TimeoutException('Wychodzi na to, że nie masz połączenia z internetem, lub nastąpiły chwilowe problemy z serwerem. Sprawdź swoję połaczenie i uruchom aplikacje ponownie.'));
+            List<Slope> slopes = await slopeRepository.getSlopes().timeout(const Duration(seconds: 10), onTimeout: () => throw TimeoutException('Wychodzi na to, że nie masz połączenia z internetem, lub nastąpiły chwilowe problemy z serwerem. Sprawdź swoję połaczenie i uruchom aplikacje ponownie.'));
+            yield HomeTrips(tripRepository, trips, await calculateMaxDistance(trips), slopes, false);
+          }
         } catch(exception){
           if(exception is TimeoutException) yield HomeFailure(exception.message);
           else yield HomeFailure(exception.toString());
         }
-
       } else if (event is ShowMyTrips){
         try{
           yield HomeLoading();
-          List<Trip> trips = await tripRepository.getTrips().timeout(const Duration(seconds: 10), onTimeout: () => throw TimeoutException('Wychodzi na to, że nie masz połączenia z internetem, lub nastąpiły chwilowe problemy z serwerem. Sprawdź swoję połaczenie i uruchom aplikacje ponownie.'));
-          trips = trips.where( (trip) {
-            if(trip.creatorId == user.id) return true;
-            bool flag = false;
-            trip.participants.forEach( (participant) {
-              if(participant == user.id) flag = true;
-            });
-            return flag;
-          }).toList();
-          List<Slope> slopes = await slopeRepository.getSlopes().timeout(const Duration(seconds: 10), onTimeout: () => throw TimeoutException('Wychodzi na to, że nie masz połączenia z internetem, lub nastąpiły chwilowe problemy z serwerem. Sprawdź swoję połaczenie i uruchom aplikacje ponownie.'));
-          yield HomeMyTrips(tripRepository, trips, await calculateMaxDistance(trips), slopes);
+          if (!(await Geolocator().isLocationServiceEnabled())){
+            yield HomeMyTrips(tripRepository, [], 10000, [], true);
+          } else{
+            List<Trip> trips = await tripRepository.getTrips().timeout(const Duration(seconds: 10), onTimeout: () => throw TimeoutException('Wychodzi na to, że nie masz połączenia z internetem, lub nastąpiły chwilowe problemy z serwerem. Sprawdź swoję połaczenie i uruchom aplikacje ponownie.'));
+            trips = trips.where( (trip) {
+              if(trip.creatorId == user.id) return true;
+              bool flag = false;
+              trip.participants.forEach( (participant) {
+                if(participant == user.id) flag = true;
+              });
+              return flag;
+            }).toList();
+            List<Slope> slopes = await slopeRepository.getSlopes().timeout(const Duration(seconds: 10), onTimeout: () => throw TimeoutException('Wychodzi na to, że nie masz połączenia z internetem, lub nastąpiły chwilowe problemy z serwerem. Sprawdź swoję połaczenie i uruchom aplikacje ponownie.'));
+            yield HomeMyTrips(tripRepository, trips, await calculateMaxDistance(trips), slopes, false);
+          }
         } catch(exception){
           if(exception is TimeoutException) yield HomeFailure(exception.message);
           else yield HomeFailure(exception.toString());

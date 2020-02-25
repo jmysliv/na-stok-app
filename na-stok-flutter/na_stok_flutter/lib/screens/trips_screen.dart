@@ -35,9 +35,31 @@ class TripsScreen extends StatelessWidget{
             TripsSortedBy activeSorting = (state is TripsFiltersLoaded) ? state.activeSorting : TripsSortedBy.time;
             final activeStyle = Theme.of(context).textTheme.body1.copyWith(color: Theme.of(context).accentColor);
             final defaultStyle = Theme.of(context).textTheme.body1;
-            return Scaffold(
-              drawer: HomeDrawer(),
-              appBar: AppBar(
+            return BlocListener<HomeBloc, HomeState>(
+              listener: (context, state){
+                if((state is HomeTrips && state.localizationOff) || (state is HomeMyTrips && state.localizationOff)){
+                  showDialog(
+                    context: context,
+                    builder: (BuildContext context) {
+                      return AlertDialog(
+                        title: Text("Nie można pobrać aktualnej lokalizacji"),
+                        content: Text('Włacz lokalizację i odśwież'),
+                        actions: <Widget>[
+                        FlatButton(
+                          child: Text('Ok'),
+                          onPressed: () {
+                          Navigator.of(context).pop();
+                          },
+                         ),
+                         ],
+                       );
+                      },
+                    );
+                  }
+              },
+              child: Scaffold(
+                drawer: HomeDrawer(),
+                appBar: AppBar(
                   title: Text(title),
                   actions: [
                     PopupMenuButton<TripsFilters>(
@@ -97,7 +119,7 @@ class TripsScreen extends StatelessWidget{
                           scrollDirection: Axis.vertical,
                           shrinkWrap: false,
                           physics: AlwaysScrollableScrollPhysics(),
-                          itemCount: filteredTrips.length,
+                          itemCount: (this.trips.length > 0) ? filteredTrips.length : 0,
                           itemBuilder: (context, index) {
                             final Trip trip = filteredTrips[index];
                             return Card(
@@ -169,7 +191,8 @@ class TripsScreen extends StatelessWidget{
                             );
                           }))
               ))
-          );
-        }));
+          ));
+        })
+      );
   }
 }

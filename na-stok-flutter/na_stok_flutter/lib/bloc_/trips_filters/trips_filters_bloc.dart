@@ -17,6 +17,7 @@ class TripsFiltersBloc extends Bloc<TripsFiltersEvent, TripsFiltersState> {
       if (state is TripsFiltersLoading) {
         List<Trip> filteredTrips = filterTrips(event.filter);
         filteredTrips = sortTrips(filteredTrips, event.sorting);
+        print(filteredTrips);
         yield TripsFiltersLoaded(filteredTrips, event.filter, event.sorting);
       } else {
         yield TripsFiltersLoading();

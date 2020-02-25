@@ -76,11 +76,13 @@ def get_slope_condition():
             print(e)
             pass
 
-    db.drop_collection(db.slopes)
+    print(db.slopes.count())
+    print(len(slopes))
     for slope in slopes:
+        db.slopes.delete_one({'name': slope["name"]})
         db.slopes.insert_one(slope)
-
-    print('done')
+    print("done")
+    print(db.slopes.count())
 
 
 @app.route('/')

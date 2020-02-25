@@ -47,15 +47,16 @@ class HomeTrips extends HomeState{
   final List<Slope> slopes;
   final TripRepository tripRepository;
   final double maxDistance;
+  final bool localizationOff;
 
-  const HomeTrips(this.tripRepository, this.trips, this.maxDistance, this.slopes);
+  const HomeTrips(this.tripRepository, this.trips, this.maxDistance, this.slopes, this.localizationOff);
 
-
-  @override
-  List<Object> get props => [trips, slopes];
 
   @override
-  String toString() => 'HomeTrips { trips: $trips, slopes: $slopes }';
+  List<Object> get props => [trips, slopes, localizationOff];
+
+  @override
+  String toString() => 'HomeTrips { trips: $trips, slopes: $slopes, localizationON: $localizationOff }';
 }
 
 class HomeMyTrips extends HomeState{
@@ -63,15 +64,14 @@ class HomeMyTrips extends HomeState{
   final List<Slope> slopes;
   final TripRepository tripRepository;
   final double maxDistance;
-  const HomeMyTrips(this.tripRepository, this.myTrips, this.maxDistance, this.slopes);
-
-
-
-  @override
-  List<Object> get props => [myTrips, slopes];
+  final bool localizationOff;
+  const HomeMyTrips(this.tripRepository, this.myTrips, this.maxDistance, this.slopes, this.localizationOff);
 
   @override
-  String toString() => 'HomeMyTrips { myTrips: $myTrips, slopes: $slopes }';
+  List<Object> get props => [myTrips, slopes, localizationOff];
+
+  @override
+  String toString() => 'HomeMyTrips { myTrips: $myTrips, slopes: $slopes, localizationOn: $localizationOff }';
 }
 
 class HomeMyProfile extends HomeState{
