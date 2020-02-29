@@ -168,7 +168,7 @@ class SlopesScreen extends StatelessWidget {
                           context: context,
                           builder: (BuildContext newContext) {
                             return AlertDialog(
-                                title: Text('Wyszukaj stoku po nazwie', style: TextStyle(fontSize: 18.0)),
+                                title: Text('Wyszukaj stok po nazwie', style: TextStyle(fontSize: 18.0)),
                               content: TextField(
                                 controller: _slopeNameController,
                                 decoration: InputDecoration(hintText: "Nazwa stoku"),

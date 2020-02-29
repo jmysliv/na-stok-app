@@ -14,7 +14,12 @@ class HomeBloc extends Bloc<HomeEvent, HomeState>{
   final SlopeRepository slopeRepository;
   final TripRepository tripRepository;
   final User user;
-  HomeBloc(this.userRepository, this.slopeRepository, this.tripRepository, this.user);
+  Position position;
+  DateTime lastPositionUpdate;
+  HomeBloc(this.userRepository, this.slopeRepository, this.tripRepository, this.user){
+    position = null;
+    lastPositionUpdate = null;
+  }
 
   @override
   HomeState get initialState => HomeLoading();
@@ -80,10 +85,13 @@ class HomeBloc extends Bloc<HomeEvent, HomeState>{
   
   Future<double> calculateMaxDistance(List<Trip> trips) async{
     double max = 0;
-    Position position = await Geolocator().getCurrentPosition(desiredAccuracy: LocationAccuracy.high).timeout(const Duration(seconds: 10), onTimeout: () => throw TimeoutException("Żeby aplikacja działała poprawnie, proszę włączyć lokalizację w swoim telefonie, zezwolić aplikacji na dostęp do niej i uruchomić ponownie."));
+    if(this.lastPositionUpdate == null || DateTime.now().difference(lastPositionUpdate).inHours > 1){
+      this.lastPositionUpdate = DateTime.now();
+      this.position = await Geolocator().getCurrentPosition(desiredAccuracy: LocationAccuracy.high).timeout(const Duration(seconds: 10), onTimeout: () => throw TimeoutException("Żeby aplikacja działała poprawnie, proszę włączyć lokalizację w swoim telefonie, zezwolić aplikacji na dostęp do niej i uruchomić ponownie."));
+    }
     for(Trip trip in trips){
       if(DateTime.parse(trip.departureDateTime).isAfter(DateTime.now())){
-        double tmp = await trip.calculateDistance(position).timeout(const Duration(seconds: 10), onTimeout: () => throw TimeoutException("Żeby aplikacja działała poprawnie, proszę włączyć lokalizację w swoim telefonie, zezwolić aplikacji na dostęp do niej i uruchomić ponownie."));
+        double tmp = await trip.calculateDistance(this.position).timeout(const Duration(seconds: 10), onTimeout: () => throw TimeoutException("Żeby aplikacja działała poprawnie, proszę włączyć lokalizację w swoim telefonie, zezwolić aplikacji na dostęp do niej i uruchomić ponownie."));
         if(tmp> max) max = tmp;
       }
     }

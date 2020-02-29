@@ -352,27 +352,48 @@ class SlopeDetailsScreen extends StatelessWidget {
 
   void launchMapsUrl(BuildContext context) async {
     try{
-      scaffoldKey.currentState ..hideCurrentSnackBar()
-        ..showSnackBar(
-            SnackBar(
-              content: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [Text('Ładowanie'), CircularProgressIndicator()],
-              ),
-              backgroundColor: Colors.black,
-            ));
-      Position position = await Geolocator().getCurrentPosition(desiredAccuracy: LocationAccuracy.high).timeout(const Duration(seconds: 10), onTimeout: () => throw TimeoutException("Żeby aplikacja działała poprawnie, proszę włączyć lokalizację w swoim telefonie, zezwolić aplikacji na dostęp do niej i uruchomić ponownie."));
-      String mapOptions = [
-        'origin=${position.latitude},${position.longitude}',
-        'destination=${slope.city}%2C+${slope.address.replaceAll(" ", "+").replaceAll(",", "%2C")}',
-        'travelmode=driving'
-      ].join('&');
-      final url = 'https://www.google.com/maps/dir/?api=1&$mapOptions';
-      if (await canLaunch(url)) {
-        await launch(url);
-        scaffoldKey.currentState..hideCurrentSnackBar();
-      } else {
-        throw 'Could not launch $url';
+      if (!(await Geolocator().isLocationServiceEnabled())){
+        showDialog(
+          context: context,
+          builder: (BuildContext context) {
+            return AlertDialog(
+              title: Text("Nie można pobrać aktualnej lokalizacji"),
+              content: Text('Włacz lokalizację i spróbuj ponownie'),
+              actions: <Widget>[
+                FlatButton(
+                  child: Text('Ok'),
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                ),
+              ],
+            );
+          },
+        );
+      } else{
+        scaffoldKey.currentState ..hideCurrentSnackBar()
+          ..showSnackBar(
+              SnackBar(
+                content: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [Text('Ładowanie'), CircularProgressIndicator()],
+                ),
+                backgroundColor: Colors.black,
+                duration: Duration(seconds: 10),
+              ));
+        Position position = await Geolocator().getCurrentPosition(desiredAccuracy: LocationAccuracy.high).timeout(const Duration(seconds: 10), onTimeout: () => throw TimeoutException("Żeby aplikacja działała poprawnie, proszę włączyć lokalizację w swoim telefonie, zezwolić aplikacji na dostęp do niej i uruchomić ponownie."));
+        String mapOptions = [
+          'origin=${position.latitude},${position.longitude}',
+          'destination=${slope.city}%2C+${slope.address.replaceAll(" ", "+").replaceAll(",", "%2C")}',
+          'travelmode=driving'
+        ].join('&');
+        final url = 'https://www.google.com/maps/dir/?api=1&$mapOptions';
+        if (await canLaunch(url)) {
+          await launch(url);
+          scaffoldKey.currentState..hideCurrentSnackBar();
+        } else {
+          throw 'Could not launch $url';
+        }
       }
     }catch(exception){
       scaffoldKey.currentState..hideCurrentSnackBar();
