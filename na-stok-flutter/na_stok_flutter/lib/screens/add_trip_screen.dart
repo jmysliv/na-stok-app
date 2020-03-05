@@ -216,7 +216,7 @@ class AddState extends State<AddTripScreen>{
                                 backgroundColor: Colors.black,
                               ));
                         List<Placemark> placemark = await Geolocator().placemarkFromAddress(address).timeout(const Duration(seconds: 5), onTimeout: () => throw TimeoutException("Wprowadź poprawny adres"));
-                        Trip trip = Trip(placemark[0].position.longitude, placemark[0].position.latitude, slope.name, new List<String>(), price, maxParticipants, new List<String>(), DateTime.parse("${currentDate} ${currentTime}").add(Duration(hours: 1)).toIso8601String(), (await userRepository.getUser()).id, "id");
+                        Trip trip = Trip(placemark[0].position.longitude, placemark[0].position.latitude, slope.name, new List<String>(), price, maxParticipants, new List<String>(), DateTime.parse("${currentDate} ${currentTime}").toIso8601String(), (await userRepository.getUser()).id, "id");
                         tripRepository.insertTrip(trip).timeout(const Duration(seconds: 10), onTimeout: () => throw TimeoutException('Wychodzi na to, że nie masz połączenia z internetem, lub nastąpiły chwilowe problemy z serwerem. Sprawdź swoję połaczenie i uruchom aplikacje ponownie.')).then((value) {
                           _keyScaffold.currentState..removeCurrentSnackBar()..showSnackBar(
                               SnackBar(
@@ -281,27 +281,63 @@ class AddState extends State<AddTripScreen>{
                       child: new Text('Użyj obecnej lokalizacji'),
                       onPressed: () async {
                         try{
-                          _keyScaffold.currentState..hideCurrentSnackBar()
-                            ..showSnackBar(
-                                SnackBar(
-                                  content: Row(
-                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                    children: [Text('Ładowanie'), CircularProgressIndicator()],
+                          if (!(await Geolocator().isLocationServiceEnabled())){
+                             showDialog(
+                              context: context,
+                              builder: (BuildContext context) {
+                                return AlertDialog(
+                                  title: Text("Nie można pobrać aktualnej lokalizacji"),
+                                  content: Text('Włacz lokalizację i spróbuj ponownie'),
+                                  actions: <Widget>[
+                                  FlatButton(
+                                    child: Text('Ok'),
+                                    onPressed: () {
+                                    Navigator.of(context).pop();
+                                    },
                                   ),
-                                  backgroundColor: Colors.black,
-                                ));
-                          Navigator.of(newContext).pop();
-                          Position position = await Geolocator().getCurrentPosition(desiredAccuracy: LocationAccuracy.high).timeout(const Duration(seconds: 5), onTimeout: () => throw TimeoutException("Żeby aplikacja działała poprawnie, proszę włączyć lokalizację w swoim telefonie, zezwolić aplikacji na dostęp do niej i uruchomić ponownie."));
-                          List<Placemark> placemark = await Geolocator().placemarkFromCoordinates(position.latitude, position.longitude).timeout(const Duration(seconds: 5), onTimeout: () => throw TimeoutException("Żeby aplikacja działała poprawnie, proszę włączyć lokalizację w swoim telefonie, zezwolić aplikacji na dostęp do niej i uruchomić ponownie."));
-                          Placemark placeMark  = placemark[0];
-                          String street = placeMark.thoroughfare;
-                          String number = placeMark.subThoroughfare;
-                          String locality = placeMark.locality;
-                          String subLocality = placeMark.subLocality;
-                          String postalCode = placeMark.postalCode;
-                          address = "$street $number, ${subLocality}, ${locality}, ${postalCode}";
-                          _keyScaffold.currentState..hideCurrentSnackBar();
-                          setState(() {});
+                                  ],
+                                );
+                              },
+                            );
+                          } else {
+                            _keyScaffold.currentState
+                              ..hideCurrentSnackBar()
+                              ..showSnackBar(
+                                  SnackBar(
+                                    content: Row(
+                                      mainAxisAlignment: MainAxisAlignment
+                                          .spaceBetween,
+                                      children: [
+                                        Text('Ładowanie'),
+                                        CircularProgressIndicator()
+                                      ],
+                                    ),
+                                    backgroundColor: Colors.black,
+                                  ));
+                            Navigator.of(newContext).pop();
+                            Position position = await Geolocator()
+                                .getCurrentPosition(
+                                desiredAccuracy: LocationAccuracy.high)
+                                .timeout(const Duration(seconds: 5),
+                                onTimeout: () => throw TimeoutException(
+                                    "Żeby aplikacja działała poprawnie, proszę włączyć lokalizację w swoim telefonie, zezwolić aplikacji na dostęp do niej i uruchomić ponownie."));
+                            List<Placemark> placemark = await Geolocator()
+                                .placemarkFromCoordinates(
+                                position.latitude, position.longitude)
+                                .timeout(const Duration(seconds: 5),
+                                onTimeout: () => throw TimeoutException(
+                                    "Żeby aplikacja działała poprawnie, proszę włączyć lokalizację w swoim telefonie, zezwolić aplikacji na dostęp do niej i uruchomić ponownie."));
+                            Placemark placeMark = placemark[0];
+                            String street = placeMark.thoroughfare;
+                            String number = placeMark.subThoroughfare;
+                            String locality = placeMark.locality;
+                            String subLocality = placeMark.subLocality;
+                            String postalCode = placeMark.postalCode;
+                            address =
+                            "$street $number, ${subLocality}, ${locality}, ${postalCode}";
+                            _keyScaffold.currentState..hideCurrentSnackBar();
+                            setState(() {});
+                          }
                         }catch(exception){
                           Navigator.of(context).pop();
                           Navigator.of(context).pop();

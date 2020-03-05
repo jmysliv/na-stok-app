@@ -62,7 +62,7 @@ class ChatScreenState extends State<ChatScreen>{
   }
 
   void onSend(ChatMessage message) async {
-    Message newMessage = Message(tripId, user.id, user.name, message.text, message.createdAt.add(Duration(hours: 1)).toIso8601String(), "id");
+    Message newMessage = Message(tripId, user.id, user.name, message.text, message.createdAt.toIso8601String(), "id");
     await messageRepository.postMessage(newMessage);
   }
 
