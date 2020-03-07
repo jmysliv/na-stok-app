@@ -13,13 +13,13 @@ Na Stok is mobile app, that was created to make it easier to organize trips to t
 
 # Demo
 
-![gif](https://github.com/jmysliv/na-stok-app/tree/master/gifs/gif1.gif)
-![gif](https://github.com/jmysliv/na-stok-app/tree/master/gifs/gif2.gif)
-![gif](https://github.com/jmysliv/na-stok-app/tree/master/gifs/gif3.gif)
-![gif](https://github.com/jmysliv/na-stok-app/tree/master/gifs/gif4.gif)
-![gif](https://github.com/jmysliv/na-stok-app/tree/master/gifs/gif5.gif)
-![gif](https://github.com/jmysliv/na-stok-app/tree/master/gifs/gif6.gif)
-![gif](https://github.com/jmysliv/na-stok-app/tree/master/gifs/gif7.gif)
+![gif1](gifs/gif1.gif)
+![gif2](gifs/gif2.gif)
+![gif4](gifs/gif4.gif)
+![gif3](gifs/gif3.gif)
+![gif5](gifs/gif5.gif)
+![gif6](gifs/gif6.gif)
+![gif7](gifs/gif7.gif)
 
 
 # Getting Started
